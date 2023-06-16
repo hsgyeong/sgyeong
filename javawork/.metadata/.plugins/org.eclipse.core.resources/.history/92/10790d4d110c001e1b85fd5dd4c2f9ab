@@ -1,0 +1,12 @@
+package day0616;
+
+public class Book69 {
+
+	public static void main(String[] args) {
+		
+		
+		System.out.printf("상품의 가격:%d원 \n상품의 가격:%6d원 \n 상품의 가격:%-6d원 \n 상품의 가격:%06d \n반지름이 10인 원의 넓이: %6d.2", 123 );
+
+	}
+
+}
