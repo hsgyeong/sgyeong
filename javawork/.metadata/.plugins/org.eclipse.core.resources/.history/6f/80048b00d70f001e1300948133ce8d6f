@@ -1,0 +1,27 @@
+package day0619;
+
+public class OperTest_11 {
+
+	public static void main(String[] args) {
+		// 삼항(조건)연산자
+<<<<<<< HEAD
+		// 수식?"참":"거짓";
+=======
+		//수식?"참":"거짓";
+>>>>>>> 0c270af390ce1b5b9a84a72d4e73c5462046f75c
+		
+		int score=79;
+		
+		char grade=(score>90)?'A':((score>80)?'B':'C');
+		
+		System.out.println(score+"점은 "+grade+"등급입니다");
+		
+		
+<<<<<<< HEAD
+		
+=======
+>>>>>>> 0c270af390ce1b5b9a84a72d4e73c5462046f75c
+
+	}
+
+}
