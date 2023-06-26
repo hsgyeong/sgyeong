@@ -11,11 +11,11 @@ public class ArrayIntFind_12 {
 
 		Scanner sc=new Scanner(System.in);
 		int su; //입력할수
-		int [] data= {5,12,46,99,88,77,32,65,54,110,85,11};
-		boolean flag;
+		int [] data= {5,12,46,99,88,77,32,65,54,110,85,11}; //배열선언을 한것과 초기값을 동시에 준것과 마찬가지
+		boolean flag; //>변수선언
 
 
-		while(true)
+		while(true)  //class에서의 기본값: 0, null, false
 		{
 			System.out.println("검색할 숫자 입력하세요");
 			su=sc.nextInt();
@@ -31,7 +31,7 @@ public class ArrayIntFind_12 {
 			flag=false;  //false를 flag에 대입하는 것 /찾으면 true로 변경
 
 			//값찾기
-			for(int i=0;i<data.length;i++)
+			for(int i=0;i<data.length;i++) //i는 0부터 시작, i는 변수보다 무조건 작아야 함
 			{
 				if(su==data[i])
 				{
