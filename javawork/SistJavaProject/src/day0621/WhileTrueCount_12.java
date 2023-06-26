@@ -27,7 +27,11 @@ public class WhileTrueCount_12 {
 		}
 		
 			
+<<<<<<< HEAD
 			avg=sum/cnt;
+=======
+			avg=(double)sum/cnt;
+>>>>>>> sgyeong
 			
 			System.out.println("입력한 수의 합: "+sum);
 			System.out.println("총 입력갯수: "+cnt);

@@ -14,7 +14,10 @@ public class ExWhile_04 {
 		}
 		System.out.println("종료");
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> sgyeong
 		i=1;
 		while(true)
 		{
@@ -26,7 +29,11 @@ public class ExWhile_04 {
 				break;
 			
 		}
+<<<<<<< HEAD
 		System.out.println("종료");
+=======
+		
+>>>>>>> sgyeong
 	}
 
 }

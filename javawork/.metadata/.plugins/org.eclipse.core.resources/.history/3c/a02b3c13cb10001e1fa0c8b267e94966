@@ -1,0 +1,32 @@
+package day0622;
+
+public class ForStar_07 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//중첩(다중)for문으로 별모양 찍기
+		System.out.println("중첩(다중)for문으로 별모양 찍기");
+
+		for(int n=1;n<=4;n++)
+		{
+			for(int k=1;k<=n;k++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}			
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
