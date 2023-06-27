@@ -1,0 +1,25 @@
+package day0627;
+
+class ConstA{
+	
+	int num=0;
+	
+	//디폴트 생성자
+	
+	//인자있는 생성자
+	public ConstA(int num) {
+		
+	}
+	
+}
+
+
+////////////////////////////////
+public class ConstTest_05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
