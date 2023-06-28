@@ -30,7 +30,7 @@ public class Quiz_10 {
 	
 	//sangpum_set, getMethod 만들기
 	
-	public void setSangpum(String name)
+	public void setSangpum(String name) 
 	{
 		sangpum=name;
 	}
