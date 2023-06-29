@@ -46,7 +46,8 @@ public class Sawon {
 		
 		if(famSu>=4)
 			n=200000;
-		else n=famSu*50000;
+		else 
+			n=famSu*50000;
 		
 		return n;
 	}
@@ -60,7 +61,8 @@ public class Sawon {
 		
 		if(timeSu>=10)
 			n=300000;
-		else n=timeSu*30000;
+		else 
+			n=timeSu*30000;
 
 		return n;
 	}
@@ -71,7 +73,7 @@ public class Sawon {
 		
 		int s=pay+getFamilySudang()+gettimeSudang();
 		
-		return s;
+		return s;  //return s에 변수 준 다음 그 값을 return해준것
 		
 	}
 	

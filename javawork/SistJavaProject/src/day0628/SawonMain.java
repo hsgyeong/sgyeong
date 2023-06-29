@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SawonMain {
 
-	public static void getSawon(Sawon[] sawon)
+	public static void getSawon(Sawon[] sawon)  //static으로 만든 이유? 생성 안 하고 나중에 출력하기 위함
 	{
 		//제목
 		Sawon.getTitle();
@@ -57,7 +57,7 @@ public class SawonMain {
 			
 		}
 	
-		//getter로 출력
+		//출력
 		getSawon(sawon);
 
 	}

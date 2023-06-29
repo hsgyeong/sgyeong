@@ -1,0 +1,20 @@
+package day0629;
+
+public class Food implements FoodShop {
+
+	@Override
+	public void order() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void baedal() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	}
+
+
