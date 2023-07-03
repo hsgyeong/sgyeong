@@ -1,0 +1,15 @@
+package day0703;
+
+public class QuizTokenFile_09 {
+
+	public static void main(String[] args) {
+		/* 
+		 *    ***과일목록***
+		 *  상품  수량  단가  총금액
+		 *  바나나 10	5000  50000 
+		 */
+
+		
+	}
+
+}
