@@ -43,6 +43,10 @@ public class Map_14 {
 		for(String key:keySet)
 		{
 			System.out.println(key+"==>"+map.get(key));  //map은 put으로 넣고 get으로 가지고 온다
+			
+			
+			
+			
 		}
 	} 
 
