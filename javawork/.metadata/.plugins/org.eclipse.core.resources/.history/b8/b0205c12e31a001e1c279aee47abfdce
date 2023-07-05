@@ -1,0 +1,40 @@
+package day0705;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+public class SwingTableShop_03 extends JFrame {
+	
+	Container cp;
+	JTextField tfSang,tfSu,tfDan;
+	JButton btnAdd;
+	JTable table;
+	DefaultTableModel model;
+	
+	//저장하고 불러올 파일명
+	String FILENAME="";
+	
+	
+	public SwingTableShop_03(String title) { 
+	super(title);
+	cp=this.getContentPane();
+	this.setBounds(200,100,500,400);
+	cp.setBackground(new Color(218,217,255));
+	setVisible(true);
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		new SwingTableShop_03("상품테이블");
+		
+	}
+
+}

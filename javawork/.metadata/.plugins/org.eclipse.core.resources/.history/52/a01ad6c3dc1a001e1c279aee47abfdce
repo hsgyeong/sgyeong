@@ -1,0 +1,28 @@
+package day0705;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JFrame;
+
+public class SwingJTable_02 extends JFrame{
+	
+	Container cp;
+	
+	public SwingJTable_02(String title) {
+		
+		super(title);
+		cp=this.getContentPane();
+		this.setBounds(200,100,500,400);
+		cp.setBackground(new Color(218,217,255));
+		setVisible(true);
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		new SwingTable_02("스윙 테이블 연습")
+	}
+
+}
