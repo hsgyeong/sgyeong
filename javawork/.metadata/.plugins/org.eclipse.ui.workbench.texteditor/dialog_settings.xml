@@ -8,6 +8,7 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="sysdate"/>
 			<item value="inte"/>
 			<item value="in"/>
 			<item value="&quot;상품명: &quot;+this.sangpumName"/>

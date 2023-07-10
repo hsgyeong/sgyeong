@@ -1,0 +1,30 @@
+package day0710;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.sql.ConnectionEventListener;
+
+public class OracleConnectTest {
+	
+	
+		static final String URL="jdbc:oracle:thin:@localhost:1521:XE";
+		
+		public void coneectSawon() {
+	
+			Connection conn=null;     //java.sql
+			Statement stmt=null;
+			ResultSet rs=null;
+			
+			String sql="select * from sawon order by name";
+			
+		}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
