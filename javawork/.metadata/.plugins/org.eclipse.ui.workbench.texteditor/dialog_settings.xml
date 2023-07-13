@@ -6,13 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="insert"/>
+		<item key="selection" value="update"/>
 		<list key="findhistory">
+			<item value="update"/>
 			<item value="insert"/>
 			<item value="select"/>
 			<item value="delete"/>
 			<item value="sear"/>
-			<item value="update"/>
 			<item value="sysdate"/>
 			<item value="inte"/>
 			<item value="in"/>

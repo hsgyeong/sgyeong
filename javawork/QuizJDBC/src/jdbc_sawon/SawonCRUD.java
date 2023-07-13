@@ -157,9 +157,9 @@ public class SawonCRUD {
 		System.out.println("검색할 사원명(일부)");
 		String name=sc.nextLine();
 		
-	/*	String sql="select num,name,gender,buseo,to_char(pay,'L999,999,999')pay from sawon "
+		String sql="select num,name,gender,buseo,to_char(pay,'L999,999,999')pay from sawon "
 					+"where name like '%"+name+"%'";  */
-		String sql= "select * from sawon where name like ?";
+	//	String sql= "select * from sawon where name like ?";
 		
 		System.out.println(sql);
 		
@@ -170,9 +170,9 @@ public class SawonCRUD {
 		System.out.println("--------------------------------------------");
 		
 		Connection conn=db.getConnection();
-	//	Statement stmt=null;
+		Statement stmt=null;
 		PreparedStatement pstmt=null;
-		ResultSet rs=null;
+	//	ResultSet rs=null;
 		
 	/*	try {
 			stmt=conn.createStatement();
