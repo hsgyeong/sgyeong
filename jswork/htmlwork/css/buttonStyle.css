@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Orbit&family=Poor+Story&family=Sunflower:wght@300&display=swap');
 body{
     font-family: 'Dongle';
+    font-size: 30pt;
 }
 
 .btn{
@@ -14,11 +15,13 @@ body{
 .btn-lightseagreen{
     background-color: lightseagreen;
     color: white;
+    font-size: 12pt;
 }
 
 .btn-lightpink{
     background-color: lightpink;
-    color: lavender;
+    color: black;
+    font-size: 12pt;
 }
 
 .btn-lemonchiffon{
@@ -28,5 +31,6 @@ body{
 
 .btn-skyblue{
     background-color: skyblue;
-    color: white;
+    color:black;
+    font-size: 12pt;
 }
