@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sphoto{
+            width: 60px;
+            height: 60px;
+            border: 1px solid gray;
+            margin: 5px 5px;
+            cursor: pointer;
+
+        }
+
+        #photo_box{
+            position: absolute;
+            left: 300px;
+            top: 100px;
+            width: 360px;
+            height: 530px;
+            border: 2px solid gray;
+            padding: 10px 10px;
+        }
+
+        #main_photo{
+            position: absolute;
+            left: 800px;
+            top: 110px;
+            width: 400px;
+            height: 550px;
+           
+        }
+
+        #large_photo{
+            width: 400px;
+            border: 10px inset gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>문제: 작은 이미지에 마우스를 올리면 큰 사진이 바뀌게하는 이벤트 추가</h2>
+    <div id="photo_box">
+        <!-- 35이미지 쇼핑몰문제 쇼핑몰 이미지 불러오기-->
+        <script>
+            for(var i=1;i<=35;i++){
+
+                if(i==23) continue;
+                document.write("<img src='../쇼핑몰사진/"+i+".jpg' class='sphoto'>");
+                
+            }
+        </script>
+    </div>
+    <div id="main_photo">
+        <img id="large_photo" src="../div_img/beauty2.jpg"
+
+    </div>
+    <script>
+        //class배열 얻기
+        //var sphoto = document.getElementByClassName("sphoto");  //방법1
+        var sphoto=document.querySelectorAll(".sphoto");
+        //id얻기
+       //var lgphoto=document.getElementById("large_photo"); // 방법1
+        var lgphoto=document.querySelector("#large_photo"); // 방법2
+        
+
+        //반복문 안에서..마우스 이벤트를 배열 갯수만큼 
+        //현재 사진의 경로 얻기
+        //얻은 경로 사진을 id가 large_photo인 이미지에서 적용
+        
+        for(var i=0;i<sphoto.length;i++)
+        {
+            //마우스 이벤트를 배열 갯수만큼
+            sphoto[i].onmouseover=function(){
+                
+                //현재 사진의 경로 얻기
+              var selimg=this.getAttribute("src");
+
+              //얻은 경로사진을 id가 large인 이미지에서 적용
+                lgphoto.setAttribute("src",selimg);
+            }
+            
+        }
+        
+      
+    </script>
+</body>
+</html>

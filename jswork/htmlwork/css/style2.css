@@ -1,4 +1,4 @@
-div.lottoball_1{
+div{
 
 
         width: 100px;
@@ -19,7 +19,7 @@ div.lottoball_1{
        
     }
     
-    div.lottoball_2{
+  /*  div.lottoball_2{
 
 
         width: 100px;
@@ -120,6 +120,6 @@ div.lottoball_1{
         margin-right: 20px;
         margin-left: 20px;
         margin-top: 20; 
-        float: left;
+        float: left; 
        
-    }
+    } */

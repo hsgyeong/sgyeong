@@ -16,21 +16,37 @@ body{
     background-color: lightseagreen;
     color: white;
     font-size: 12pt;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
 }
 
 .btn-lightpink{
     background-color: lightpink;
     color: black;
     font-size: 12pt;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
 }
 
 .btn-lemonchiffon{
     background-color: lemonchiffon;
     color: black
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
 }
 
 .btn-skyblue{
     background-color: skyblue;
     color:black;
     font-size: 12pt;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
 }
