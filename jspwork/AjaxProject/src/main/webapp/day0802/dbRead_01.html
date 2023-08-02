@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<title>Insert title here</title>
+
+<style>
+<!--	div.box{
+		/*width: 40px;*/
+		/*height: 40px;*/
+		font-family: "Nanum Pen Script";
+		font-size: "20px";
+		border: "1px solid gray";
+		border-radius: "30px";
+		float: left;
+		margin-left:30px;
+		/*box-shadow: 5px 5px 5px gray;*/
+		};-->
+		
+	table.box2{
+		width: 40px;
+		height: 40px;
+		box-shadow: 5px 5px 5px gray;
+		border: "1px solid gray";
+		border-radius: "30px";
+	}	
+</style>
+
+</head>
+<body>
+<button type="button" id="btn1" class="btn btn-outline-info">xml읽기(myfood)</button>
+
+<button type="button" id="btn2" class="btn btn-outline-success">json읽기(shop)</button>
+
+<div id="show" class="box"></div>
+
+<script>
+	$("#btn1").click(function(){
+		
+		var s="";
+		
+		$("#show").empty();
+		
+		$.ajax({
+			
+			type:"get",
+			url:"foodtoxml.jsp",
+			dataType:"xml",
+			success:function(data){
+				
+				$(data).find("myfood").each(function(idx,ele){
+					
+					var e = $(ele);
+					
+					s+="<div class='alert alert-info box'>"+"<br>";
+					s+="No.: "+e.attr("num")+"<br>";
+					s+="Name: "+e.find("foodname").text()+"<br>";
+					s+="Photo"+"<br>"+"<img src='"+e.find("foodphoto").text()+"' width='150px' height='150px' >"+"<br>";
+					s+="Price: "+e.find("plice").text()+"<br>";
+					s+="cnt: "+e.find("cnt").text()+"<br>";
+					s+="</div>";	
+					
+				})
+				
+				$("#show").append(s);
+			}
+		});
+		
+	});
+	
+	$("#btn2").click(function(){
+		
+		$.ajax({
+			
+			type:"get",
+			url:"shoptojson.jsp",
+			dataType:"json",
+			success:function(res){
+				
+				var s="<table class='table table-bordered' style='width:700px'>";
+					s+="<br>";
+					s+="<th>번호</th><th>상품명</th><th>색상</th><th>가격</th><th>이미지</th>";
+					s+="<tr>"
+					$.each(res,function(i,ele){
+						s+="<tr>";
+						s+="<td>"+ele.num+"</td>";
+						s+="<td>"+ele.sangpum+"</td>";
+						s+="<td>"+ele.color+"</td>";
+							+"<div style='background-color:"+ele.color+"'; class='b'></div></td>"
+						s+="<td>"+ele.price+"</td>";
+						var img=ele.imgname;
+						s+="<td><img src='"+img+"' width='60'>"
+						s+="<tr>";
+						
+			});
+		
+		s+="</table>";
+		$("#show").html(s);
+		}
+	})
+})
+</script>
+</body>
+</html>

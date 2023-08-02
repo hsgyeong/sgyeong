@@ -15,8 +15,8 @@
 </head>
 <body>
 	<%
-	String per1=request.getParameter("person");
-	String [] per2= request.getParameterValues("person2");
+	String per1=request.getParameter("person");	// "person"이라는 이름의 매개변수 값을 가져와서 해당 값을 문자열 변수에 저장
+	String [] per2= request.getParameterValues("person2");  //"person2"라는매개변수(parameter) 값을 가져와서 해당 값을 문자열 배열(String [])에 저장
 	%>
 	
 	조장 1순위: <%=per1 %><br><br>
