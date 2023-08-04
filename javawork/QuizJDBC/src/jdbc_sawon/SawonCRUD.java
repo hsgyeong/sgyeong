@@ -158,7 +158,7 @@ public class SawonCRUD {
 		String name=sc.nextLine();
 		
 		String sql="select num,name,gender,buseo,to_char(pay,'L999,999,999')pay from sawon "
-					+"where name like '%"+name+"%'";  */
+					+"where name like '%"+name+"%'";  
 	//	String sql= "select * from sawon where name like ?";
 		
 		System.out.println(sql);
@@ -172,7 +172,7 @@ public class SawonCRUD {
 		Connection conn=db.getConnection();
 		Statement stmt=null;
 		PreparedStatement pstmt=null;
-	//	ResultSet rs=null;
+		ResultSet rs=null;
 		
 	/*	try {
 			stmt=conn.createStatement();

@@ -20,7 +20,7 @@ Vector<SinsangDto> list=dao.getAllDatas();
 %>
 <body>
 <button type="button" class="btn btn-info"
-onclick="location.href='insertForm.jps'">데이터추가</button>
+onclick="location.href='insertForm.jsp'">데이터추가</button>
 <br>
 <table class="table table-bordered" style="width: 700px;">
 <tr class="table-success" style="text-align: center;">
@@ -32,7 +32,6 @@ onclick="location.href='insertForm.jps'">데이터추가</button>
 </tr>
 
 <%
-
 for(int i=0;i<list.size();i++)
 {
 	SinsangDto dto=list.get(i);
@@ -43,7 +42,7 @@ for(int i=0;i<list.size();i++)
 	<td><%=dto.getAddr() %></td>
 	<td><%=dto.getSdate() %></td>
 	<td><button type="button" class="btn btn-info btn-sm"
-	onclick="location.href=''">수정</button>
+	onclick="location.href='updateForm.jsp?num=<%=dto.getNum()%>'">수정</button>
 	<button type="button" class="btn btn-danger btn-sm"
 	onclick="location.href='delete.jsp?num=<%=dto.getNum()%>'">삭제</button></td>
 	<!--'delete.jsp?num=dto.getNum()': 이동하고자 하는 새로운 URL을 나타냄. delete.jsp 페이지로 이동하되, URL에 파라미터 num을 추가하여 

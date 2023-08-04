@@ -11,7 +11,7 @@
 	<img src="../image/f13.png">
 	<br><br>
 	<button type="button" class="btn btn-outline-info" id="btn1">data1.xml읽기</button>
-	<button type="button" class="btn btn-outline-danger" id="btn2">data1.json읽기</button type="button" class="btn btn-outline-danger" id="btn2">
+	<button type="button" class="btn btn-outline-danger" id="btn2">data1.json읽기</button>
 	<br>
 	<div id="result">결과출력</div>
 	
@@ -58,7 +58,7 @@
 				url:"data1.json",
 				dataType:"json",
 
- 
+ 				success:function(data){
  					
 					var s="";
 					s+="이름: "+data.name+"<br>";
