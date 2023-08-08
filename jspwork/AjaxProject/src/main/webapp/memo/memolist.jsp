@@ -14,9 +14,9 @@ List<MemoDto> list=dao.getAllMemos();
 JSONArray arr=new JSONArray();
 
 //arr에 먼저 size 보내보기
-JSONObject size=new JSONObject();
-size.put("size",list.size());
-arr.add(size);
+/* JSONObject size=new JSONObject();
+//size.put("size",list.size());
+arr.add(size); */
 
 SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
 for(MemoDto dto:list)
