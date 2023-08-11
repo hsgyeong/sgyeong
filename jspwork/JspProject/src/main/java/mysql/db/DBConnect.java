@@ -11,19 +11,19 @@ public class DBConnect {
 
 	//driver,url,계정,비밀번호
 
-	static final String MYSQL_URL="jdbc:oracle:thin:@localhost:1521:XE";
+	static final String MYSQL_URL="jdbc:mysql://localhost:3306/coffee?serverTimezone=Asia/Seoul";
 
 	//driver   //driver는 딱 한번만 실행
-	String driver="oracle.jdbc.driver.OracleDriver";
+	String driver="com.mysql.cj.jdbc.Driver";
 
 	public DBConnect() {
 		try {
 			Class.forName(driver);
-			System.out.println("오라클 드라이버 성공");
+			System.out.println("MYSQL 드라이버 성공");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("오라클 드라이버 실패");
+			System.out.println("MYSQL 드라이버 실패");
 		}
 	}
 
@@ -33,14 +33,14 @@ public class DBConnect {
 		Connection conn=null;
 
 		try {
-			conn=DriverManager.getConnection(ORACLE_URL,"Sgyeong","a1234");
+			conn=DriverManager.getConnection(MYSQL_URL,"sgyeong","1234");
 
 
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("오라클 연결실패: url,계정,비밀번호 확인요함"+e.getMessage());
+			System.out.println("MYSQL 연결실패: url,계정,비밀번호 확인요함"+e.getMessage());
 		}
 
 		return conn;

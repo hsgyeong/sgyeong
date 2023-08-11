@@ -47,7 +47,8 @@ public class IntroDao {
 
 	String sql="select * from myintro order by num";
 
-	try { pstmt=conn.prepareStatement(sql); rs=pstmt.executeQuery();
+	try { pstmt=conn.prepareStatement(sql); 
+		  rs=pstmt.executeQuery();
 
 	while(rs.next()) { IntroDto dto=new IntroDto();
 
