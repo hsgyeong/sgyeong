@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="db.quiz.QuizBoardDao"%>
 <%@page import="db.quiz.QuizBoardDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,16 +17,20 @@
 <title>Insert title here</title>
 </head>
 <%
-QuizBoardDto dto = new QuizBoardDto();
-QuizBoardDao dao = new QuizBoardDao();
+
+QuizBoardDao dao=new QuizBoardDao();
+
 %>
 <table class="table table-borederd">
 <body>
 	<div>
-		<tr>
-			<td><%=dto.getImgname()%> <br>
-			작성자: <%=dto.getWriter()%><br>
-				제목: <%=dto.getTitle()%></td>
+
+		<tr> 
+			<td><img src="../upload/<%=dto.getImgname() %>"> <br>
+			작성자: <%=dto.getWriter() %><br>
+			제목: <%=dto.getTitle() %></td>
+		
+
 		</tr>
 	</div>
 </body>

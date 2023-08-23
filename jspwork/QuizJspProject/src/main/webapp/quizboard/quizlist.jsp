@@ -95,7 +95,7 @@ if(list.size()==0)
 					%>
 					<tr>
 					<td align="center"><%=no-- %></td>
-					<td ><%=dto.getTitle() %><img src="<%=dto.getImgname() %>" style="width:80px"></td>
+					<td ><%=dto.getTitle() %><img src="<%=dto.getImgname() %>" style="width:50px; height:50px;"></td>
 					<td style="text-align:center;"><%=dto.getWriter() %></td>
 					<td style="text-align:center;"><%=sdf.format(dto.getWriteday()) %></td>
 					<td><%=dto.getReadcount() %></td>
