@@ -12,21 +12,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="margin: 100px 200px;">
-<img alt="" src="../image/bye2.jpg" width="120" align="left">
 <% 
-//세션으로부터 아이디를 얻는다
-String myid=(String)session.getAttribute("myid");
-
-//db에 있는 이름 가져온다
+String num=request.getParameter("num");
 MemberDao dao=new MemberDao();
-String name=dao.getName(myid);
-%>
+dao.deleteMember(num);
 
-<br><br>
-<b><%=name %>님이 로그인하셨습니다</b><br>
-<button type="button" class="btn btn-outline-danger"
-onclick="location.href='login/logoutaction.jsp'">로그아웃</button>
-</div>
+response.sendRedirect("../index.jsp?main=member/memberlist.jsp");
+%>
 </body>
+
 </html>

@@ -12,8 +12,8 @@
 	rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <style>
-div ul{
-	margin-top:35px;
+div ul {
+	margin-top: 35px;
 }
 </style>
 <title>Insert title here</title>
@@ -39,13 +39,13 @@ String root=request.getContextPath();
 <a href="<%=root %>/">Q & A</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="<%=root %>/">회원게시판</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="<%=root %>/">Shop</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --%>
-	<div id="wrap" >
+	<div id="wrap">
 		<header>
-			<div class="inner relative" >
+			<div class="inner relative">
 				<a class="logo" href="#"></a> <a id="menu-toggle"
 					class="button dark" href="#"><i class="icon-reorder"></i></a>
 				<nav id="navigation">
-					<ul id="main-menu" style="font-size:80px;">
+					<ul id="main-menu" style="font-size: 80px;">
 						<li class="current-menu-item"><a href="<%=root %>">Home</a></li>
 						<li class="parent"><a href="#">회원</a>
 							<ul class="sub-menu">
@@ -56,7 +56,9 @@ String root=request.getContextPath();
 										class="bi bi-person-plus-fill"></i>회원가입</a></li>
 								<li><a
 									href="<%=root%>/index.jsp?main=member/memberlist.jsp"><i
-										class="bi bi-person-square"></i>회원정보</a></li>
+										class="bi bi-person-square"></i>회원목록</a></li>
+								<li><a href="<%=root%>/index.jsp?main=member/myinfo.jsp"><i
+										class="bi bi-person-square"></i>나의정보</a></li>
 							</ul></li>
 						<li class="parent"><a
 							href="<%=root%>/index.jsp?main=guest/guestlist.jsp">방명록</a></li>

@@ -1,3 +1,5 @@
+<%@page import="data.dao.MemberDao"%>
+<%@page import="data.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,13 +12,26 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 </head>
-<body>
+
 <% 
 //절대경로잡기
 String root=request.getContextPath();
+String loginok=(String)session.getAttribute("loginok");
+String myid=(String)session.getAttribute("myid");
 %>
-</body>
+
 <a href="<%=root %>" style="color:black; font-size:20px; text-decoration: none; font-size: 15px;">
 <img alt="" src="<%=root %>/image/title2.png " style="width:150px; height:100px;" hscape="5px">&nbsp;&nbsp;&nbsp;
 Jsp & JQuery Mini Project</a>
+<body>
+<% 
+if(loginok!=null)
+{%>
+<button type="button" class="btn btn-outline-success" onclick="location.href='login/logoutaction.jsp'">로그아웃</button>
+<img src="image/05.png" style="width:25px"><b style="font-size: 15px"><%=myid %>님이 로그인중입니다</b>
+<%}else {%>
+<button type="button" class="btn btn-outline-success" onclick="location.href='index.jsp?main=login/loginform.jsp'">로그인</button>
+<%}
+%>
+</body>
 </html>

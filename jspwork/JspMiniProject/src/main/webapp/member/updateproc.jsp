@@ -1,4 +1,5 @@
 <%@page import="data.dao.MemberDao"%>
+<%@page import="data.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,21 +13,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="margin: 100px 200px;">
-<img alt="" src="../image/bye2.jpg" width="120" align="left">
 <% 
-//세션으로부터 아이디를 얻는다
-String myid=(String)session.getAttribute("myid");
+request.setCharacterEncoding("utf-8");
 
-//db에 있는 이름 가져온다
+MemberDto dto= new MemberDto();
+
+String num=request.getParameter("num");
+String name=request.getParameter("name");
+String id=request.getParameter("id");
+String pass=request.getParameter("pass");
+String hp=request.getParameter("hp");
+String addr=request.getParameter("addr");
+String email=request.getParameter("email1")+"@"+request.getParameter("email2");
+
+dto.setNum(num);
+dto.setName(name);
+dto.setId(id);
+dto.setPass(pass);
+dto.setHp(hp);
+dto.setAddr(addr);
+dto.setEmail(email);
+
 MemberDao dao=new MemberDao();
-String name=dao.getName(myid);
-%>
+dao.updateMember(dto);
 
-<br><br>
-<b><%=name %>님이 로그인하셨습니다</b><br>
-<button type="button" class="btn btn-outline-danger"
-onclick="location.href='login/logoutaction.jsp'">로그아웃</button>
-</div>
+response.sendRedirect("../index.jsp?main=member/memberlist.jsp");
+
+
+%>
 </body>
 </html>
