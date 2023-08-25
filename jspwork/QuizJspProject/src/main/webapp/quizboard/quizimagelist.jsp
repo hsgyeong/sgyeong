@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="db.quiz.QuizBoardDao"%>
 <%@page import="db.quiz.QuizBoardDto"%>
@@ -19,10 +20,34 @@
 <%
 
 QuizBoardDao dao=new QuizBoardDao();
-
+List<QuizBoardDto> list=dao.getAllBoards();
 %>
 <table class="table table-borederd">
 <body>
+<div style="margin:30px 30px; width:800px;">
+</div>
+<br>
+<table class="table table-bordered" style="width:600px; text-align:center;">
+<caption><h6>게시판</h6></caption>
+<tr>
+<th>번호</th>
+<th>제목</th>
+<th>작성자</th>
+<th>작성일</th>
+<th>조회</th>
+<th>이미지</th>
+</tr>
+<% 
+if(list.size()==0)
+{%>
+<tr>
+<td>
+<h6><b>등록된 게시물이 없습니다</b></h6>
+</td>
+</tr>
+<%}
+%>
+</table>
 	<div>
 
 		<tr> 
@@ -30,7 +55,7 @@ QuizBoardDao dao=new QuizBoardDao();
 			작성자: <%=dto.getWriter() %><br>
 			제목: <%=dto.getTitle() %></td>
 		
-
+ 
 		</tr>
 	</div>
 </body>

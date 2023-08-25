@@ -16,8 +16,13 @@
 <% 
 //절대경로잡기
 String root=request.getContextPath();
+//로그인세션
 String loginok=(String)session.getAttribute("loginok");
+//아이디얻기
 String myid=(String)session.getAttribute("myid");
+//dao에서 이름 얻기
+MemberDao dao = new MemberDao();
+String name=dao.getName(myid);
 %>
 
 <a href="<%=root %>" style="color:black; font-size:20px; text-decoration: none; font-size: 15px;">
@@ -25,12 +30,12 @@ String myid=(String)session.getAttribute("myid");
 Jsp & JQuery Mini Project</a>
 <body>
 <% 
-if(loginok!=null)
+if(loginok==null)
 {%>
+<button type="button" class="btn btn-outline-success" onclick="location.href='index.jsp?main=login/loginform.jsp'">로그인</button>
+<%}else {%>
 <button type="button" class="btn btn-outline-success" onclick="location.href='login/logoutaction.jsp'">로그아웃</button>
 <img src="image/05.png" style="width:25px"><b style="font-size: 15px"><%=myid %>님이 로그인중입니다</b>
-<%}else {%>
-<button type="button" class="btn btn-outline-success" onclick="location.href='index.jsp?main=login/loginform.jsp'">로그인</button>
 <%}
 %>
 </body>

@@ -20,6 +20,8 @@ div ul {
 <% 
 //절대경로잡기
 String root=request.getContextPath();
+String myid=(String)session.getAttribute("myid");
+String loginok=(String)session.getAttribute("loginok");
 %>
 
 <link rel="stylesheet" type="text/css"
@@ -54,20 +56,27 @@ String root=request.getContextPath();
 								<li><a
 									href="<%=root%>/index.jsp?main=member/memberform.jsp"><i
 										class="bi bi-person-plus-fill"></i>회원가입</a></li>
-								<li><a
+										
+										<%
+										if(loginok!=null && myid.equals("admin")){%>
+									<li><a
 									href="<%=root%>/index.jsp?main=member/memberlist.jsp"><i
 										class="bi bi-person-square"></i>회원목록</a></li>
+										<% }
+										%>
+																		
 								<li><a href="<%=root%>/index.jsp?main=member/myinfo.jsp"><i
 										class="bi bi-person-square"></i>나의정보</a></li>
 							</ul></li>
 						<li class="parent"><a
-							href="<%=root%>/index.jsp?main=guest/guestlist.jsp">방명록</a></li>
+							href="<%=root%>/index.jsp?main=guest/guestlist.jsp">회원방명록</a></li>
 						<li class="parent"><a href="#">고객의 소리</a>
 							<ul class="sub-menu">
 								<li><a href="<%=root %>/index.jsp?main=board/boardlist.jsp">회원게시판</a></li>
 								<li><a href="#">Q & A</a></li>
+								<li><a href="#">스마트게시판</a></li>
 							</ul></li>
-						<li><a href="#">찾아오시는 길</a></li>
+						<li><a href="<%=root %>/index.jsp?main=load/map.jsp">찾아오시는 길</a></li>
 					</ul>
 				</nav>
 				<div class="clear"></div>
