@@ -29,8 +29,8 @@ String loginok=(String)session.getAttribute("loginok");
 <link rel="stylesheet" type="text/css"
 	href="<%=root %>/menu/css/menu.css">
 
-<script type="text/javascript" src="<%=root %>/js/jquery.js"></script>
-<script type="text/javascript" src="<%=root %>/js/function.js"></script>
+<script type="text/javascript" src="<%=root %>/menu/js/jquery.js"></script>
+<script type="text/javascript" src="<%=root %>/menu/js/function.js"></script>
 </head>
 <body>
 <body>
