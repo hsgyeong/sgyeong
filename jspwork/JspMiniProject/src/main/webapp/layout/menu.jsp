@@ -72,9 +72,9 @@ String loginok=(String)session.getAttribute("loginok");
 							href="<%=root%>/index.jsp?main=guest/guestlist.jsp">회원방명록</a></li>
 						<li class="parent"><a href="#">고객의 소리</a>
 							<ul class="sub-menu">
-								<li><a href="<%=root %>/index.jsp?main=board/boardlist.jsp">회원게시판</a></li>
+								<li><a href="<%=root %>/index.jsp?main=board/boardlist.jsp">스마트게시판</a></li>
 								<li><a href="#">Q & A</a></li>
-								<li><a href="#">스마트게시판</a></li>
+								
 							</ul></li>
 						<li><a href="<%=root %>/index.jsp?main=load/map.jsp">찾아오시는 길</a></li>
 					</ul>

@@ -228,6 +228,12 @@ public class MemberDao {
 			db.dbClose(pstmt, conn);
 		}
 		
+		
+		
+		
+		
+		
+		
 	}
 	
 	//로그인시 아이디와 비밀번호 체크
@@ -259,10 +265,7 @@ public class MemberDao {
 		}finally {
 			db.dbClose(rs, pstmt, conn);
 		}
-		
 	
-		
-		
 		return b;
 		
 	}

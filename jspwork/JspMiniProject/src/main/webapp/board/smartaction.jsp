@@ -9,23 +9,26 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
-<style>
- .img{
-    display: flex; /* Flex 레이아웃 설정 */
-  }
-
-  .img {
-    width: 200px; /* 이미지 너비 설정 */
-    height: 600px; /* 이미지 높이 설정 */
-    margin-left: 20px; /* 이미지 간격 설정 */
-  }
-</style>
 </head>
 <body>
-<div class="img">
-<img art="" src="image/main2.jpeg" ><br><br>
-<img art="" src="image/main3.jpg" ><br><br>
-<img art="" src="image/main7.jpeg" ><br><br>
-</div>
+<%
+request.setCharacterEncoding("utf-8");
+%>
+<jsp:useBean id="dao" class="data.dao.SmartDao"/>
+<jsp:useBean id="dto" class="data.dto.SmartDto"/>
+
+<jsp:setProperty property="*" name="dto"/>
+
+<% 
+//db에 insert
+dao.insertSmart(dto);
+
+//목록으로 이동
+//response.sendRedirect("../index.jsp?main=board/boardlist.jsp");
+
+//디테일페이지로 이동하려면 방금 insert된 num값을 알아야한다
+int num=dao.getMaxNum();
+response.sendRedirect("../index.jsp?main=board/contentview.jsp?num="+num);
+%>
 </body>
 </html>

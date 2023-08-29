@@ -61,6 +61,8 @@ div.main{
 </head>
 
 <% 
+
+response.setCharacterEncoding("utf-8");
 //절대경로잡기
 String root=request.getContextPath();
 String mainPage="layout/main.jsp";  //기본페이지

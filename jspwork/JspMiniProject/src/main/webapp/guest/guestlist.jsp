@@ -81,12 +81,49 @@ $("span.likes").click(function() {
    });
    
  
-	 $("i.amod").click(function(){
-		 
-		 $("#myModal").modal();
-	 })
+	
  
+	 //수정아이콘 누르면 모달로 수정폼 띄우기
+	 $("i.amod").click(function(){
+		var idx=$(this).attr("idx"); 
+	/* 	alert(idx); */
+		
+		//댓글수정폼의 hidden에 idx를 넣어주기
+		$("#idx").val(idx);
+		
+		//모달창 띄우기
+		/* $("#myModal").modal(); */
+		
+		$.ajax({
+			type:"get",
+			dataType:"json",
+			url:"guest/answercontent.jsp",
+			data:{"idx":idx},
+			success:function(res){
+				$("#idx").val(res.idx);
+				$("#content").val(res.story);
+			}
+		
+		})
+	 });
 	 
+	 //모달창의 수정버튼 누르면 수정이 된 후 reload()
+	  $("#btnupdate").click(function(){
+		 
+		 var idx=$("#idx").val();
+		 
+		 var content=$("#content").val();
+		 
+		 $.ajax({
+			 type:"post",
+			 dataType:"html",
+			 url:"guest/answerupdate.jsp",
+			 data:{"idx":idx,"content":content},
+			 success:function(){
+				 location.reload();
+			 }
+		 })
+	 }) 
    
 });
 
@@ -216,7 +253,9 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 						src="save/<%=dto.getPhotoname()%>" align="left"
 						style="width: 100px; margin-top: 15px;" hspace="20" class="photo"></a> <%
  }
- %> <%=dto.getContent().replace("\n", "<br>")%>
+ %> 
+ 
+ <%=dto.getContent().replace("\n", "<br>")%>
 				</td>
 			</tr>
 
@@ -284,7 +323,7 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 									
 									<span style="font-size: 9pt; color: gray; margin-left:30px;"><%=sdf.format(adto.getWriteday()) %></span>
 									<br>
-									<span><%=adto.getContent().replace("\n", "<br>") %></span>
+									<span><%=adto.getContent() %></span>
 									<%
 									//수정 삭제는 로그인중이면서 로그인한 아이디와 같은 경우만 보이게
 									if(loginok!=null && adto.getMyid().equals(myid)){%>
@@ -375,15 +414,21 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h5 class="modal-title">수정하기</h5>
+        <h5 class="modal-title">댓글 수정</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
+      <div class="updateform">
+      <input type="hidden" id="idx" >
+      <input type="text" id="content">
+      <button type="button" class="btn btn-outline-info"
+      id="btnupdate">수정하기</button>
+     <!--  </div>
         <td><textarea style="width: 465px; height: 80px;"
-												name="content" required="required" class="form-control"></textarea></td>
-      </div>
+			name="content" required="required" class="form-control"></textarea></td>
+      </div> -->
 
       <!-- Modal footer -->
       <div class="modal-footer">

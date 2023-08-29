@@ -1,3 +1,4 @@
+<%@page import="com.mysql.cj.jdbc.ha.BestResponseTimeBalanceStrategy"%>
 <%@page import="data.dto.AnswerDto"%>
 <%@page import="data.dao.AnswerDao"%>
 <%@page import="data.dto.GuestDto"%>
@@ -17,7 +18,7 @@
 <body>
 <% 
 	//엔코딩
-	response.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf-8");
 
 	//data읽어서 dao 담기
 	AnswerDto dto=new AnswerDto();
