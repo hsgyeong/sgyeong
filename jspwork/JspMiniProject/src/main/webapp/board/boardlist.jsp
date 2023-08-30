@@ -23,6 +23,49 @@ a:hover{
    text-decoration: underline;
 }
 </style>
+<script type="text/javascript">
+$(function(){
+	
+	//전체선택 클릭시 체크값 얻어서 모든 체크값 전달하기
+	$(".alldelcheck").click(function(){
+		
+		//전체 체크값 얻기
+		var chk=$(this).is(":checked");
+		console.log(chk);
+		
+		//전체체크값을 글 앞의 체크에 일괄적으로 전달하기
+		$(".delcheck").prop("checked",chk);
+	});
+	
+	$("#btndel").click(function(){
+		
+		//체크된 길이
+		var len=$(".delcheck:checked").length;
+		//alert(len);
+		
+		if(len==0){
+			alert("최소 1개 이상 선택해주세요")
+		}else{
+			var a=confirm(len+"개의 글을 삭제하려면 [확인]을 눌러주세요");
+			
+			//체크된 곳의 value값 얻기(num)
+			var n="";
+			
+			$(".delcheck:checked").each(function(idx){
+				
+				n+=$(this).val()+",";
+			});
+			
+			//마지막 , 제거
+			n=n.substring(0,n.length-1);
+			console.log(n);
+		}
+		
+		//삭제파일로 전송
+		location.href="board/alldelete.jsp?nums="+n;
+	})
+});
+</script>
 </head>
 <%
    //로그인 상태 확인후 입력폼 나타낼것_회원만 보이게
@@ -78,7 +121,6 @@ List<SmartDto>list=dao.getPagingList(startNum, perPage);
 %>
 <body>
   <div style="margin: 30px 30px; width: 800px;">
-  <button type="button" class="btn btn-info" onclick="location.href='index.jsp?main=board/smartform.jsp'">글쓰기</button>
     <br>
     <h5><b>총<%=totalCount %>개의 게시글이 있습니다</b></h5>
         <table class="table table-bordered" >
@@ -90,6 +132,7 @@ List<SmartDto>list=dao.getPagingList(startNum, perPage);
              <th width="160px;">작성일</th>
              <th width="60px;">조회</th>     
            </tr>
+       
         <%
            if(totalCount==0)
         {%>
@@ -104,7 +147,9 @@ List<SmartDto>list=dao.getPagingList(startNum, perPage);
            for(SmartDto dto:list)
            {%>
               <tr>
-                <td align="center"><%=no-- %></td>
+                <td align="center"><input type="checkbox" value="<%=dto.getNum() %>" class="delcheck">
+                <%=no-- %>
+                </td>
                 <td>
                    <a href="index.jsp?main=board/contentview.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage%>"><%=dto.getSubject() %></a>
                 </td>
@@ -114,6 +159,17 @@ List<SmartDto>list=dao.getPagingList(startNum, perPage);
                </tr>
            <%}
         }%>
+        <tr>
+        <td colspan="5">
+        <input type="checkbox" class="alldelcheck">&nbsp;전체선택
+        <span style="float:right";>
+        <button type="button" class="btn btn-danger" onclick="" id="btndel">삭제</button>
+		<button type="button" class="btn btn-info" style="width:80px;"
+		onclick="location.href='index.jsp?main=board/smartform.jsp'">글쓰기</button>
+        </span>
+        
+        </td>
+        </tr>
         </table>
   </div>
   

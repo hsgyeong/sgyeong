@@ -14,18 +14,14 @@
     display: flex; /* Flex 레이아웃 설정 */
   }
 
-  .img {
-    width: 200px; /* 이미지 너비 설정 */
-    height: 600px; /* 이미지 높이 설정 */
-    margin-left: 20px; /* 이미지 간격 설정 */
-  }
+
 </style>
 </head>
 <body>
-<div class="img">
-<img art="" src="image/main2.jpeg" ><br><br>
-<img art="" src="image/main3.jpg" ><br><br>
-<img art="" src="image/main7.jpeg" ><br><br>
+<div class="img" >
+<img art="" src="image/main2.jpeg"  style="width:550px; height:650px;" ><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img art="" src="image/main3.jpg"  style="width:550px; height:650px;" ><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img art="" src="image/main7.jpeg"  style="width:550px; height:650px;" ><br><br>
 </div>
 </body>
 </html>

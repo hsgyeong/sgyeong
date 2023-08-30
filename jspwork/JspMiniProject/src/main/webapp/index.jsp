@@ -35,15 +35,17 @@ div.menu{
 }
 
 div.info{
-	width: 200px;
-	height: 500px;
+	width: 230px;
+	height: 260px;
 	line-height: 10px;
 	font-family: 'Sunflower';
 	font-size: 15px;
 	left: 100px;
 	top: 300px;
 	padding: 20px 10px;
-	border-radius: 30px;
+	border: 1px solid gray;
+	margin:1
+	
 }
 
 div.main{

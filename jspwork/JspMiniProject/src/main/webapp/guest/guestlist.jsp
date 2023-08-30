@@ -216,9 +216,10 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 	<%
 	}
 	%>
-	<div>
+	<div style="margin-left:100px;">
 		<b>총<%=totalCount%>개의 게시글이 있습니다
 		</b>
+		<br><br>
 
 		<%
 		MemberDao mdao = new MemberDao();
@@ -227,9 +228,9 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 			String name = mdao.getName(dto.getMyid());
 		%>
 
-		<table class="table table-bordered" style="width: 600px;">
+		<table class="table table-bordered" style="width: 1200px;">
 			<tr>
-				<td><b><i class="bi bi-person-square"></i>&nbsp;&nbsp;<%=name%>(<%=dto.getMyid()%>)</b>
+				<td>&nbsp;&nbsp;<b>&nbsp;<i class="bi bi-person-square"></i>&nbsp;&nbsp;<%=name%>(<%=dto.getMyid()%>)</b>
 					<%
 					//로그인한 아이디
 					String myid = (String) session.getAttribute("myid");
@@ -255,7 +256,7 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
  }
  %> 
  
- <%=dto.getContent().replace("\n", "<br>")%>
+ &nbsp;&nbsp;&nbsp;<%=dto.getContent().replace("\n", "<br>")%>
 				</td>
 			</tr>
 
@@ -288,6 +289,7 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 											<input type="hidden" name="currentPage" value="<%=currentPage%>">
 										</td>
 									</tr>
+									
 								</table>
 							</form>
 						</div>
@@ -343,11 +345,11 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 
 					</div> 
 					<span class="answer" style="cursor: pointer;"
-					num=<%=dto.getNum()%>><i class="bi bi-chat-dots-fill"
+					num=<%=dto.getNum()%>>&nbsp;&nbsp;&nbsp;<i class="bi bi-chat-dots-fill"
 						style=""></i>&nbsp;&nbsp;댓글 <%=alist.size() %></span> <span class="likes"
 					style="margin-left: 20px; cursor: pointer"
 					;
-              num=<%=dto.getNum()%>><i
+              num=<%=dto.getNum()%>>&nbsp;&nbsp;<i
 						class="bi bi-hand-thumbs-up-fill"></i>&nbsp;&nbsp;추천</span>
 
 					<span class="chu"><%=dto.getChu()%></span> <i
@@ -404,7 +406,7 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 			%>
 		</ul>
 	</div>
-	<b>방명록 출력할곳</b>
+	
 	
 	
 <!-- The Modal -->
