@@ -41,9 +41,9 @@ String loginok=(String)session.getAttribute("loginok");
 <a href="<%=root %>/">Q & A</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="<%=root %>/">회원게시판</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="<%=root %>/">Shop</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --%>
-	<div id="wrap">
+	<div id="wrap" style="margin-top: 20px;">
 		<header>
-			<div class="inner relative">
+			<div class="inner relative" style="margin-top: 30px">
 				<a class="logo" href="#"></a> <a id="menu-toggle"
 					class="button dark" href="#"><i class="icon-reorder"></i></a>
 				<nav id="navigation">

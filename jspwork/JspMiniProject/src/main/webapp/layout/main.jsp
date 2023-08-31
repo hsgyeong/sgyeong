@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="img" >
-<img art="" src="image/main2.jpeg"  style="width:550px; height:650px;" ><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img art="" src="image/main2.jpeg"  style="width:550px; height:650px; margin-top:-5px;" ><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img art="" src="image/main3.jpg"  style="width:550px; height:650px;" ><br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img art="" src="image/main7.jpeg"  style="width:550px; height:650px;" ><br><br>
 </div>

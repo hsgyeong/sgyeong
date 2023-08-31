@@ -26,7 +26,7 @@ String name=dao.getName(myid);
 %>
 
 <a href="<%=root %>" style="color:black; font-size:20px; text-decoration: none; font-size: 15px;">
-<img alt="" src="<%=root %>/image/title2.png " style="width:150px; height:100px;" hscape="5px">&nbsp;&nbsp;&nbsp;
+<img alt="" src="<%=root %>/image/title2.png " style="width:180px; height:150px;" >&nbsp;&nbsp;&nbsp;
 Jsp & JQuery Mini Project</a>
 <body>
 <% 
@@ -35,7 +35,7 @@ if(loginok==null)
 <button type="button" class="btn btn-outline-success" onclick="location.href='index.jsp?main=login/loginform.jsp'">로그인</button>
 <%}else {%>
 <button type="button" class="btn btn-outline-success" onclick="location.href='login/logoutaction.jsp'">로그아웃</button>
-<img src="image/05.png" style="width:25px"><b style="font-size: 15px"><%=myid %>님이 로그인중입니다</b>
+<img src="image/05.png" style="width:25px; margin-top: 5px;"><b style="font-size: 15px"><%=myid %>님이 로그인중입니다</b>
 <%}
 %>
 </body>

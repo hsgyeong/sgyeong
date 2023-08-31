@@ -48,7 +48,7 @@ ol, ul {
 /* HEADER */
 #wrap > header {
 	background-color: #333;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 }
 .logo {
 	display: inline-block;
@@ -92,7 +92,7 @@ ol, ul {
 
 #main-menu > li > a {
 	color: #eee;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 14px;
 	padding: 30px 0;
 	text-decoration:none;
@@ -199,7 +199,7 @@ ul.sub-menu > li > a.parent {
 		border: 1px solid #444;
 		color: #bbb;
 		display: block;
-		font-size: 14px;
+		font-size: 16px;
 		padding: 12px !important;
 		padding: 0;
 	}

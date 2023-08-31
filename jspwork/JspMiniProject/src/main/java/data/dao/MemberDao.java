@@ -118,6 +118,7 @@ public class MemberDao {
 		
 		try {
 		pstmt=conn.prepareStatement(sql);
+		
 		rs=pstmt.executeQuery();
 		
 		while(rs.next()) 

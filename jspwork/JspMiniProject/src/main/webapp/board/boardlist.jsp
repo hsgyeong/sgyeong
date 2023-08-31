@@ -1,3 +1,4 @@
+<%@page import="data.dao.SmartAnswerDao"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.ietf.jgss.GSSManager"%>
 <%@page import="data.dao.SmartDao"%>
@@ -118,6 +119,18 @@ no=totalCount-startNum;
 //각페이지 필요한 게시글 자겨오기
 List<SmartDto>list=dao.getPagingList(startNum, perPage);
 
+//댓글 dao
+SmartAnswerDao adao=new SmartAnswerDao();
+for(SmartDto dto:list){
+	
+	//댓글변수에 댓글 총 갯수
+	int acount=adao.getAllSmartAnswers(dto.getNum()).size();
+	dto.setAnswercount(acount);
+	
+	
+	
+}
+
 %>
 <body>
   <div style="margin: 30px 30px; width: 800px;">
@@ -151,7 +164,16 @@ List<SmartDto>list=dao.getPagingList(startNum, perPage);
                 <%=no-- %>
                 </td>
                 <td>
-                   <a href="index.jsp?main=board/contentview.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage%>"><%=dto.getSubject() %></a>
+                   <a href="index.jsp?main=board/contentview.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage%>"><%=dto.getSubject() %>&nbsp;&nbsp;<%=dto.getAnswercount() %></a>
+                <!--댓글갯수출력-->
+                <% 
+                if(dto.getAnswercount()>0)
+                {%>
+                 <a href="index.jsp?main=board/contentview.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage%>#alist"
+                 style="color:red;">[<%=dto.getAnswercount() %>]</a>	
+                	
+                <%}
+                %>
                 </td>
                 <td><%=dto.getWriter() %></td>
                 <td align="center"><%=sdf.format(dto.getWriteday()) %></td>

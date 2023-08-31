@@ -364,7 +364,7 @@ location.href="index.jsp?main=guest/guestlist.jsp?currentPage=<%=currentPage - 1
 		%>
 	</div>
 
-	<div style="width: 600px; text-align: center;">
+	<div style="width: 600px; text-align: center; margin-left:180">
 		<ul class="pagination justify-content-center">
 			<%
 			//이전
