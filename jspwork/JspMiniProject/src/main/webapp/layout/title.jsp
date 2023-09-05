@@ -1,3 +1,4 @@
+<%@page import="data.dao.ShopDao"%>
 <%@page import="data.dao.MemberDao"%>
 <%@page import="data.dto.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -9,7 +10,39 @@
  <link  href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap"
  		rel="stylesheet">
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style type="text/css">
+    div.cart{
+		float:right;
+		cursor:pointer;
+	}
+	.count{
+		width:30px;
+		height:30px;
+		float: right;
+		background-color: red;
+		border-radius: 100px;
+		text-align: center;
+		z-index:10;
+		position: relative;
+		left:-20px;
+		top: 10px;
+		line-height: 30px;
+		color: white;
+		font-size:0.4em;
+	}
+	
+    </style>
+    <script type="text/javascript">
+	$(function(){
+		
+		$("div.cart").click(function(){
+			
+			location.href="index.jsp?main=shop/mycart.jsp";
+		})
+	})
+	</script>
 <title>Insert title here</title>
 </head>
 
@@ -38,5 +71,20 @@ if(loginok==null)
 <img src="image/05.png" style="width:25px; margin-top: 5px;"><b style="font-size: 15px"><%=myid %>님이 로그인중입니다</b>
 <%}
 %>
+
+<div class="cart">
+<% 
+ShopDao sdao=new ShopDao();
+
+//카트갯수 구하기
+
+int cartSize=sdao.getCartList(myid).size();
+
+%>
+
+<i class="bi bi-cart4" style="font-size:1.2em;"></i>
+
+<div class="count"><%=cartSize %></div>
+</div>
 </body>
 </html>

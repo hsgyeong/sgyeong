@@ -52,9 +52,7 @@
 	response.sendRedirect("../index.jsp?main=shop/addform.jsp");
 	
 	}catch(Exception e){
-		System.out.println("업로드오류"
-				
-				);
+		System.out.println("업로드오류");
 	}finally{
 		
 	}
