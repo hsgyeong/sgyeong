@@ -5,11 +5,10 @@
 안녕하세요😊  <br><br>
 
 
-<h2> 💜 Project 💜 </h2>
-|:---:|:---:|:---:| 
-|기간|내용|역할| 
-|2023.09.06 ~ 2023.09.22|리뷰 페이지|프론트엔드 개발 및 백엔드 개발 보조| 
-
+<h2> 💻 Project  </h2>
+|           기간          |     내용    |                 역할                |
+|:-----------------------:|:-----------:|:-----------------------------------:|
+| 2023.09.06 ~ 2023.09.22 | 리뷰 페이지 | 프론트엔드 개발 및 백엔드 개발 보조 |
 
 <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2>
 
@@ -33,7 +32,7 @@
 <div><h4>DB</h4>
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white">
   <img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=AWS&logoColor=white">
- <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white"> 
+ <img src="https://img.shields.io/badge/oracle-F80000?style=flat&logo=oracle&logoColor=white"> 
 </div>
 
 <div><h4>Communication</h4>
