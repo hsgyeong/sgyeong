@@ -2,11 +2,11 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=lightgreen&height=200&section=header&text=SG Github&fontSize=90" />
 
 
-안녕하세요.  <br><br>
+안녕하세요😊  <br><br>
 
 
 <h2> 💜 Project 💜 </h2>
-|:---------------------:|:---------:|:--------------------------------:| 
+|:---:|:---:|:---:| 
 |기간|내용|역할| 
 |2023.09.06 ~ 2023.09.22|리뷰 페이지|프론트엔드 개발 및 백엔드 개발 보조| 
 
