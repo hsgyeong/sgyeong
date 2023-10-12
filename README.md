@@ -6,7 +6,7 @@
 
 
 <h2> 💜 Project 💜 </h2>
-|:---:|:---:|:---:| 
+|:---------------------:|:---------:|:--------------------------------:| 
 |기간|내용|역할| 
 |2023.09.06 ~ 2023.09.22|리뷰 페이지|프론트엔드 개발 및 백엔드 개발 보조| 
 
@@ -36,7 +36,7 @@
  <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white"> 
 </div>
 
-<div><h4>communication</h4>
+<div><h4>Communication</h4>
   <img src="https://img.shields.io/badge/Github-181717?style=flat&logo=Github&logoColor=white">
   <img src="https://img.shields.io/badge/Discord-5865F2?style=flat&logo=Github&logoColor=white">
 </div><br>
