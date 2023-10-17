@@ -1,0 +1,13 @@
+테이블명: snsboard
+
+b_num: 기본키
+nick: 작성자 닉네임(문자열)
+subject: 제목 (문자열)
+content: 내용 (문자열)
+wday: 현재날짜
+
+최소 10개 insert
+
+자바 QuizConnectNewBoard
+
+메서드에서 Connection,Statement,ResultSet 객체 이용해서 새로 만든 Board를 불러오기

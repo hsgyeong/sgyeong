@@ -1,0 +1,5 @@
+package spring.mvc.carmember;
+
+public class CarMemberDto {
+
+}

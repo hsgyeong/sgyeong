@@ -50,7 +50,8 @@
 			<button type="button" class="btn btn-success"
 			onclick="location.href='list.jsp'">목록으로이동</button>
 			</td>
-		</tr>			
+		</tr>
+		</table>			
 	</form>
 </body>
 </html>

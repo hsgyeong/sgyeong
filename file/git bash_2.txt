@@ -1,0 +1,309 @@
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git branch
+* master
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git add .
+warning: in the working copy of 'javawork/.metadata/.log', LF will be replaced b
+y CRLF the next time Git touches it
+warning: in the working copy of 'javawork/.metadata/.plugins/org.eclipse.jdt.cor
+e/savedIndexNames.txt', LF will be replaced by CRLF the next time Git touches it
+
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git commit -m"sgyeong 브렌치에 올리는 중"
+[master 5ae67e3] sgyeong 브렌치에 올리는 중
+ 32 files changed, 2314 insertions(+), 2191 deletions(-)
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.hist
+ory/37/20ef569b370e001e1f37b22245cec00c
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.hist
+ory/a0/b04bd1bb370e001e1f37b22245cec00c
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/.org.eclipse.egit.core.cmp/.markers.snap
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/.org.eclipse.egit.core.cmp/.syncinfo.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/SistJavaProject/.indexes/e4/47/history.index
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/SistJavaProject/.markers.snap
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/SistJavaProject/.syncinfo.snap
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.root
+/.markers.snap
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.root
+/2.tree
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.root
+/4.tree
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/2.sna
+p
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.jdt.debug.ui/dialog_
+settings.xml
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/0.
+png
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/1.
+png
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/2.
+png
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/3.
+png
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/4.
+png
+ delete mode 100644 javawork/.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/5.
+png
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.tm.terminal.view.ui/
+.executables/data.properties
+ create mode 100644 javawork/SistJavaProject/bin/gittest/BranchTest.class
+ create mode 100644 javawork/SistJavaProject/src/gittest/BranchTest.java
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git push origing sgyeong
+error: src refspec sgyeong does not match any
+error: failed to push some refs to 'origing'
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git push origin sgyeong
+error: src refspec sgyeong does not match any
+error: failed to push some refs to 'https://github.com/hsgyeong/sgyeong.git'
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git push origin hsgyeong
+error: src refspec hsgyeong does not match any
+error: failed to push some refs to 'https://github.com/hsgyeong/sgyeong.git'
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ ^C
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git branch sgyeong
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git add .
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git chechout sgyeong
+git: 'chechout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git branch sgyeong
+fatal: a branch named 'sgyeong' already exists
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git add .
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git checkout sgyeong
+Switched to branch 'sgyeong'
+A       javawork/.metadata/.plugins/org.eclipse.core.resources/.projects/.org.ec
+lipse.egit.core.cmp/.markers.snap
+A       javawork/.metadata/.plugins/org.eclipse.core.resources/.projects/.org.ec
+lipse.egit.core.cmp/.syncinfo.snap
+A       javawork/.metadata/.plugins/org.eclipse.core.resources/.projects/SistJav
+aProject/.markers.snap
+A       javawork/.metadata/.plugins/org.eclipse.core.resources/.projects/SistJav
+aProject/.syncinfo.snap
+A       javawork/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.sn
+ap
+M       javawork/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.ec
+lipse.core.resources
+A       javawork/.metadata/.plugins/org.eclipse.core.resources/4.snap
+M       javawork/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (sgyeong)
+$ git add .
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (sgyeong)
+$ git commit -m "sgyeong branch에 올리는 중"
+[sgyeong 9fa7536] sgyeong branch에 올리는 중
+ 8 files changed, 2194 insertions(+), 2187 deletions(-)
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/.org.eclipse.egit.core.cmp/.markers.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/.org.eclipse.egit.core.cmp/.syncinfo.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/SistJavaProject/.markers.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/SistJavaProject/.syncinfo.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.root
+/.markers.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/4.sna
+p
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (sgyeong)
+$ git push origin sgyeong
+Enumerating objects: 494, done.
+Counting objects: 100% (494/494), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (444/444), done.
+Writing objects: 100% (494/494), 15.34 MiB | 2.47 MiB/s, done.
+Total 494 (delta 131), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (131/131), done.
+remote:
+remote: Create a pull request for 'sgyeong' on GitHub by visiting:
+remote:      https://github.com/hsgyeong/sgyeong/pull/new/sgyeong
+remote:
+To https://github.com/hsgyeong/sgyeong.git
+ * [new branch]      sgyeong -> sgyeong
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (sgyeong)
+$ git checkout master
+Switched to branch 'master'
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git stash
+Saved working directory and index state WIP on master: 5ae67e3 sgyeong 브렌치에
+올리는 중
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git checkout master
+Already on 'master'
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git merge sgyeong
+Updating 5ae67e3..9fa7536
+Fast-forward
+ .../.org.eclipse.egit.core.cmp/.markers.snap       |  Bin 0 -> 16 bytes
+ .../.org.eclipse.egit.core.cmp/.syncinfo.snap      |  Bin 0 -> 16 bytes
+ .../.projects/SistJavaProject/.markers.snap        |  Bin 0 -> 6269 bytes
+ .../.projects/SistJavaProject/.syncinfo.snap       |  Bin 0 -> 16 bytes
+ .../org.eclipse.core.resources/.root/.markers.snap |  Bin 0 -> 16 bytes
+ .../.safetable/org.eclipse.core.resources          |  Bin 1398 -> 2035 bytes
+ .../.plugins/org.eclipse.core.resources/4.snap     |  Bin 0 -> 1361 bytes
+ .../org.eclipse.e4.workbench/workbench.xmi         | 4381 ++++++++++----------
+ 8 files changed, 2194 insertions(+), 2187 deletions(-)
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/.org.eclipse.egit.core.cmp/.markers.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/.org.eclipse.egit.core.cmp/.syncinfo.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/SistJavaProject/.markers.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.proj
+ects/SistJavaProject/.syncinfo.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/.root
+/.markers.snap
+ create mode 100644 javawork/.metadata/.plugins/org.eclipse.core.resources/4.sna
+p
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git push origin master
+To https://github.com/hsgyeong/sgyeong.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/hsgyeong/sgyeong.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git checkout sgyeong
+Switched to branch 'sgyeong'
+M       javawork/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (sgyeong)
+$ git merge master
+Already up to date.
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (sgyeong)
+$ git push origin master
+To https://github.com/hsgyeong/sgyeong.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/hsgyeong/sgyeong.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (sgyeong)
+$ git checkout master
+Switched to branch 'master'
+M       javawork/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git push origin sgyeong
+Everything up-to-date
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git push origin master
+To https://github.com/hsgyeong/sgyeong.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/hsgyeong/sgyeong.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ ^C
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$ git push -f origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/hsgyeong/sgyeong.git
+ + a57afcb...9fa7536 master -> master (forced update)
+
+user@DESKTOP-COJ9858 MINGW64 /c/sist0615/work (master)
+$
+
+
+
+
+
+
+
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+에러 발생 해결방법
+$ git push -f origin master 해서 처리하면 된다.
+
+
+git stash
+
+git checkout master
+
+git merge sgyeong
+
+git push origin master
+
+
+git branch
+
+git add . 
+
+git commit -m 
+
+git push origin sgyeong
+
+
+git stash
+
+git checkout master
+
+git merge sgyeong
+
+git push origin master
+
+=======================================
+git stash 
+git checkout master
+git merge sgyeong 했을때 conflict 발생시
+git status 해서 상태 확인 >  붉은색
+
+git add * >업로드 가능하게 함
+
+<git status commit 가능한 상태가 됨 (초록색)>
+
+git commit -m "메세지"
+
+git push origin +master
+
+하면 업데이트됨!

@@ -1,0 +1,13 @@
+07.03
+
+오라클: 시퀀스
+mysql: 오토
+
+exception(예외조항)
+
+generic유형의 collection
+
+데이터베이스 저장시 connection이라는 class의 api를 얻어와야함
+
+메서드에서는 반드시 초기값 주어야함
+

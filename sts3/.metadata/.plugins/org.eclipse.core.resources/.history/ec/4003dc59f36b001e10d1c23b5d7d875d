@@ -1,0 +1,34 @@
+package board.data.controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import spring.mvc.reboard.BoardDao;
+
+@Controller
+public class BoardWriteController {
+	
+	@Autowired
+	BoardDao dao;
+	
+	@GetMapping("/board/writeform")
+	public String write(Model model, @RequestParam Map<String, String> map)
+	{
+		//아래 5개는 답글일 경우에만 넘어온다(새 글일 경우 안 넘어옴)
+		String currentPage = map.get("currentPage");
+		String num = map.get("num");
+		String regroup = map.get("regroup");
+		String restep = map.get("restep");
+		String relevel = map.get("relevel");
+		
+		
+		return "reboard/writeform";
+	}
+
+}

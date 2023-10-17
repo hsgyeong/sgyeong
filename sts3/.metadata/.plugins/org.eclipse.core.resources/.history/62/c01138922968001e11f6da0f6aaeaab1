@@ -1,0 +1,5 @@
+package spring.quiz.dto;
+
+public class ShopDto {
+
+}

@@ -1,0 +1,14 @@
+package spring.mvc.friday;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class InfoDao implements InfoInter {
+
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

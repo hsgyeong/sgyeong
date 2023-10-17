@@ -1,0 +1,64 @@
+package board.data.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import spring.mvc.reboard.BoardDao;
+import spring.mvc.reboard.BoardDto;
+
+@Controller
+public class BoardDeleteController {
+
+	@Autowired
+	BoardDao dao;
+	
+	@GetMapping("/board/deletepass")
+	public ModelAndView upassform(
+			@RequestParam String num,
+			@RequestParam String currentPage)
+	{
+		ModelAndView model = new ModelAndView();
+		
+		model.addObject("num", num);
+		model.addObject("currentPage", currentPage);
+		
+		
+		model.setViewName("reboard/delpassform");
+		
+		return model;
+	}
+	
+	@GetMapping("/board/delete")
+	public String deleteContent(Model model,
+			@RequestParam int num,
+			@RequestParam int pass,
+			@RequestParam int currentPage)
+	{	
+		int check = dao.getCheckPass(num, pass);
+		
+		if (check==1)
+		{
+			dao.deleteReboard(num);
+			return "redirect:list";
+			
+		}else
+		{
+			return "reboard/passfail";
+		}
+		
+	}
+
+	
+	@GetMapping("/board/delpass")
+	public String delContent()
+	{
+		return "reboard/delpassform";
+	}
+
+}
+

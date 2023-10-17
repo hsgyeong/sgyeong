@@ -1,0 +1,28 @@
+* 1621388 = hsgyeong , 6 minutes ago : 0627
+* 9491eff = hsgyeong , 9 minutes ago : 0627
+* 8c88758 = sg , 25 hours ago : 0626
+* 58e183f = sg , 4 days ago : 0623
+* b396fe4 = sg , 5 days ago : 0622
+* 0c270af = sg , 7 days ago : 0620
+* 9fa7536 = sg , 8 days ago : sgyeong branch에 올리는 중
+* 5ae67e3 = sg , 8 days ago : sgyeong 브렌치에 올리는 중
+* 69069b3 = sg , 11 days ago : 1st send
+
+
+--preserve-merges was replaced by --rebase-merges
+Note: Your `pull.rebase` configuration may also be set to 'preserve',
+which is no longer supported; use 'merges' instead
+
+
+git rebase -i -r 49f9cd2 으로 다시 입력
+
+
+
+ It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+        git rebase (--continue | --abort | --skip)
+If that is not the case, please
+        rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.

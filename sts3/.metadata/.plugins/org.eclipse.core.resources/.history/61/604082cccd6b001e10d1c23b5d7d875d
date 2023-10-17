@@ -1,0 +1,11 @@
+package spring.mvc.reboard;
+
+public class BoardDao implements BoardDaoInter {
+
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

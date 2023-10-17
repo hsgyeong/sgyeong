@@ -1,0 +1,41 @@
+package spring.mvc.reboard;
+
+import java.util.HashMap;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BoardDao implements BoardDaoInter {
+	
+	@Autowired
+	SqlSession session;
+	
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return session.selectOne("getTotalCountOfReboard");
+	}
+
+	@Override
+	public int getMaxNum() {
+		// TODO Auto-generated method stub
+		return session.selectOne("MaxNumOfReboard");
+	}
+
+	@Override
+	public void updateRestep(int regroup, int restep) {
+		// TODO Auto-generated method stub
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("regroup", regroup);
+		map.put("restep", restep);
+	}
+
+	@Override
+	public void insertReboard(BoardDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -53,7 +53,7 @@ public class SimpleBoardDao {
 		return list;
 	}
 
-	//num에 해당하는 dto 반환
+	//num�뿉 �빐�떦�븯�뒗 dto 諛섑솚
 	public SimpleBoardDto getBoard(String num)
 	{
 		SimpleBoardDto dto=new SimpleBoardDto();
@@ -89,7 +89,7 @@ public class SimpleBoardDao {
 	}
 
 
-	//가장 최신에 추가한 num값 얻기
+	//媛��옣 理쒖떊�뿉 異붽��븳 num媛� �뼸湲�
 	public int getMaxNum() {
 
 		int max=0;
@@ -128,7 +128,7 @@ public class SimpleBoardDao {
 		try {
 			pstmt=conn.prepareStatement(sql);
 
-			//바인딩
+			//諛붿씤�뵫
 			pstmt.setString(1, dto.getWriter());
 			pstmt.setString(2, dto.getPass());
 			pstmt.setString(3, dto.getSubject());
@@ -163,7 +163,7 @@ public class SimpleBoardDao {
 		}
 	}
 
-	//비밀번호 맞는지 체크
+	//鍮꾨�踰덊샇 留욌뒗吏� 泥댄겕
 	public boolean getCheckPass(String num,String pass)
 	{
 		boolean check=false;
@@ -183,8 +183,8 @@ public class SimpleBoardDao {
 
 			if(rs.next())
 			{
-				//초기값이 false이므로 else는 굳이 안 줘도 됨
-				if(rs.getInt(1)==1)  //비밀번호가 틀릴 경우 0
+				//珥덇린媛믪씠 false�씠誘�濡� else�뒗 援녹씠 �븞 以섎룄 �맖
+				if(rs.getInt(1)==1)  //鍮꾨�踰덊샇媛� ��由� 寃쎌슦 0
 					check=true;
 			}
 		} catch (SQLException e) {
@@ -196,7 +196,7 @@ public class SimpleBoardDao {
 		return check;
 	}
 	
-	//수정	..writer, subject, story 다 되게 할 것
+	//�닔�젙	..writer, subject, story �떎 �릺寃� �븷 寃�
 	public void updateBoard(SimpleBoardDto dto)
 	{
 		Connection conn=db.getConnection();
@@ -223,7 +223,7 @@ public class SimpleBoardDao {
 	
 	}
 	
-	//삭제
+	//�궘�젣
 	public void deleteBoard(String num)
 	{
 		Connection conn=db.getConnection();
@@ -244,7 +244,7 @@ public class SimpleBoardDao {
 	
 	}
 	
-	//페이징처리_1.전체 갯수 반환
+	//�럹�씠吏뺤쿂由�_1.�쟾泥� 媛��닔 諛섑솚
 	public int getTotalCount()
 	{
 		int total=0;
@@ -261,7 +261,7 @@ public class SimpleBoardDao {
 			
 			if(rs.next())
 			{
-				total=rs.getInt(1);  //1번열
+				total=rs.getInt(1);  //1踰덉뿴
 				
 			}
 		} catch (SQLException e) {
@@ -274,7 +274,7 @@ public class SimpleBoardDao {
 		return total;
 	}
 	
-	//부분조회
+	//遺�遺꾩“�쉶
 	public List<SimpleBoardDto> getPagingList(int startNum,int perPage)
 	{
 		List<SimpleBoardDto> list=new ArrayList<SimpleBoardDto>();

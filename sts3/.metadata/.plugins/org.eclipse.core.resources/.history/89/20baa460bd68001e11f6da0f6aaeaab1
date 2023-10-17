@@ -1,0 +1,73 @@
+package spring.mysql.carmember;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+@Repository
+public class CarMemberDao implements CarMemberInter {
+
+	@Autowired
+	private SqlSession session;
+	
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return session.selectOne("getTotalCountOfCarMember");
+	}
+
+	@Override
+	public List<CarMemberDto> getAllCarmembers() {
+		// TODO Auto-generated method stub
+		return session.selectList("getAllListOfCarMember"); 
+	}
+
+	@Override
+	public void insertCarMember(CarMemberDto dto) {
+		// TODO Auto-generated method stub
+		session.insert("insertOfCarMember", dto);
+	}
+
+	@Override
+	public void deleteCarMember(String num) {
+		// TODO Auto-generated method stub
+		session.delete("deleteOfCarMember", num); 
+	}
+
+	@Override
+	public String getData() {
+		// TODO Auto-generated method stub
+		return null;
+	}	
+	
+	@Override
+	public String update(CarMemberDto dto) {
+		// TODO Auto-generated method stub
+		session.update("updateOfCarMember", dto);
+	}
+
+
+
+	
+	
+	/*
+	 * //전체목록 public List<CarMemberDto> getAllCarmembers() { return
+	  session.selectList("getAllListOfCarMember"); }
+	 * 
+	 * //insert public void insertCarMember(@ModelAttribute CarMemberDto dto) {
+	  session.insert("insertOfCarMember", dto); }
+	 * 
+	 * //delete public void deleteCarMember(String num) {
+	 * session.delete("deleteOfCarMember", num); }
+	 * 
+	 * //getData public CarMemberDto getData(String num) { return
+	  session.selectOne("getDataOfCarMember", num); }
+	 * 
+	 * //update public void updateCarMember(@ModelAttribute CarMemberDto dto) {
+	 * session.update("updateOfCarMember", dto); }
+	 */
+
+}

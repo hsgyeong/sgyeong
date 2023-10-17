@@ -1,0 +1,56 @@
+package board.data.controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import spring.mvc.reboard.BoardDao;
+
+@Controller
+public class BoardWriteController {
+	
+	@Autowired
+	BoardDao dao;
+	
+	@GetMapping("/board/writeform")
+	public ModelAndView write(@RequestParam Map<String, String> map)
+	{
+		ModelAndView model = new ModelAndView();
+		
+		//아래 5개는 답글일 경우에만 넘어온다(새 글일 경우 안 넘어옴)
+		String currentPage = map.get("currentPage");
+		String num = map.get("num");
+		String regroup = map.get("regroup");
+		String restep = map.get("restep");
+		String relevel = map.get("relevel");
+		
+		System.out.println(currentPage+","+num);		
+	
+		//입력폼에 hidden으로 넣어줘야 함. 답글일때 대비
+		model.addObject("currentPage", currentPage==null?"1":currentPage);
+		model.addObject("num", num==null?"0":num);
+		model.addObject("regroup", regroup==null?"0":regroup);
+		model.addObject("restep", restep==null?"0":restep);
+		model.addObject("relevel", relevel==null?"0":relevel);
+		
+		//0으로 넣어야 dao에서 새 글로 인식
+		//폼이 답글, 새 글 공용이므로
+		
+		model.setViewName("reboard/writeform");
+		
+		return model;
+	}
+	
+	@PostMapping("")
+	public String insert()
+	{
+		return "redirect:list";
+	}
+
+}

@@ -1,0 +1,16 @@
+package spring.mvc.json;
+
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class JsonTest2Controller {
+
+	@GetMapping("/list2")
+	public Map<String, String> list
+	{
+		
+		
+	}
+	
+}

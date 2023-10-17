@@ -1,0 +1,11 @@
+package spring.mvc.carmember;
+
+public interface CarMemberInter {
+
+	public int getTotalCount();
+	//insert
+	//allselect
+	//getdata
+	//update
+	//delete
+}

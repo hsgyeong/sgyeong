@@ -53,8 +53,8 @@ public class MemberDao {
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getId());
-			pstmt.setString(2, dto.getPass());
-			pstmt.setString(3, dto.getName());
+			pstmt.setString(3, dto.getPass());
+			pstmt.setString(2, dto.getName());
 			pstmt.setString(4, dto.getHp());
 			pstmt.setString(5, dto.getImage());
 			
@@ -104,4 +104,149 @@ public class MemberDao {
 		return list;
 		
 	}
-}
+	
+	public String getName(String id)
+	{
+		String name="";
+		
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql="select * from spmember where id=?";
+				
+				try {
+					pstmt=conn.prepareStatement(sql);
+					pstmt.setString(1, id);
+					rs=pstmt.executeQuery();
+					
+					if(rs.next())
+					{
+						name=rs.getString("name");
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}finally {
+					db.dbClose(rs, pstmt, conn);
+				}
+				return name;						
+	}
+	
+	public boolean isLogin(String id,String pass)
+	{
+		boolean flag=false;
+		
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql="select * from spmember where id=? and pass=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pass);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				flag=true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+		return flag;
+	
+	}
+	
+	//num의 dto
+	public MemberDto getData(String num)
+	{
+		MemberDto dto=new MemberDto();
+		
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql="select * from spmember where num=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setString(1, num);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next())
+			{
+				dto.setNum(rs.getString("num"));
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setHp(rs.getString("hp"));
+				dto.setImage(rs.getString("image"));
+				dto.setGaip(rs.getTimestamp("gaip"));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+
+		return dto;
+	}
+		
+		//update... name,hp,photo
+		
+		public void updateMember(MemberDto dto)
+		{
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			
+			String sql="update spmember set pass=?, name=?, hp=?, photo=? where num=?";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, dto.getPass());
+				pstmt.setString(2, dto.getName());
+				pstmt.setString(3, dto.getHp());
+				pstmt.setString(4, dto.getImage());
+				pstmt.setString(5, dto.getNum());
+				
+				pstmt.execute();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(null, pstmt, conn);
+			}	
+			
+		}
+		
+		public void deleteMember(String num)
+		{
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			
+			String sql="delete from spmember where num=?";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, num);
+				pstmt.executeUpdate();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(pstmt, conn);
+			}
+			
+			
+		}
+		
+	}
+	
+

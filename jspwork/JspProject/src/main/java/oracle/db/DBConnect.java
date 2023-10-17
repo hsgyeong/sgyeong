@@ -9,21 +9,21 @@ import java.sql.Statement;
 
 public class DBConnect {
 
-	//driver,url,ê³„ì •,ë¹„ë°€ë²ˆí˜¸
+	//driver,url,°èÁ¤,ºñ¹Ð¹øÈ£
 
 	static final String ORACLE_URL="jdbc:oracle:thin:@localhost:1521:XE";
 
-	//driver   //driverëŠ” ë”± í•œë²ˆë§Œ ì‹¤í–‰
+	//driver   //driver µü ÇÑ ¹ø¸¸ ½ÇÇà. »ý¼ºÀÚ ´Ü¿¡¼­ ½ÇÇà
 	String driver="oracle.jdbc.driver.OracleDriver";
 
 	public DBConnect() {
 		try {
 			Class.forName(driver);
-			System.out.println("ì˜¤ë¼í´ ë“œë¼ì´ë²„ ì„±ê³µ");
+			System.out.println("¿À¶óÅ¬ µå¶óÀÌ¹ö ¼º°ø");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("ì˜¤ë¼í´ ë“œë¼ì´ë²„ ì‹¤íŒ¨");
+			System.out.println("¿À¶óÅ¬ µå¶óÀÌ¹ö ½ÇÆÐ"+e.getMessage());
 		}
 	}
 
@@ -40,13 +40,13 @@ public class DBConnect {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("ì˜¤ë¼í´ ì—°ê²°ì‹¤íŒ¨: url,ê³„ì •,ë¹„ë°€ë²ˆí˜¸ í™•ì¸ìš”í•¨"+e.getMessage());
+			System.out.println("¿À¶óÅ¬ ¿¬°á½ÇÆÐ: url,°èÁ¤, ºñ¹Ð¹øÈ£ È®ÀÎ ¿äÇÔ"+e.getMessage());
 		}
 
 		return conn;
 	}
 
-	//closeë©”ì„œë“œ.. ì´ 4ê°œ
+	//close¸Þ¼­µå »ý¼º.. ÃÑ 4°³
 
 	public void dbClose(ResultSet rs,Statement stmt,Connection conn)
 	{
@@ -60,8 +60,8 @@ public class DBConnect {
 		}
 	}
 
-	public void dbClose(Statement stmt,Connection conn)
-	{
+	public void dbClose(Statement stmt,Connection conn) // ResultSetÀÌ ¾ø´Â ÀÌÀ¯ >  Ãâ·Â ÇÊ¿ä ¾øÀ½
+	{ 
 		try {
 			if(stmt!=null) stmt.close();
 			if(conn!=null) conn.close();

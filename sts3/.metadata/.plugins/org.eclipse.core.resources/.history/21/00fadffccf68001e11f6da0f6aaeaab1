@@ -1,0 +1,9 @@
+package spring.mvc.json;
+
+import java.util.Map;
+
+@Controller
+public class JsonTestController {
+
+	public Map<K, V>
+}

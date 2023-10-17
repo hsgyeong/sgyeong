@@ -1,0 +1,16 @@
+package spring.mvc.friday;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+public interface InfoInter {
+
+	public int getTotalCount();
+	public void insertMyInfo(InfoDto dto);
+	public List<InfoDto> getAllInfos();
+	public InfoDto getData(String num);
+	public void update(@ModelAttribute("dto") InfoDto dto);
+	
+	
+}

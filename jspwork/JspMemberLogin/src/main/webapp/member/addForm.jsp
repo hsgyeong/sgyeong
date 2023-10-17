@@ -58,7 +58,7 @@ $(function(){
 
 				<tr>
 					<td style="background-color: #87cefa; text-align:center" width="120">핸드폰</td>
-					<td><input type="password" class="form-control"
+					<td><input type="text" class="form-control"
 						style="width: 200px;" name="hp" required="required"></td>
 				</tr>
 				
