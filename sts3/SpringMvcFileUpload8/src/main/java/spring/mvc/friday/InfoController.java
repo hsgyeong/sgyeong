@@ -67,7 +67,7 @@ public class InfoController {
 		model.addAttribute("list",list);
 		//model.addAttribute("list", list);
 		
-		return "info/list";
+		return "info/infolist";
 		
 	} 
 	

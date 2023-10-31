@@ -1,9 +1,0 @@
-package spring.quiz.dto;
-
-public class ShopDto {
-	
-	private String sangpum;
-	private String category;
-	private String color;
-	private int price;
-}

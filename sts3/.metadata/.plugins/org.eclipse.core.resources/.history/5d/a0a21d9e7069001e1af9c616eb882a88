@@ -1,9 +1,0 @@
-package spring.mvc.friday;
-
-public class InfoDto {
-	
-	private String num;
-	private String driver;
-	private String addr;
-	private String photo;
-}

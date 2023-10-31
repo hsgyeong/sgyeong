@@ -115,12 +115,5 @@ public class BoardDao implements BoardDaoInter {
 	// TODO Auto-generated method stub
 	   
 	   session.update("UpdateOfReboard", dto);
-   }
-
-
-
-
-   
-
-   
+   }   
 }

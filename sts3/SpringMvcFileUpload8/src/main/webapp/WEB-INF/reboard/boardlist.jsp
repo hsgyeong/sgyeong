@@ -57,6 +57,11 @@
 					<!-- 제목.. 누르면 내용보기로 -->
 					<a href="content?num=${dto.num }&currentPage=${currentPage}">${dto.subject }</a>
 					
+					<!--댓글 개수 -->
+					<c:if test="${dto.acount>0 }">
+					<a style="color:red;" href="content?num=${dto.num }&currentPage=${currentPage}#answer">[${dto.acount }]</a>
+					</c:if>
+					
 					<!--사진이 있을 경우 아이콘 표시 -->
 					<c:if test="${dto.photo!='no'}">
 						<i class="bi bi-image"></i>

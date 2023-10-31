@@ -11,10 +11,6 @@
   	insert into myinfo(name,driver,addr,photo,gaipday) values (#{name},#{driver},#{addr},#{photo},now())
   	</insert>
   	
-  <!-- 	<select id="selectAllOfMyInfo" resultType="indto">
-  	select * from myinfo order by num
-  	</select> -->
-  	
   	<select id="selectOneOfMyInfo" resultType="indto" parameterType="string">
   	select * from myinfo where num=#{num}
   	</select>

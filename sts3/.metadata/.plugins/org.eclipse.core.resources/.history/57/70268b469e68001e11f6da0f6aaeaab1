@@ -1,5 +1,0 @@
-package spring.mvc.carmember;
-
-public interface CarMemberInter {
-
-}

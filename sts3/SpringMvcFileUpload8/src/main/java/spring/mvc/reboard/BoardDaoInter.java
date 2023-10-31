@@ -14,4 +14,5 @@ public interface BoardDaoInter {
 	public int getCheckPass(int num,int pass);
 	public void deleteReboard(int num);
 	public void updateReBoard(BoardDto dto);
+	
 }

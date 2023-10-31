@@ -1,6 +1,7 @@
 package board.data.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import answer.data.AnswerDao;
+import answer.data.AnswerDto;
 import spring.mvc.reboard.BoardDao;
 import spring.mvc.reboard.BoardDto;
 
@@ -21,6 +24,9 @@ public class BoardContentController {
 	
 	@Autowired
 	BoardDao dao;
+	
+	@Autowired
+	AnswerDao adao;
 	
 	@GetMapping("/board/content")
 	public ModelAndView content(@RequestParam int num,
@@ -34,6 +40,13 @@ public class BoardContentController {
 		//dto
 		BoardDto dto = dao.getData(num);
 		
+		//num에 해당하는 댓글을 db에서 가져와서 보낸다
+		List<AnswerDto> alist = adao.getAnswerList(num);
+		
+		//값이 있을떄만 넘겨야 하므로
+		model.addObject("acount", alist.size());
+		model.addObject("alist", alist);
+		
 		model.addObject("dto", dto);
 		model.addObject("currentPage", currentPage);
 		
@@ -41,7 +54,5 @@ public class BoardContentController {
 		
 		return model;
 	}
-	
-
 
 }

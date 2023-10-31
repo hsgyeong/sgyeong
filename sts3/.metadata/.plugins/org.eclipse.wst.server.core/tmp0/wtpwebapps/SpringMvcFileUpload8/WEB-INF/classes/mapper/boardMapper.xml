@@ -45,7 +45,6 @@
   	select count(*) from reboard where num=#{num} and pass=#{pass}
   	</select>
   	
-  	<delete id=""></delete>
   	
   	<update id="UpdateOfReboard" parameterType="bdto">
   	update reboard set writer=#{writer}, subject=#{subject}, content=#{content},

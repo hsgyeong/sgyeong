@@ -15,6 +15,7 @@ public class BoardDto {
 	private int relevel;
 	private int readcount;
 	private Timestamp writeday;
+	private int acount;
 	
 	
 	public int getNum() {
@@ -82,6 +83,12 @@ public class BoardDto {
 	}
 	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
+	}
+	public int getAcount() {
+		return acount;
+	}
+	public void setAcount(int acount) {
+		this.acount = acount;
 	}
 	
 	
