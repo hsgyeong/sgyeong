@@ -59,7 +59,7 @@
 			<a href="${root }/ipgo/list" class="btn">상품목록</a>
 		</li>
 		<li>
-			<a href="${root }/board/list" class="btn">답변형게시판</a>
+			<a href="${root }/reboard/list" class="btn">답변형게시판</a>
 		</li>
 		<li>
 			<a href="${root }/member/list" class="btn">회원목록</a>
@@ -68,7 +68,7 @@
 			<a href="${root }/member/myinfo" class="btn">나의정보</a>
 		</li>
 		<li>
-			<a href="${root }/login/main" class="btn">로그인</a>
+			<a href="${root }/memboard/list" class="btn">회원게시판</a>
 		</li>
 		<li>
 			<a href="${root }/load/map" class="btn">오시는길</a>

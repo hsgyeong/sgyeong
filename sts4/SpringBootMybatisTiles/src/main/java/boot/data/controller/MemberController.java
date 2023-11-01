@@ -168,6 +168,8 @@ public class MemberController {
 	
 	}
 	
+	//string은 포워드를 하기 위한 것. ajax는 포워드가 없음
+	//dto 자체를 그대로 res로 넘겨서 화면에 띄워줄 수 있음
 	@GetMapping("/member/updatemodal")
 	@ResponseBody
 	public MemberDto updateModal(@RequestParam String num)
@@ -183,6 +185,7 @@ public class MemberController {
 		
 		return "redirect:myinfo";
 	}
+	
 	
 	
 	
