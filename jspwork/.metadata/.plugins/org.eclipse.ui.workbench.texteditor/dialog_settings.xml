@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="trash"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="true"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="trash"/>
+			<item value="adel"/>
+			<item value="hide"/>
+			<item value="수정"/>
+			<item value="div"/>
+			<item value="span"/>
+			<item value="댓글"/>
+			<item value="answer"/>
+			<item value="view"/>
+			<item value="getD"/>
+			<item value="dto"/>
+			<item value="count"/>
+			<item value="read"/>
+			<item value="id"/>
+			<item value="session"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="496"/>
+		<item key="DIALOG_Y_ORIGIN" value="488"/>
+		<item key="DIALOG_WIDTH" value="369"/>
+		<item key="DIALOG_HEIGHT" value="398"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="10"/>
+		<item key="DIALOG_Y_ORIGIN" value="50"/>
+		<item key="DIALOG_WIDTH" value="717"/>
+		<item key="DIALOG_HEIGHT" value="419"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>
