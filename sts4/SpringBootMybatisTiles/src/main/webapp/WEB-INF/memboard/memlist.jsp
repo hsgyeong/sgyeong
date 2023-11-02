@@ -50,7 +50,8 @@
 				<c:forEach var="dto" items="${list}" varStatus="i">
 				<tr style="vertical-align: middle;">
 					<td>${dto.num }</td>
-					<td><a href="content?num=${dto.num }&currentPage=${currentPage}">${dto.subject }</a></td>
+					<td><a href="content?num=${dto.num }&currentPage=${currentPage}"
+					style="color:black">${dto.subject }</a></td>
 					<td><c:if test="${dto.uploadfile!=null }">
 							<img alt="" src="../savefile/${dto.uploadfile }"
 								style="width: 120px;height:120px;">

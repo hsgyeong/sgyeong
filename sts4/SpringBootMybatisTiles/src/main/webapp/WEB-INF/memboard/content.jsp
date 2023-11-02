@@ -11,6 +11,138 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+.day{
+	color: gray;
+	margin-left: 30px;
+	margin-right: 30px;
+	font-size: 9px;
+}
+
+.amod, .adel{
+	cursor:pointer;
+}
+</style>
+<script>
+$(function(){
+	
+	list();
+	
+	num=$("#num").val();
+	idx=$("#idx").val();
+	loginok="${sessionScope.loginok}";
+	myid = "${sessionScope.myid}";
+	
+	//alert(num+","+loginok+","+myid);
+
+	
+	//insert	
+	
+	$("#btnansweradd").click(function(){
+		
+		var content=$("#content").val();
+		
+		//alert(num);
+		
+		if(content.length==0){
+			
+			alert("댓글을 입력해주세요");
+			return;
+		}
+		
+		//입력했을 때 ajax
+		
+		
+		
+		$.ajax({
+			
+			data:{"num":num,"content":content},
+			dataType:"html",
+			type:"post",
+			url:"/mbanswer/ainsert",
+			success:function(res){
+				
+			//	alert("인서트 성공");
+			
+//				list();
+				$("#content").val(""); 
+			}
+			
+		}); 
+		
+	}); 
+	
+	
+	//댓글 수정창 띄우기
+	
+	//댓글 수정
+	
+	//댓글 삭제  //댓글 휴지통과 수정버튼은 자동으로 생성된 버튼. 따라서 document.on을 써서 해줘야함
+	$(document).on("click",".adel",function(){
+		
+		var del = confirm("정말 삭제하시겠습니까?");
+		
+		if(del){
+			
+			$.ajax({
+				
+				type:"get",
+				dataType:"html",
+				url:"deleteasw",
+				data:{"idx",idx},
+				success:function(){
+					
+					alert("댓글이 삭제되었습니다");
+					
+				}
+			})
+		}
+	});
+	
+	
+});
+
+//list 수시로 호출해줘야되기 때문에 밖에다 빼줌
+
+function list(){
+	
+	num=$("#num").val();
+	
+	$.ajax({
+		
+		type:"get",
+		dataType:"json",
+		url:"/mbanswer/alist",
+		data:{"num":num},
+		success:function(data){
+						//성공했을 때 alist를 data라는 이름으로 불러옴
+			$("span.acount").text(data.length);
+			
+			var s="";
+			$.each(data,function(i,dto){
+				//따라서 data를 넣어줘야함
+				s+="<b>"+dto.name+"</b>:"+dto.content;
+				s+="<span class='day'>"+dto.writeday+"</span>";
+				
+				if(loginok=='yes' && myid == dto.myid){
+					
+					s+="<i class='bi bi-pencil-square amod' id='dto.idx' idx='"+dto.idx+"'></i>";
+					s+="&nbsp";
+					s+="<i class='bi bi-trash adel' id='dto.idx' idx='"+dto.idx+"'></i>"
+				}
+				s+="<br>";
+				$("div.alist").html(s);	
+			});
+			
+			
+				
+		}
+	});
+
+} 
+		
+
+</script>
 </head>
 <body>
 <div style="margin: 50px 150px">
@@ -44,7 +176,28 @@
 			
 			<br>
 			</div>
-			<span style="float:right;"><b>조회: ${dto.readcount }</b></span>
+			<span style="float:right;"><b>조회: ${dto.readcount }</b><br></span>
+			<b>댓글: <span class="acount"></span></b>
+		</td>
+	</tr>
+	
+	<!-- 댓글  -->
+	<tr>
+		<td>
+			<div class="alist"></div>
+			
+			<input type="hidden" id="num" value="${dto.num }">
+			
+			<c:if test="${sessionScope.loginok!=null }">
+				<div class="aform">
+					<div class="d-inline-flex">
+				<input type="text" class="form-control" style="width:500px;"
+				placeholder="댓글을 입력하세요" id="content">&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn btn-info"
+				id="btnansweradd">등록</button>
+					</div>
+				</div>
+			</c:if>
 		</td>
 	</tr>
 	
@@ -57,14 +210,14 @@
 		</c:if>
 		<c:if test="${sessionScope.loginok!=null and sessionScope.myid==dto.myid}">
 		<button type="button" class="btn btn-outline-success" 
-		onclick="location.href='updateform?num=${dto.num}'">수정</button>
+		onclick="location.href='updateform?num=${dto.num}&currentPage=${currentPage}'">수정</button>
 		</c:if>						<!--ajax가 아니라 그냥 넘기는 것  -->		
 		<c:if test="${sessionScope.loginok!=null and sessionScope.myid==dto.myid}">
 		<button type="button" class="btn btn-outline-success" 
-		onclick="location.href='delete?num=${dto.num}'">삭제</button>
+		onclick="location.href='delete?num=${dto.num}&currentPage=${currentPage}'">삭제</button>
 		</c:if>
 		<button type="button" class="btn btn-outline-success" 
-		onclick="location.href='list'">목록</button>
+		onclick="location.href='list?currentPage=${currentPage}'">목록</button>
 		</td>
 	</tr>
 	

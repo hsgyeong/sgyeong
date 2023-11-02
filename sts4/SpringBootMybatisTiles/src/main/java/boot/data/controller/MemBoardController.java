@@ -45,7 +45,7 @@ public class MemBoardController {
 				int startPage; //각블럭에서 보여질 시작페이지
 				int endPage; //각블럭에서 보여질 끝페이지
 				int startNum; //db에서 가져올 글의 시작번호(mysql은 첫글이 0,오라클은 1)
-				int perPage=3; //한페이지당 보여질 글의 갯수
+				int perPage=5; //한페이지당 보여질 글의 갯수
 				int perBlock=5; //한블럭당 보여질 페이지 개수
 			
 				//총페이지수 구하기
@@ -73,7 +73,8 @@ public class MemBoardController {
 				
 					//각 페이지에 출력할 시작번호
 					int no = totalCount-(currentPage-1)*perPage;
-		
+						
+						//key값         value값
 		model.addObject("totalCount", totalCount);
 		model.addObject("list", list);
 		model.addObject("startPage", startPage);
@@ -137,7 +138,8 @@ public class MemBoardController {
 	}
 	
 	@GetMapping("/content")  //insert해서 가는 곳
-	public ModelAndView content(@RequestParam String num)
+	public ModelAndView content(@RequestParam String num,
+			@RequestParam(defaultValue = "1") int currentPage)
 	{
 		ModelAndView model = new ModelAndView();
 		
@@ -164,8 +166,32 @@ public class MemBoardController {
 			 
 		model.addObject("bupload",false);
 		 
+		 
+		model.addObject("currentPage",currentPage); 
 		model.setViewName("/memboard/content");
 		return model;
+	}
+	
+	@GetMapping("/updateform")
+	public ModelAndView uform(@RequestParam String num,
+			@RequestParam(defaultValue = "1") int currentPage) 
+	{
+		ModelAndView model = new ModelAndView();
+		
+		model.addObject("currentPage", currentPage);
+		model.addObject("num", num);
+		
+		model.setViewName("/memboard/updateform");
+		
+		return model;
+	}
+	
+	@PostMapping("/update") 
+	public String update(@ModelAttribute MemBoardDto dto,
+			HttpSession session,
+			@RequestParam String num)
+	{
+		return "/member/content?num="+num;
 	}
 	
 }
