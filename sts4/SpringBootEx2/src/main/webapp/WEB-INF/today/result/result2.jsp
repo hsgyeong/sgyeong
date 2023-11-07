@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<pre><h2 class="alert alert-danger">
+<pre><h2 class="alert alert-warning">
 	이름: ${dto.name }
 	주소: ${dto.addr }
 	핸드폰번호: ${dto.hp }

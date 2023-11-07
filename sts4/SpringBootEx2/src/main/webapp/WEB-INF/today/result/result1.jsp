@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<pre><h2 class="alert alert-info">
+<pre><h2 class="alert alert-info " >
 	이름: ${irum }
 	자바점수: ${java }
 	스프링점수: ${spring }

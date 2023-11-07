@@ -17,7 +17,7 @@
   </select>
   
   <update id="updateMbanswer" parameterType="mbdto">
-  update mbanswer set content=#{content} where num=#{num}
+  update mbanswer set content=#{content} where idx=#{idx}
   </update>
   
   <delete id="deleteAnswer" parameterType="String">

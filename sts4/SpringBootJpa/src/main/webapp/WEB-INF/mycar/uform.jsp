@@ -13,9 +13,9 @@
 </head>
 <body>
 	<div style="margin:100px 100px; width:500px;">
-	<input type="hidden" name="num" value="${dto.num }">
-		<form action="update" method="post">
+		<form action="update" method="post"  enctype="multipart/form-data">
 		<table class="table table-bordered">
+		<input type="hidden" name="num" value="${dto.num }">
 		<tr>
 			<th>자동차명</th>
 				<td>
@@ -37,6 +37,14 @@
 				<td>
 				<input type="color" name="carcolor" class="form-control"
 				style="width:200px;" value="#ff0000" value="${dto.carcolor }">
+				</td>
+		</tr>
+		
+		<tr>
+			<th>자동사사진</th>
+				<td>
+				<input type="file" name="carupload" class="form-control"
+				style="width:200px;" required="required" value="${dto.carphoto }">
 				</td>
 		</tr>
 		

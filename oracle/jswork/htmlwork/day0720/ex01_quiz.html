@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+ 
+
+    <script>
+        window.onload=function(){
+            
+       
+           var btn1=document.getElementById("food");
+           var btn2=document.getElementById("celeb");
+
+           food.onclick=function(){
+             var foodimg=confirm("음식을 출력할까요?");
+
+             if(foodimg)
+             out.innerHTML="<img src=../Food/1.jpg>";
+           }
+
+           celeb.onclick=function(){
+
+            var celebimg=confirm("연예인을 출력할까요?");
+
+            if(celebimg)
+            out.innerHTML="<img src=../연예인사진/10.jpg>";
+             
+            }       
+        }
+  var imgArr=new Array();
+  imgArr.push("../연예인사진/1.jpg");
+  imgArr.push("../연예인사진/2.jpg");
+  imgArr.push("../연예인사진/3.jpg");
+  imgArr.push("../연예인사진/4.jpg");
+  imgArr.push("../연예인사진/5.jpg");
+
+  var r=document.getElementById("result");
+
+  function writePromptImage(){
+
+    var idx=prompt("이미지의 인덱스 번호를 입력해주세요");
+
+    if(idx<0 || idx>4)
+        
+        
+        r.innerHTML="해당 번호는 없습니다";
+        else 
+        r.innerHTML="<img src='"+imgArr[idx]+"'>";
+        
+  }  
+    </script>
+</head>
+
+<script>
+
+</script>
+<body>
+    <!-- 버튼 2개에 하나는 food, 하나는 연예인 이라고 쓰고 css는 우리가 만든 buttonStyle에서 적용한다 
+         food 버튼을 클릭하면 음식 사진을 div에 출력하고 연예인을 클릭하면 연예인을 출력한다 
+         (단, 2번 모두 음식을 출력할까요?라고 물어보고 예 클릭시에만 이미지 출력한다) -->
+
+    <!-- 문제2. 이미지출력이라는 버튼을 만들고.. 클릭시 prompt로 "출력할 이미지의 인덱스 번호를 입력해주세요" 라고 출력 후
+        0번을 입력하면 0번 이미지 출력(총 5개의 이미지를 imgArr이라는 배열 형태로 넣어놓고 다양한 폴더의 이미지 5개 배열에 넣어주세요
+        단 배열인덱스에 없는 값 입력시 div에 "해당 번호는 없습니다" 라고 출력)-->
+    
+        <button type="button" id="food" class="btn-lightpink">food</button>
+        <button type="button" id="celeb" class="btn-skyblue">연예인</button>
+        <button type="button" id="img" class="btn-lightpink">이미지 출력</button>
+        <hr>
+    
+
+        <div id="out"></div>
+
+  
+
+        
+</body>
+</html>

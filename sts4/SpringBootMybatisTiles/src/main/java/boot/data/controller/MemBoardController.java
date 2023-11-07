@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -191,7 +192,31 @@ public class MemBoardController {
 			HttpSession session,
 			@RequestParam String num)
 	{
-		return "/member/content?num="+num;
+		service.updateBoard(dto);
+		
+		return "/memboard/content?num="+num;
+	}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam String num,
+			HttpServletRequest request)
+	{
+		String photo = service.getData(num).getUploadfile();
+		
+		if(!photo.equals(null))
+		{
+			String path = request.getServletContext().getRealPath("/save");
+			
+			File file = new File(path+"\\"+photo);
+			
+			if(file.exists()) {
+				file.delete();
+			}
+		}
+		
+		service.deleteBoard(num);
+		
+		return "redirect:list";
 	}
 	
 }

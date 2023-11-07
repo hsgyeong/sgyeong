@@ -15,13 +15,13 @@
 <h1>폼태그 읽기</h1>
 <ul>
 	<li>
-	<a href="form1">폼데이터 각각 읽기</a>
+	<a href="form1" style="font-size: 25px;">폼데이터 각각 읽기</a>
 	</li>
 	<li>
-	<a href="form2">폼데이터 DTO 읽기</a>
+	<a href="form2" style="font-size: 25px;">폼데이터 DTO 읽기</a>
 	</li>
 	<li>
-	<a href="form3">폼데이터 Map 읽기</a>
+	<a href="form3" style="font-size: 25px;">폼데이터 Map 읽기</a>
 	</li>
 </ul>
 </body>

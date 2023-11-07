@@ -83,7 +83,7 @@ public class MyCarController {
 	@GetMapping("/car/carupdate")
 	public String uform(@RequestParam Long num,
 			Model model)
-	{
+	{	
 		MyCarDto dto = dao.getData(num);
 		
 		model.addAttribute("dto", dto);
@@ -93,9 +93,47 @@ public class MyCarController {
 	}
 	
 	@PostMapping("/car/update")
-	public String update(@ModelAttribute MyCarDto dto)
+	public String update(@ModelAttribute MyCarDto dto, 
+		@RequestParam("carupload")	MultipartFile carupload,
+			HttpSession session,
+			Long num)
 	{
+		//이전사진
+		String pre_photo = dao.getData(num).getCarphoto();
+		
+		//업로드할 save 위치 구하기
+		String path=session.getServletContext().getRealPath("/save");
+		
+		if(carupload != null && !carupload.isEmpty())
+		{	
+		//이전사진 삭제
+		File file = new File(path+"\\"+pre_photo);
+		if(file.exists()) {
+		file.delete();
+		}
+	}
+		//업로드한 파일 dto 얻기
+		dto.setCarphoto(carupload.getOriginalFilename());
+
+		if(carupload!=null && !carupload.isEmpty()) {
+			
+			dto.setCarphoto(carupload.getOriginalFilename());
+		
+		//실제 업로드				//역슬래시 두 개 또는 슬래시 하나
+		try {
+			carupload.transferTo(new File(path+"\\"+carupload.getOriginalFilename()));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		}
+
 		dao.updateMyCar(dto);
+
 			
 		return "redirect:carlist";
 	}

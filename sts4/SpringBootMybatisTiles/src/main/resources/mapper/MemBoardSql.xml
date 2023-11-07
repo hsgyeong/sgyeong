@@ -27,4 +27,12 @@
   <select id="getList" parameterType="HashMap" resultType="memboard">
   select * from memboard order by num desc limit #{start},#{perpage}
   </select>
+  
+  <update id="updateBoard" parameterType="memboard">
+  update memboard set (subject, uploadfile, content) values(#{subject},#{uploadfile},#{content})
+  </update>
+  
+  <delete id="deleteBoard" parameterType="String">
+  delete from memboard where num=#{num}
+  </delete>
   </mapper>

@@ -111,8 +111,41 @@ public class MarketController {
 	}
 	
 	@PostMapping("/market/update")
-	public String update(@ModelAttribute MarketDto mdto)
+	public String update(@ModelAttribute MarketDto mdto,
+			@RequestParam("photoupload") MultipartFile photoupload,
+			@RequestParam int currentPage,
+			@RequestParam String num,
+			HttpSession session)
 	{
+		String pre_photo = service.getData(num).getPhotoname();
+		
+		String path = session.getServletContext().getRealPath("/save");
+		
+	String []pre_fName = pre_photo.split(",");
+	for(String f:pre_fName)
+	{
+		File file = new File(path+"\\"+f);
+		file.delete();
+	}
+	
+		
+		mdto.setPhotoname(photoupload.getOriginalFilename());
+		
+		if(photoupload != null && !photoupload.isEmpty())
+		{
+			mdto.setPhotoname(photoupload.getOriginalFilename());
+			
+			try {
+				photoupload.transferTo(new File(path+"\\"+photoupload.getOriginalFilename()));
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		service.updateMarket(mdto);
 		
 		return "redirect:list";
@@ -124,16 +157,39 @@ public class MarketController {
 	{
 		String photo = service.getData(num).getPhotoname();
 		
-		if(!photo.equals(null))
+		if(!photo.equals("no"))
 		{
 			String path=request.getServletContext().getRealPath("/save");
 			
 			File file = new File(path+"\\"+photo);
+			
+			if(file.exists()) {
 			file.delete();
+			}
 		}
 		
 		service.deleteMarket(num);
 		
 		return "redirect:list";
 	}
+	
+	
+/*	@GetMapping("/market/delete")
+	public String delete(@RequestParam String num,
+			HttpServletRequest request)
+	{
+		MarketDto dto = service.getData(num);
+		
+		String photo = dto.getPhotoname();
+		
+		if(photo != null)
+		{
+			String path=request.getServletContext().getRealPath("/save");
+			
+			File file = new File(path+"\\"+photo);
+			
+			if(file.exists()) {
+			file.delete();
+			}
+		} */
 }

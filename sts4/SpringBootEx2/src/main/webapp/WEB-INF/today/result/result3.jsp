@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<pre><h2 class="alert alert-danger">
+<pre><h2 class="alert alert-success">
 	이름: ${name }
 	주소: ${blood }
 	나이: ${age }

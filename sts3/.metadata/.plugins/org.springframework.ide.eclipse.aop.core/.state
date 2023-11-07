@@ -7,7 +7,7 @@
 <aop-project name="SpringMvc3"/>
 <aop-project name="SpringMvc4"/>
 <aop-project name="SpringMvc5"/>
-<aop-project name="SpringMvcJson7"/>
 <aop-project name="SpringMvcFileUpload8"/>
+<aop-project name="SpringMvcJson7"/>
 <aop-project name="SpringMvcMunje"/>
 </aop-reference-model>

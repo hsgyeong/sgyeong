@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle:wght@300&family=Gamja+Flower&family=Gowun+Batang&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Document</title>
+    <script>
+        //h3 아래 b태그 글자색 배경 변경
+        $(function(){
+
+            $("h3>b").css("background-color","lavender")
+
+        //h3아래 span도 글자체나 글자색 변경
+        $("h3>span").css("color","navy")
+
+        //이벤트: 음식명 누르면 span에 있는 경로가 img에 음식명은 맨 아래 h3에 나오게 하기
+
+        $("b").click(function(){
+
+            var foodimg=$(this).next().next().text();
+            $("img.photo").attr("src",foodimg);
+
+            var food=$(this).text();
+            $("h3:last").html(food);
+        })
+
+        });
+        
+    </script>
+</head>
+<body>
+    <h3>
+        <b>샌드위치</b>
+        <br>
+        <span>../Food/8.jpg</span>
+    </h3>
+
+    <h3>
+        <b>에그샌드위치</b>
+        <br>
+        <span>../Food/1.jpg</span>
+    </h3>
+
+    <h3>
+        <b>망고빙수</b>
+        <br>
+        <span>../Food/11.jpg</span>
+    </h3>
+
+    <hr>
+    <img src="" class="photo"> <!--위의 span 태그 있는 이미지 띄울것-->
+    <br>
+    <h3></h3> <!--여기에 b태그에 있는 음식명 출력-->
+</body>
+</html>

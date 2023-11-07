@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sist> <!--sist폴더 -->
+	<stu name="lee">
+		<java>78</java>
+		<oracle>53</oracle>
+		<ajax>65</ajax>
+	</stu>
+	
+	<stu name="kim">
+		<java>76</java>
+		<oracle>78</oracle>
+		<ajax>99</ajax>
+	</stu>
+	
+	<stu name="park">
+		<java>67</java>
+		<oracle>97</oracle>
+		<ajax>88</ajax>
+	</stu>
+</sist>

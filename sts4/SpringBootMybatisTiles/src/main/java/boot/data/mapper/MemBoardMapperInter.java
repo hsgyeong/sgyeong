@@ -18,4 +18,6 @@ public interface MemBoardMapperInter {
 							//insert 시킬때 content detail로 가면 어떤 num으로 가는지 알기 위함
 							//예를 들어 현재 글이 2일때 3번 글로 가기 위해서 maxnum 필요
 	public List<MemBoardDto> getList(HashMap<String, Integer> map);
+	public void updateBoard(MemBoardDto dto);
+	public void deleteBoard(String num);
 }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<!--오늘의 과제
+quizform
+
+상품명: text
+사이즈: 라디오박스 (한개)
+색상: 체크박스 (다중)
+추가상품: select박스
+radius 100
+서버로 전송
+
+[출력]
+상품명: 에어팟 케이스
+사이즈: m
+상품 색상: 선택색상 없음 or 초록 파랑 (색상을 div로 만들어 옆에 찍을것)
+추가상품: 키링-->
+<form action="quizAction.jsp" method="post">
+	<table class="table table-bordered" style="width:250px;">
+		<tr>
+			<th align="center">상품명</th>
+			<td>
+				<input type="text" name="sangpum" placeholder="상품명"
+				required="required" class="sang" style="width:150px;">
+			</td>
+		</tr>
+		
+		<tr>
+			<th>사이즈
+				<td>
+					<input type="radio" name="size" value="S">S<br>
+					<input type="radio" name="size" value="M">M<br>
+					<input type="radio" name="size" value="L">L<br>
+					<input type="radio" name="size" value="Free">Free<br>
+				</td>
+			</th>
+		</tr>
+		<tr>
+			<th>색상</th>
+			<td>
+				<div>
+			<input type="checkbox" name="color" value="yellow">노랑<br>
+			<input type="checkbox" name="color" value="green">초록<br>
+			<input type="checkbox" name="color" value="blue">파랑<br>
+			<input type="checkbox" name="color" value="red">빨강<br>
+				</div>
+			</td>
+		</tr>
+	<tr>
+		<th>추가상품</th>
+		<td>
+			<select size="2" name="plus">
+				<option value="키링">키링</option>
+				<option value="반지">반지</option>
+				<option value="스티커">스티커</option>
+			</select>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" align="center">
+		<input type="submit" value="서버로 전송" class="btn btn-success" style="width:150px;">
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

@@ -35,12 +35,17 @@
 	<c:forEach var="mdto" items="${list }" varStatus="i">
 		<tr>
 			<td align="center">${i.count }</td>
-			<td>
-			<c:if test="${mdto.photoname != null}">
+			<td align="center"	>
+			<c:if test="${mdto.photoname != 'no'}">
 			<a href="../save/${photo }">
-			<img alt="" src="../save/${mdto.photoname }" style="width:100px; height:100px;">
-			${mdto.sang }</a>
-			</c:if></td>
+			<img alt="" src="../save/${mdto.photoname }" style="width:100px; height:100px;"></a>
+			</c:if>
+			<c:if test="${mdto.photoname == 'no' }">
+			<a href="../image/noimage.png">
+			<img alt="" src="../image/noimage.png" style="width:100px; height:100px;">
+			</a>
+			</c:if>
+			${mdto.sang }</td>
 		
 			<td align="center">${mdto.price }</td>
 			<td align="center"><fmt:formatDate value="${mdto.ipgoday }" pattern="yyyy-MM-dd"/></td>

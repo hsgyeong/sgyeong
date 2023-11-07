@@ -9,6 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
@@ -16,11 +17,20 @@
 	color: gray;
 	margin-left: 30px;
 	margin-right: 30px;
-	font-size: 9px;
+	font-size: 12px;
 }
 
 .amod, .adel{
 	cursor:pointer;
+}
+.ans{
+	float: right;
+	margin-top: 500px;
+	
+}
+
+.tb{
+	margin-left: 60px;
 }
 </style>
 <script>
@@ -75,11 +85,53 @@ $(function(){
 	
 	//댓글 수정창 띄우기
 	
+	$(document).on("click",".amod",function(){
+		
+		idx=$(this).attr("idx");
+		//alert(idx);
+	
+	$.ajax({
+		
+		type:"get",
+		dataType:"json",
+		url:"/mbanswer/adata",
+		data:{"idx":idx},
+		success:function(res){
+			$("#ucontent").val(res.content);
+			
+		}
+	});
+	
+	$("#mbUpdateModal").modal("show");
+	
+	}) ;
+
 	//댓글 수정
 	
-	//댓글 삭제  //댓글 휴지통과 수정버튼은 자동으로 생성된 버튼. 따라서 document.on을 써서 해줘야함
-	$(document).on("click",".adel",function(){
+	$(document).on("click","#btnupdate",function(){
 		
+		var content = $("#ucontent").val();
+		//alert(idx+","+content);
+		
+		$.ajax({
+			
+			type:"post",
+			dataType:"html",
+			url:"/mbanswer/aupdate",
+			data:{"idx":idx,"content":content},
+			success:function(){
+				
+				list();
+
+			}
+		});
+	});
+	
+	//댓글 삭제  //댓글 휴지통과 수정버튼은 자동으로 생성된 버튼. 따라서 document.on을 써서 해줘야함
+	$(document).on("click","i.adel",function(){
+		
+		var idx = $(this).attr("idx");
+		alert(idx);
 		var del = confirm("정말 삭제하시겠습니까?");
 		
 		if(del){
@@ -88,17 +140,18 @@ $(function(){
 				
 				type:"get",
 				dataType:"html",
-				url:"deleteasw",
-				data:{"idx",idx},
+				url:"/mbanswer/deleteasw",
+				data:{"idx":idx},
 				success:function(){
 					
 					alert("댓글이 삭제되었습니다");
 					
+				location.reload();	
+				list();
 				}
 			})
-		}
+		}  
 	});
-	
 	
 });
 
@@ -107,6 +160,7 @@ $(function(){
 function list(){
 	
 	num=$("#num").val();
+	//alert(num);
 	
 	$.ajax({
 		
@@ -126,9 +180,9 @@ function list(){
 				
 				if(loginok=='yes' && myid == dto.myid){
 					
-					s+="<i class='bi bi-pencil-square amod' id='dto.idx' idx='"+dto.idx+"'></i>";
+					s+="<i class='bi bi-pencil-square amod'  idx='"+dto.idx+"'></i>";
 					s+="&nbsp";
-					s+="<i class='bi bi-trash adel' id='dto.idx' idx='"+dto.idx+"'></i>"
+					s+="<i class='bi bi-trash adel'  idx='"+dto.idx+"'></i>"
 				}
 				s+="<br>";
 				$("div.alist").html(s);	
@@ -137,7 +191,7 @@ function list(){
 			
 				
 		}
-	});
+	}); 
 
 } 
 		
@@ -145,8 +199,8 @@ function list(){
 </script>
 </head>
 <body>
-<div style="margin: 50px 150px">
-	<table class="table table-bordered" style="width:600px;">
+<div style="margin: 50px 40px">
+	<table class="table table-bordered tb" style="width:800px; height: 300px;">
 	<tr>
 		<td>
 		<h4><b>${dto.subject }</b>
@@ -167,17 +221,18 @@ function list(){
 		<td>
 		<div class="d-inline-flex">
 		<c:if test="${bupload==true }">
-			<img alt="" src="../savefile/${dto.uploadfile }" style="width: 200px; height:200px;">
+			<img alt="" src="../savefile/${dto.uploadfile }" style="width: 250px; height:250px;
+			margin-top: 120px;">
 			&nbsp;&nbsp;&nbsp;&nbsp;
 		</c:if>	
 			<br><br>
-			
+			<span style="font-size: 30px;">
 			<pre>${dto.content }</pre>
-			
+			</span>
 			<br>
 			</div>
 			<span style="float:right;"><b>조회: ${dto.readcount }</b><br></span>
-			<b>댓글: <span class="acount"></span></b>
+			<span class="ans"><b>댓글: <span class="acount"></span></b></span>
 		</td>
 	</tr>
 	
@@ -209,7 +264,7 @@ function list(){
 		onclick="location.href='form'">글쓰기</button>
 		</c:if>
 		<c:if test="${sessionScope.loginok!=null and sessionScope.myid==dto.myid}">
-		<button type="button" class="btn btn-outline-success" 
+		<button type="button" class="btn btn-outline-success"  num="${dto.num }"
 		onclick="location.href='updateform?num=${dto.num}&currentPage=${currentPage}'">수정</button>
 		</c:if>						<!--ajax가 아니라 그냥 넘기는 것  -->		
 		<c:if test="${sessionScope.loginok!=null and sessionScope.myid==dto.myid}">
@@ -222,6 +277,32 @@ function list(){
 	</tr>
 	
 	</table>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="mbUpdateModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">댓글수정</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       <input type="text" id="ucontent" class="form-control">
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      <button type="button" class="btn btn-success" id="btnupdate">수정</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">취소</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 </body>
 </html>
