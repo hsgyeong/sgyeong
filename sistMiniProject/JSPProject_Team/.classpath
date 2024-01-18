@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="JSPProject_Team/src/main/java"/>
+	<classpathentry kind="lib" path="JSPProject_Team/src/main/webapp/WEB-INF/lib/cos.jar"/>
+	<classpathentry kind="lib" path="JSPProject_Team/src/main/webapp/WEB-INF/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="JSPProject_Team/src/main/webapp/WEB-INF/lib/ojdbc11.jar"/>
+	<classpathentry kind="output" path="JSPProject_Team/build/classes"/>
+</classpath>

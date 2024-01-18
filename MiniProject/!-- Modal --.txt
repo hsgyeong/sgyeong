@@ -1,0 +1,29 @@
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <form action="orderList()">
+          	<table>
+          		<tr>
+          			<td></td>
+          		</tr>
+          	</table>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+키오스크 코드를 개발하여 고객이 주문 및 결제 과정을 빠르고 편리하게 진행할 수 있도록 도와주는 것은 고객 경험을 향상시킬 수 있는 좋은 방법입니다.키오스크를 통해 수집되는 주문 및 거래 데이터는 고객의 선호도, 인기 있는 메,,뉴, 판매 추세 등을 분석하는 데 활용될 수 있습니다. 이를 통해 전략적인 의사 결정을 할 수 있습니다.
+키오스크를 통한 주문은 기계적으로 정확하게 기록되기 때문에 음식 메뉴에 대한 선택과 특별한 요청 사항이 정확하게 전달될 확률이 높습니다. 이는 주문 처리의 정확성을 향상시켜 고객의 불만족을 줄이는 데 도움이 됩니다.
