@@ -32,7 +32,7 @@
  <c:forEach var="dto" items="${list }">
  <tr>
  	<td width="400" rowspan="4" style="padding-left:50px">
- 		<c:if test="${dto.photoname!='no' }">					<!--c:forTokens에 begin=0, end=0으로 하면 대표사진 하나만 출력  -->
+ 		<c:if test="${dto.photoname!='no' }">			<!--c:forTokens에 begin=0, end=0으로 하면 대표사진 하나만 출력  -->
  		<c:forTokens var="pho" items="${dto.photoname }" delims="," begin="0" end="0"> <!--var:출력할 변수 delims: 구분기호  -->
  		<a href="content?num=${dto.num }"><img alt="" src="../upload/${pho }" style="width:150px; height:150px;"></a>
  		</c:forTokens>

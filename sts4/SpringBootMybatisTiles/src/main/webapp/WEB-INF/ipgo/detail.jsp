@@ -22,7 +22,8 @@ margin-right:20px;
 </style>
 </head>
 <body>
-<table class="sang">
+<table class="table table-bordered sang"
+style="margin-left: 400px; margin-top: 120px;">
 	<tr>
 		<td>
 		<img src="../upload/${dto.photoname }" >
@@ -31,9 +32,11 @@ margin-right:20px;
 
 <tr>
 	<td>
+		<h5>
 		<p>${dto.sangpum }</p>
 		<p>${dto.price }</p>
 		<p>${dto.ipgoday }</p>
+		</h5>
 	</td>
 </tr>
 </table>

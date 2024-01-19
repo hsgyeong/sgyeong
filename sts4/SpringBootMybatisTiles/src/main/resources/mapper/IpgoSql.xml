@@ -18,5 +18,9 @@
   	<select id="getData" resultType="IpgoDto">
   	select * from ipgo where num=#{num}
   	</select>
+  	
+  	<update id="updateIpgo" parameterType="IpgoDto" >
+  	update ipgo set(sangpum, price, photoname) values(#{sangpum}, #{price}, #{photoname})
+  	</update>
   
   </mapper>

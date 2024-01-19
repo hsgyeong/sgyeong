@@ -53,6 +53,9 @@
 			<a href="/" class="btn" >Home</a>
 		</li>
 		<li>
+			<a href="${root }/login/main" class="btn">로그인</a>
+		</li>
+		<li>
 			<a href="${root }/smart/list" class="btn">스마트샵</a>
 		</li>	
 		<li>

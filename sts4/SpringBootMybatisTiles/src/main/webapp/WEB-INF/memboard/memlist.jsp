@@ -55,7 +55,8 @@
 					<td><c:if test="${dto.uploadfile!=null }">
 							<img alt="" src="../savefile/${dto.uploadfile }"
 								style="width: 120px;height:120px;">
-						</c:if> <c:if test="${dto.uploadfile==null }">
+						</c:if> 
+						<c:if test="${dto.uploadfile==null }">
 							<img alt="" src="../image/noimage.png" style="width: 120px;height:120px;">
 						</c:if></td>
 					<td>${dto.myid }</td>

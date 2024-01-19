@@ -8,9 +8,11 @@ import java.util.Date;
 import java.util.List;
 
 import javax.el.MapELResolver;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.javassist.expr.NewArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,10 +57,10 @@ public class IpgoController {
 	
 	
 	
-/*	@GetMapping("/ipgo/ipgoform")
+	@GetMapping("/ipgo/ipgoform")
 	public String form()
 	{
-		return "ipgoform";
+		return "/ipgo/ipgoform";
 	}
 	
 	@PostMapping("/ipgo/insert")
@@ -106,7 +108,7 @@ public class IpgoController {
 		mapper.insertIpgo(dto);
 			
 		return "redirect:list";
-	} */
+	} 
 	
 	@GetMapping("/ipgo/content")
 	public String detail(@RequestParam String num, Model model)
@@ -118,5 +120,53 @@ public class IpgoController {
 		return "/ipgo/detail";
 	}
 	
+	@GetMapping("/ipgo/updateform")
+	public String uform()
+	{
+		return "/ipgo/updateform";
+		
+	}
 	
+	@PostMapping("/ipgo/update")
+	public String update(@ModelAttribute IpgoDto dto,
+			@RequestParam ArrayList<MultipartFile> photo,
+			HttpSession session)
+	{
+		String path = session.getServletContext().getRealPath("/upload");
+		
+		String uploadName="";
+		
+		if(photo.get(0).getOriginalFilename().equals(""))
+			uploadName="no";
+		else
+		{
+			for(MultipartFile f:photo)
+			{
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
+				String fName = sdf.format(new Date())+"_"+f.getOriginalFilename();
+				
+				uploadName += fName+",";
+				
+				try {
+					f.transferTo(new File(path+"\\"+fName));
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+			
+			uploadName = uploadName.substring(0, uploadName.length()-1);
+			
+			dto.setPhotoname(uploadName);
+			
+			mapper.updateIpgo(dto);
+			
+		}
+		
+		return "redirect:list";
+	}
 }

@@ -24,7 +24,7 @@
 		<tr align="center">
 			<th>상품이미지</th>
 			<td>
-			<input type="file" name="photo" multiple="multiple" class="form-control" ><!-- 이미지에는 value를 넣으면 안됨 --> 
+			<input type="file" name="photoupload" multiple="multiple" class="form-control" value="${mdto.photoname }"><!-- 이미지에는 value를 넣으면 안됨 --> 
 			</td>
 		</tr>
 		<tr align="center">

@@ -113,7 +113,6 @@ public class MarketController {
 	@PostMapping("/market/update")
 	public String update(@ModelAttribute MarketDto mdto,
 			@RequestParam("photoupload") MultipartFile photoupload,
-			@RequestParam int currentPage,
 			@RequestParam String num,
 			HttpSession session)
 	{
@@ -127,7 +126,6 @@ public class MarketController {
 		File file = new File(path+"\\"+f);
 		file.delete();
 	}
-	
 		
 		mdto.setPhotoname(photoupload.getOriginalFilename());
 		

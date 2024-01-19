@@ -13,9 +13,16 @@
 <title>Insert title here</title>
 <style type="text/css">
    #btnlogin,#btnlogout{
-      margin-left: 700px;
+      margin-left: 80px;
+      margin-top: 80px;
     
    }
+ .a{
+ display: inline-flex;;
+ }  
+ .bt{
+ margin-left: 10px;
+ }
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -70,25 +77,13 @@
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
+<div class="a">
 <a href="${root }"><img src="${root }/image/title.png"
 style="width: 350px; height: 150px;"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-<c:if test="${sessionScope.loginok==null }">
-   <button type="button" class="btn btn-success"
-   onclick="location.href='${root}/login/main'">Login</button> <!-- 경로에 절대값 써주기 -->
-</c:if>
-
-<c:if test="${sessionScope.loginok!=null }">
-   <b style="color: white;">${sessionScope.myid }님이 로그인중....</b>
-   <button type="button" class="btn btn-danger"
-   onclick="location.href='${root}/login/logoutprocess'">Logout</button>
-</c:if>
-
 <!-- ajax 로그인 -->
 <div class="container">
   <c:if test="${sessionScope.loginok==null }">
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"
+  <button type="button" class="btn btn-primary bt" data-bs-toggle="modal" data-bs-target="#myModal"
   id="btnlogin">
      AjaxLogin
   </button>
@@ -100,6 +95,19 @@ style="width: 350px; height: 150px;"></a>
   </button>
   </c:if>
 </div>
+</div>
+
+<!-- 경로에 절대값 써주기 -->
+<!-- <c:if test="${sessionScope.loginok==null }">
+   <button type="button" class="btn btn-success"
+   onclick="location.href='${root}/login/main'">Login</button> 
+</c:if> -->
+
+<c:if test="${sessionScope.loginok!=null }">
+   <b style="color: white;">${sessionScope.myid }님이 로그인중....</b>
+   <button type="button" class="btn btn-danger"
+   onclick="location.href='${root}/login/logoutprocess'">Logout</button>
+</c:if>
 
 <!-- The Modal -->
 <div class="modal" id="myModal">

@@ -61,9 +61,9 @@ $(function(){
 	<tr>
 		<td>
 		<h3>${dto.subject }</h3>
-		<b>${dto.name }(${dto.id })</b><br>
-		<span style="color: gray; font-size: 0.7em;">
-			<fmt:formatDate value="${dto.writeday }" pattern="yyyy-MM-dd HH:mm"/>
+		<span style="float:right;"><b>${dto.name }(${dto.id })</b></span><br>
+		<span style="color: gray; float:right; font-size: 0.7em;">
+		<fmt:formatDate value="${dto.writeday }" pattern="yyyy-MM-dd HH:mm"/>
 			&nbsp;&nbsp;&nbsp;&nbsp;
 			조회: ${dto.readcount }
 		</span>

@@ -50,7 +50,7 @@
 	<c:set var="root" value="<%=request.getContextPath()%>" />
 	<span class="main"> <br><br><br>
 		<h4>
-			<b>베스트</b>
+			<div style="text-align: center;"><b>베스트</b></div>
 		</h4> <br>
 	<br>
 
