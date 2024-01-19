@@ -39,20 +39,31 @@
 #id {
 	margin: auto;
 	margin-left: 150px;
+	width: 340px;
 }
 
 .inputid {
 	display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.inputname {
+	display: flex;
+    flex-direction: column;
+    margin-left: -150px;
 }
 
 .inputpassword {
 	display: flex;
 	margin-left:-160px;
+	flex-direction: column;
 }
 
 .id {
 	margin: auto;
 	display: flex;
+	width: 800px;
 }
 
 .password {
@@ -65,36 +76,57 @@
 }
 
 #idcheck {
-	width: 300px;
+	width: 200px;
+	margin-left:10px;
 }
 
 #pass1, #pass2 {
 	margin: auto; 
 	margin-left: 135px;
 	width: 340px;
+	flex:1;
+}
+
+#email, .inputemail, inputaddr {
+	flex:1;
 }
 
 .passwordcheck {
 	display: flex;
-	margin: auto;
-	margin-left: -200px;
+    flex-direction: column;
+    margin-left:-160px;
+  
+}
+
+.passchkbox {
+	display: flex;
+	
+}
+
+#pass2 {
+	margin-left:100px;
+}
+
+#email {
+	margin-left:160px;
+	width: 340px;
 }
 
 .passwordchk {
-	display: flex;
 	margin: auto;
-	margin-left:500px;
+	display: flex;
 
 }
 
 .namebox {
+	margin: auto;
 	display: flex;
-	width: 100%;
-	
 }
 
 #name {
-	margin-left: 200px;
+	margin: auto;
+	margin-left: 180px;
+	width: 340px;
 }
 
 #addr {
@@ -104,6 +136,10 @@
 .emailbox {
 	display: flex;
 	float: right;
+}
+
+.inputemail {
+	margin-left:-150px;
 }
 
 </style>
@@ -117,8 +153,8 @@
 				<hr>
 				<br> <br> <br>
 				<div class="inputid">
+				<div class="idbox">
 					<span class="id">아이디
-						<div class="idbox">
 							<input type="text" class="form-control" name="id" id="id">
 							<button type="button" class="btn" id="idcheck">중복확인</button>
 						</div>
@@ -136,9 +172,9 @@
 				<div class="passwordcheck">
 					<span class="passwordchk">비밀번호 확인
 						<div class="passchkbox">
-							<input type="text" class="form-control" name="pass2" id="pass2">
+							<input type="text" class="form-control passchk" name="pass2" id="pass2">
 						</div>
-					</span>
+				   </span>
 				</div>
 				<br><br><br>
 				<div class="inputname">
