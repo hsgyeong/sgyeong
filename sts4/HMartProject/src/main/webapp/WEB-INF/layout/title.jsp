@@ -55,8 +55,8 @@ font-weight: bold;
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <div class="member">
-<a class="login" href="#">로그인</a>
-<a class="join" href="/member/join">회원가입</a>
+<a class="login" href="login">로그인</a>
+<a class="join" href="join">회원가입</a>
 </div>
 <div class="titlebox">
 	<a href="/" class="marttitle">HMart</a>

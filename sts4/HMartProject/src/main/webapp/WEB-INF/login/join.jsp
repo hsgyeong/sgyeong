@@ -175,7 +175,7 @@
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath()%>" />
-	<form action="join" id="joinform">
+	<form action="join-success" method="post" id="joinform">
 		<div class="join">
 			<div class="join-form">
 				<div class="member-join">회원가입</div>
@@ -195,7 +195,7 @@
 				<div class="inputpassword">
 					<span class="password">비밀번호
 						<div class="passwordbox">
-							<input type="text" class="form-control" name="pass1" id="pass1">
+							<input type="text" class="form-control" name="password" id="pass1">
 						</div>
 					</span>
 						<br>
@@ -235,7 +235,8 @@
 					</span>
 				</div>
 				</div>
-				<button type="submit" class="btn btn success" style="background-color:#7DAB12; color: white;" id="successbtn">가입하기</button>
+				<button type="submit" class="btn btn success" style="background-color:#7DAB12; color: white;" id="successbtn"
+				onclick="location.href='/'">가입하기</button>
 			</div>
 	</form>
 </body>
