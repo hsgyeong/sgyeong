@@ -12,28 +12,46 @@
 <title>Insert title here</title>
 <style>
 .log {
-	font-weight:bold;
+	font-weight: bold;
 	font-size: 25px;
 }
 
 .tb {
-	border-style: none
+	border-style: none;
+	margin-top: 200px;
+	text-align: center;
 }
 
 .loginTitle {
-	margin-bottom: 200px;
+	margin-bottom: 150px;
 }
 
 .myid {
 	margin-right: 100px;
 }
+
+.mypassword {
+	margin-right: 80px;
+}
+
+.inputid {
+	margin-bottom: 30px;
+}
+
+.input-myid, .input-mypass {
+	width: 280px;
+	height: 60px;
+	border-radius: 1px;
+	border-color: gray;
+}
+
 </style>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <form action="login-success" method="post" id="loginform">
 	<table class="tb">
-
+	<div class="tb-box">
 	<tr>
 		<td>
 			<div class="loginTitle">
@@ -46,7 +64,7 @@
 		<td>
 			<div class="inputid">
 			<span class="myid">아이디</span>
-			<input type="text" id="myid" name="myid" placeholder="아이디를 입력해주세요">
+			<input type="text" id="myid" class="input-myid" name="myid" placeholder="아이디를 입력해주세요">
 			</div>
 		</td>
 	<tr>
@@ -55,12 +73,12 @@
 		<td>
 			<div class="inputpassword">
 			<span class="mypassword">비밀번호</span>
-			<input type="text" id="mypass" name="mypass" placeholder="비밀번호를 입력해주세요">
+			<input type="text" id="mypass" class="input-mypass" name="mypass" placeholder="비밀번호를 입력해주세요">
 			</div>
 		</td>
 	<tr>
 	
-
+	</div>
 	</table>
 </form>
 </body>

@@ -12,6 +12,9 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
+div.layout{
+	position:relative;
+}
 div.layout div.menu
 {
 position:absolute;
@@ -30,12 +33,22 @@ margin-top:30px;
 width:100%;
 height:1000px;
 font-size: 17px;
+margin-bottom: 100px;
 }
 div.layout div.title
 {
 position:absolute;
 width:100%;
 height:150px;
+}
+
+div.layout div.info
+{
+position:absolute;
+width: 100%;
+height: 200px;
+ top: calc(180px + 30px + 1000px + 50px);
+
 }
 </style>
 </head>
