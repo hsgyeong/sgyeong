@@ -46,21 +46,21 @@
 	display: flex;
     flex-direction: column;
     margin-left: 100px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .inputname {
 	display: flex;
     flex-direction: column;
     margin-left: -150px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .inputpassword {
 	display: flex;
 	margin-left:-160px;
 	flex-direction: column;
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 }
 
 .id {
@@ -84,7 +84,16 @@
 }
 
 .validpass {
-	margin-left:80px;
+	margin-left:50px;
+	font-size:12px;
+}
+
+.validid {
+	font-size:12px;
+}
+
+.passok {
+	font-size:12px;
 }
 
 #pass1, #pass2 {
@@ -102,7 +111,7 @@
 	display: flex;
     flex-direction: column;
     margin-left:-160px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   
 }
 

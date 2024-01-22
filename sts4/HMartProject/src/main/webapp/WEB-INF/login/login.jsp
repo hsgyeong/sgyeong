@@ -13,43 +13,93 @@
 <style>
 .log {
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 .tb {
 	border-style: none;
 	margin-top: 200px;
 	text-align: center;
+	width:800px;
+}
+
+.tb-box {
+	align-content: center;
+	justify-content: center;
+	display: flex;
+}
+
+.loginform {
+	display:flex;
+	align-content: center !important;
+	justify-content: center !important;
 }
 
 .loginTitle {
-	margin-bottom: 150px;
-}
-
-.myid {
-	margin-right: 100px;
+	margin-bottom: 80px;
 }
 
 .mypassword {
-	margin-right: 80px;
+	margin-right: 50px;
+}
+
+.myid {
+	margin-right: 65px;
 }
 
 .inputid {
 	margin-bottom: 30px;
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
 }
 
 .input-myid, .input-mypass {
-	width: 280px;
-	height: 60px;
-	border-radius: 1px;
+	width: 240px !important;
+	height: 50px;
 	border-color: gray;
+	font-size: 14px;
+}
+
+.inputpassword {
+	margin-bottom: 30px;
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+}
+
+.loginbt {
+	width:350px !important;
+	height:50px;
+}
+
+.searchId {
+	margin-right:30px;
+}
+
+.idPass {
+	margin-bottom: 30px;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.submitlogin {
+	justify-content: center;
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.submitjoin {
+	justify-content: center;
+	display: flex;
+	margin-bottom: 15px;
 }
 
 </style>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<form action="login-success" method="post" id="loginform">
+<form action="login-success" method="post" id="loginform" class="loginform">
 	<table class="tb">
 	<div class="tb-box">
 	<tr>
@@ -64,7 +114,7 @@
 		<td>
 			<div class="inputid">
 			<span class="myid">아이디</span>
-			<input type="text" id="myid" class="input-myid" name="myid" placeholder="아이디를 입력해주세요">
+			<input type="text" id="myid" class="form-control input-myid" name="myid" placeholder="아이디를 입력해주세요">
 			</div>
 		</td>
 	<tr>
@@ -73,10 +123,36 @@
 		<td>
 			<div class="inputpassword">
 			<span class="mypassword">비밀번호</span>
-			<input type="text" id="mypass" class="input-mypass" name="mypass" placeholder="비밀번호를 입력해주세요">
+			<input type="text" id="mypass" class="form-control input-mypass" name="mypass" placeholder="비밀번호를 입력해주세요">
 			</div>
 		</td>
 	<tr>
+	
+	<tr>
+		<td>
+		<div class="idPass">
+		<span class="searchId">아이디 찾기</span>
+		<span class="searchPass">비밀번호 찾기</span>
+		</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<div class="submitlogin">
+		<button type="button" class="form-control loginbt" >로그인</button>
+		</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<div class="submitjoin">
+		<button type="button" class="form-control loginbt" 
+		onclick="location.href='join'">회원가입</button>
+		</div>
+		</td>
+	</tr>
 	
 	</div>
 	</table>
