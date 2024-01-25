@@ -105,7 +105,7 @@
 	<tr>
 		<td>
 			<div class="loginTitle">
-		<span class="log">로그인</span>
+		<span class="log" style="color: #477500;">로그인</span>
 			</div>
 		</td>
 	<tr>
@@ -113,7 +113,7 @@
 	<tr>
 		<td>
 			<div class="inputid">
-			<span class="myid">아이디</span>
+			<span class="myid" style="color:#477500; font-weight:bold;">아이디</span>
 			<input type="text" id="myid" class="form-control input-myid" name="myid" placeholder="아이디를 입력해주세요">
 			</div>
 		</td>
@@ -122,7 +122,7 @@
 	<tr>
 		<td>
 			<div class="inputpassword">
-			<span class="mypassword">비밀번호</span>
+			<span class="mypassword" style="color:#477500; font-weight:bold;">비밀번호</span>
 			<input type="text" id="mypass" class="form-control input-mypass" name="mypass" placeholder="비밀번호를 입력해주세요">
 			</div>
 		</td>
@@ -131,8 +131,8 @@
 	<tr>
 		<td>
 		<div class="idPass">
-		<span class="searchId">아이디 찾기</span>
-		<span class="searchPass">비밀번호 찾기</span>
+		<span class="searchId" style="color:#477500;">아이디 찾기</span>
+		<span class="searchPass" style="color:#477500;">비밀번호 찾기</span>
 		</div>
 		</td>
 	</tr>
@@ -140,7 +140,7 @@
 	<tr>
 		<td>
 		<div class="submitlogin">
-		<button type="button" class="form-control loginbt" >로그인</button>
+		<button type="button" class="form-control loginbt" style="background-color: #7DAB12; color:white;" >로그인</button>
 		</div>
 		</td>
 	</tr>
