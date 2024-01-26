@@ -76,15 +76,17 @@
 .kakao-inq-btn, .indiv-inq-btn, .bulk-inq-btn {
 	display: flex;
 }
+
+.information {
+	border: 1px solid pink;
+}
 </style>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<div id="info">
+<div id="info" class="information">
 	<div class="infobox">
 	<hr>
-	
-
 	<div class="left">
 		<span class="center"><span class="mt">H-Mart</span> 고객센터</span><br>
 		<div class="run">
@@ -126,7 +128,6 @@
 	<span class="infobt">개인정보처리방침</span>
 	<span class="infobt">이용안내</span>
 	</div>
-	
 	</div>
 </div>
 </body>

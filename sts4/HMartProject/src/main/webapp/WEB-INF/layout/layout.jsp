@@ -48,14 +48,25 @@ position:absolute;
 width: 100%;
 height: 200px;
  top: calc(180px + 30px + 1000px + 50px);
-
 }
+
+div.layout div.category
+{
+position: absolute;
+height: 100%;
+width: 300px;
+}
+
+
 </style>
 </head>
 <body>
 <div class="layout">
 	<div class="main">
 	<tiles:insertAttribute name="main"/>
+	</div>
+	<div class="category">
+	<tiles:insertAttribute name="category"/>
 	</div>
 	<div class="title">
 	<tiles:insertAttribute name="title"/>

@@ -30,30 +30,43 @@ display: flex;
 float: left;
 align-items: center;
 justify-content: center;
-margin-left: 50px;
+margin-left: 100px;
 cursor: pointer;
+
 }
 
+.menu a {
+font-weight:bold;	
+font-size: 15px;
+text-decoration: none;
+color:#477500;
+}
 </style>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <ul class="menu">
 	<li>
-	<a href="#" class="btn">카테고리</a>
+	<a href="#" class="cate">카테고리</a>
 	</li>
 	<li>
-	<a href="#" class="btn">베스트</a>
+	<a href="#" class="b">베스트</a>
 	</li>
 	<li>
-	<a href="#" class="btn">세일</a>
+	<a href="#" class="sa">세일</a>
 	</li>
 	<li>
-	<a href="#" class="btn">신상품</a>
+	<a href="#" class="sin">신상품</a>
 	</li>
 	<li>
-	<a href="#" class="btn">이벤트</a>
+	<a href="#" class="evt">이벤트</a>
 	</li>
 </ul>
 </body>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".cate").hover
+})
+</script>
 </html>
