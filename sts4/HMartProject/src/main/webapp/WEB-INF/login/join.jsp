@@ -67,6 +67,7 @@
 	margin: auto;
 	display: flex;
 	width: 800px;
+	margin-bottom: 5px;
 }
 
 .password {
@@ -83,16 +84,7 @@
 	margin-left:10px;
 }
 
-.validpass {
-	margin-left:50px;
-	font-size:12px;
-}
-
-.validid {
-	font-size:12px;
-}
-
-.passok {
+.validid, .passok, .validpass  {
 	font-size:12px;
 }
 
@@ -112,7 +104,6 @@
     flex-direction: column;
     margin-left:-160px;
     margin-bottom: 50px;
-  
 }
 
 .passchkbox {
@@ -195,8 +186,8 @@
 					<span class="id">아이디
 							<input type="text" class="form-control" name="id" id="id">
 							<button type="button" class="btn" id="idcheck">중복확인</button>
-						</div>
 					</span>
+				</div>
 					<br>
 				<span class="validid"></span>
 				</div>
@@ -272,6 +263,31 @@
 				}
 			})
 			
+		$("#idcheck").click(function(){
+			
+			var id = $("#id").val();
+			
+			alert(id);
+			
+			$.ajax({
+				
+				type:"get",
+				dataType:"json",
+				url:"idcheck",
+				data:{"id":id},
+				success:function(res){
+					if(res.count==0){
+						alert("사용 가능한 아이디입니다.");
+						$("span.validid").text("사용 가능한 아이디입니다.").css("color","green");
+					}else
+					{
+						alert("이미 사용중인 아이디입니다. 다시 입력해주세요.");
+						$("span.validid").text("이미 사용중인 아이디입니다. 다시 입력해주세요.").css("color","red");
+					}
+				}
+			})	
+		})
+			
 			
 		$("#pass1").keyup(function(){
 			
@@ -297,7 +313,7 @@
 			var pass1 = $("#pass1").val();
 			var pass2 = $("#pass2").val();
 			
-			var passval = $("span.validpass").text("");
+		//	var passval = $("span.validpass").text("");
 			
 			if(pass1==pass2 && ValidPass(pass1)){
 				$("span.passok").text("비밀번호가 일치합니다.").css("color","green");

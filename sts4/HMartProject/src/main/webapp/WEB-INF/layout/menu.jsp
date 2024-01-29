@@ -41,6 +41,38 @@ font-size: 15px;
 text-decoration: none;
 color:#477500;
 }
+
+.categorylist {
+border: 1px solid orange;
+position: absolute;
+height: 560px;
+width: 240px;
+margin-top: 100px;
+margin-left: 40px;
+float: right;
+}
+
+.li {
+font-weight: bold;
+list-style: none;
+margin-bottom: 0px;
+cursor: pointer;
+height:40px;
+vertical-align: middle;
+display: flex;
+align-items: center;
+padding-left: 20px;
+}
+
+.li:hover{
+color:#477500;
+background-color: #F6F6F6;
+}
+
+.type{
+margin-left:40px;
+margin-top:30px;
+}
 </style>
 </head>
 <body>
@@ -62,11 +94,40 @@ color:#477500;
 	<a href="#" class="evt">이벤트</a>
 	</li>
 </ul>
+<div class="categorylist">
+	<div class="type">
+	<li class="li">채소,쌀</li>
+	<li class="li">과일,견과</li>
+	<li class="li">수산,해산,건어물</li>
+	<li class="li">정육,가공육,계란</li>
+	<li class="li">국,반찬,샐러드</li>
+	<li class="li">메인요리,밀키트</li>
+	<li class="li">면,양념,오일</li>
+	<li class="li">생수,음료,커피</li>
+	<li class="li">간식,과자,떡</li>
+	<li class="li">베이커리</li>
+	<li class="li">유제품</li>
+	<li class="li">건강식품</li>
+	<li class="li">주류</li>
+	</div>
+</div>
 </body>
 <script type="text/javascript">
 $(document).ready(function(){
 	
-	$(".cate").hover
+	$("div.categorylist").hide();
+	
+	$("a.cate").mouseover(function(){
+		$("div.categorylist").show();
+	})
+	
+	$("div.categorylist").mouseover(function(){
+		$("div.categorylist").show();
+	})
+	
+	$("div.categorylist").mouseout(function(){
+		$("div.categorylist").hide();
+	})
 })
 </script>
 </html>

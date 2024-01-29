@@ -65,9 +65,6 @@ width: 300px;
 	<div class="main">
 	<tiles:insertAttribute name="main"/>
 	</div>
-	<div class="category">
-	<tiles:insertAttribute name="category"/>
-	</div>
 	<div class="title">
 	<tiles:insertAttribute name="title"/>
 	</div>
