@@ -19,5 +19,6 @@ $(function(){
 </script>
 </head>
 <body>
+<c:set var="root" value="<%=request.getContextPath() %>"/>
 </body>
 </html>

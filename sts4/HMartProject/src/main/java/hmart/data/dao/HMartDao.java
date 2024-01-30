@@ -1,11 +1,14 @@
 package hmart.data.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
+import hmart.data.dto.HMartMemberDto;
 import hmart.data.dto.productDto;
 
 @Repository
@@ -24,6 +27,17 @@ public class HMartDao {
 		return hmartDaoInter.findAll(Sort.by(Sort.Direction.ASC, "price"));
 	}
 	
+	
+	 public int loginPassCheck(String id, String pass) 
+	 {
+	  
+	  
+	 }
+	  
+	  public HMartMemberDto getData(Long num)
+	  {
+		  return hmartDaoInter.getReferenceById(num);
+	  }
 	
 	
 

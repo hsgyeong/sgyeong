@@ -18,18 +18,13 @@ public class MemberController {
 	@Autowired
 	HMartMemberDao memberDao;
 	
-	@PostMapping("/member/join-success")
+	@PostMapping("join-success")
 	public String join(@ModelAttribute HMartMemberDto memberDto)
 	{
 		memberDao.insertMember(memberDto);
 		
-		return "/login/success";
+		return "/login/joinsuccess";
 	}
 	
-	@GetMapping("/member/success")
-	public String joinSuccess()
-	{
-		return "redirect:success";
-	}
-	
+
 }

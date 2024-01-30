@@ -99,7 +99,7 @@
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<form action="login-success" method="post" id="loginform" class="loginform">
+<form action="loginproc" method="post" id="loginform" class="loginform">
 	<table class="tb">
 	<div class="tb-box">
 	<tr>
@@ -114,7 +114,7 @@
 		<td>
 			<div class="inputid">
 			<span class="myid" style="color:#477500; font-weight:bold;">아이디</span>
-			<input type="text" id="myid" class="form-control input-myid" name="myid" placeholder="아이디를 입력해주세요">
+			<input type="text" id="myid" class="form-control input-myid" name="id" placeholder="아이디를 입력해주세요">
 			</div>
 		</td>
 	<tr>
@@ -123,7 +123,7 @@
 		<td>
 			<div class="inputpassword">
 			<span class="mypassword" style="color:#477500; font-weight:bold;">비밀번호</span>
-			<input type="text" id="mypass" class="form-control input-mypass" name="mypass" placeholder="비밀번호를 입력해주세요">
+			<input type="text" id="mypass" class="form-control input-mypass" name="pass" placeholder="비밀번호를 입력해주세요">
 			</div>
 		</td>
 	<tr>
@@ -140,7 +140,7 @@
 	<tr>
 		<td>
 		<div class="submitlogin">
-		<button type="button" class="form-control loginbt" style="background-color: #7DAB12; color:white;" >로그인</button>
+		<button type="submit" class="form-control loginbt" style="background-color: #7DAB12; color:white;" >로그인</button>
 		</div>
 		</td>
 	</tr>
