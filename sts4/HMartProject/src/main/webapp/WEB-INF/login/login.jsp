@@ -123,7 +123,7 @@
 		<td>
 			<div class="inputpassword">
 			<span class="mypassword" style="color:#477500; font-weight:bold;">비밀번호</span>
-			<input type="text" id="mypass" class="form-control input-mypass" name="pass" placeholder="비밀번호를 입력해주세요">
+			<input type="text" id="mypass" class="form-control input-mypass" name="password" placeholder="비밀번호를 입력해주세요">
 			</div>
 		</td>
 	<tr>

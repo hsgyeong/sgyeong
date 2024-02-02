@@ -7,3 +7,5 @@ import hmart.data.dto.productDto;
 public interface HMartDaoInter extends JpaRepository<productDto, Long> {
 
 }
+
+

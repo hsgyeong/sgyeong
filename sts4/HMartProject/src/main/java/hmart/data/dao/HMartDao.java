@@ -26,18 +26,13 @@ public class HMartDao {
 	{
 		return hmartDaoInter.findAll(Sort.by(Sort.Direction.ASC, "price"));
 	}
+
+	public int loginPassCheck(String password) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
-	
-	 public int loginPassCheck(String id, String pass) 
-	 {
-	  
-	  
-	 }
-	  
-	  public HMartMemberDto getData(Long num)
-	  {
-		  return hmartDaoInter.getReferenceById(num);
-	  }
+
 	
 	
 

@@ -18,9 +18,6 @@ public class MarketService implements MarketServiceInter {
 	@Autowired
 	MarketMapperInter mapperInter;	
 	
-/*	@Autowired
-	MarketService service;	*/
-	
 	@Override
 	public int getTotalCount() {
 		// TODO Auto-generated method stub
