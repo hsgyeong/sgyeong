@@ -46,18 +46,19 @@ public class LoginController {
 			{
 				Optional<HMartMemberDto> memberOptional = hmartMemberService.getUserNameById(id); 
 				
-				if(memberOptional.isPresent())
-				{	
+		//		if(memberOptional.isPresent())
+		//		{	
 					String name = memberOptional.get().getName();
 				
 					model.addAttribute("name", name);
-				}
-				return "/";
+					
+					return "/";
 			}
+				else
+					return "/login/login";
+			}
+			
 		}
-		return "/login/login";
-	}
-
 
 	  @PostMapping("loginproc") 
 	  public String loginproc(@RequestParam String id,
@@ -65,9 +66,8 @@ public class LoginController {
 	  @RequestParam(required=false) 
 	  String cbsave, HttpSession session) 
 	  { 
-		  int check = hmartMemberService.loginPassCheck(id, password);
-	  
-//	System.out.println(check+"확인하세용요요요요요용");
+		  int check = hmartMemberService.idPassCheck(id, password);
+		System.out.println(check+"확인하세용요요요요요용");
 	
 	  if(check==1) { 
 	  session.setMaxInactiveInterval(60*60*8);

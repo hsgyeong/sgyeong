@@ -18,23 +18,22 @@ public class HMartMemberDao {
 		hmartMemberDaoInter.save(dto);
 	}
 	  
-	 public HMartMemberDto idPassCheck(String id, String password)
+	 public int idPassCheck(String id, String password) //아이디에 대한 값 반환
 	 {
 		Optional<HMartMemberDto> loginId = hmartMemberDaoInter.findById(id);
-		Optional<HMartMemberDto> loginPass = hmartMemberDaoInter.findByPassword(password);
+		//Optional<HMartMemberDto> loginPass = hmartMemberDaoInter.findByPassword(password);
 		
-		if(loginId.isPresent() && loginPass.isPresent()) {
+		String storedId = loginId.get().getId();
+		String storedPass = loginId.get().getPassword();
+		System.out.println(storedId+"이게 나오려나????");
+		
+		if(storedId.equals(id) && storedPass.equals(password)) {
 			
-			return loginPass.get();
+			return 1;
 		}else {
 			
-			return null;
+			return 0;
 		}
-	 }
-	 
-	 public Optional<HMartMemberDto> getMemberInfoById(String id, String addr, String email)
-	 {
-		 return hmartMemberDaoInter.findByNameAndAddrAndEmail(id, addr, email);
 	 }
 	 
 }

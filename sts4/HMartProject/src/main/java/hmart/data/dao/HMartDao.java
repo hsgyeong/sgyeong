@@ -27,13 +27,4 @@ public class HMartDao {
 		return hmartDaoInter.findAll(Sort.by(Sort.Direction.ASC, "price"));
 	}
 
-	public int loginPassCheck(String password) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-
-	
-	
-
 }

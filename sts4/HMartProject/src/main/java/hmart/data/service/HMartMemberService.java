@@ -22,13 +22,17 @@ public class HMartMemberService {
 	
 	public int idPassCheck(String id, String password)
 	{
-		Optional<HMartMemberDto> loginId = hmartMemberDaoInter.findById(id);
-		Optional<HMartMemberDto> loginPass = hmartMemberDaoInter.findByPassword(password);
-	
-		boolean idMatch = id.equals(loginId);
-		boolean passMatch = password.equals(loginPass);
+		Optional<HMartMemberDto> memberDto = hmartMemberDaoInter.findById(id);
+		String pass = hmartMemberDaoInter.findById(id).get().getPassword();
+	//	System.out.println(pass+"비밀번호닷다다랏");
+		if(memberDto.isPresent()) { 
+		boolean passMatch = hmartMemberDaoInter.findById(id).get().getPassword().equals(password);
 		
-		return passMatch && idMatch ? 1:0;
+	//	System.out.println(passMatch);
+		return passMatch ? 1:0;
+		}else {
+			return 0; 
+		} 
 	}
 	
 	public Optional<HMartMemberDto> getMemberInforById(String id)
