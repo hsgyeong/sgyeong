@@ -73,7 +73,7 @@ public class LoginController {
 	  session.setMaxInactiveInterval(60*60*8);
 	  
 	  session.setAttribute("myid", id); 
-	  session.setAttribute("loginok", id);
+	  session.setAttribute("login", id);
 	  session.setAttribute("saveok", cbsave);
 	  
 	  Optional<HMartMemberDto> memberDto = hmartMemberService.getMemberInforById(id);
