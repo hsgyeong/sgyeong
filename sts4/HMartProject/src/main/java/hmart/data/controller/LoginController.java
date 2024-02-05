@@ -98,7 +98,7 @@ public class LoginController {
 		  if(login!=null)
 		  {
 			  session.removeAttribute("login");
-			  session.removeAttribute("id");
+			  session.removeAttribute("myid");
 			  session.removeAttribute("name");
 		  }
 		  return "redirect:/";

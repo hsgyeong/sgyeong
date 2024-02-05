@@ -94,5 +94,13 @@
 	<div class="titlebox">
 		<a href="/" class="marttitle">HMart</a>
 	</div>
+	
+	<c:if test="${sessionScope.login != null && sessionScope.myid == 'admin'}">
+		<div style="text-align:right; margin-right: 60px; margin-top:40px;">
+		<button type="button" class="product-insertbt"
+		onclick="location.href='product-upload'">상품 등록</button>
+		<button type="button" class="event-insertbt">이벤트 등록</button>
+		</div>
+	</c:if>	
 </body>
 </html>

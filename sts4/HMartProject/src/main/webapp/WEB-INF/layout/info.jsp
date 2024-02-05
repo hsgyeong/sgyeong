@@ -36,9 +36,18 @@
 	height: 50px;
 	border-radius: 5px;
 	background-color: white;
-	color: #7DAB12;
+	color: white;
 	border-color: #7DAB12;
-	product-insert-btn
+	background-color: #7DAB12;
+	font-weight: bold;
+}
+.product-insertbt, .event-insertbt{
+	background-color: #7DAB12;
+	color: white;
+	border-color: #7DAB12;
+	width: 120px;
+	height: 40px;
+	border-radius: 5px;
 }
 
 .run {
@@ -85,6 +94,11 @@
 .ad {
 	color:gray;
 	cursor:pointer;
+}
+
+.ad-style {
+	text-decoration: none;
+	color:gray;
 }
 
 </style>
@@ -135,12 +149,13 @@
 	<span class="infobt">개인정보처리방침</span>
 	<span class="infobt">이용안내</span>
 	</div>
-	</div>
-	<c:if test="${sessionScope.login !=null && sessionScope.id =='admin'}">
-	<button class="btn product-insert-btn" type="submit">상품등록</button>
-	</c:if>
 	
-	<span class="ad">관리자</span>
+	</div>
+	<c:if test="${sessionScope.login == null }">
+	<div>
+	<span class="ad"><a href="admin-login" class="ad-style">관리자</a></span>
+	</div>
+	</c:if>
 </div>
 </body>
 </html>
