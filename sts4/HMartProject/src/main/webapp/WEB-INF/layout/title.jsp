@@ -36,16 +36,32 @@
 	top: 50%;
 }
 
-.member {
+.ul {
 	display: flex;
 	float: right;
-	margin-right: 100px;
+	list-style: none;
+
 }
 
-.login {
+.select-li {
+	list-style: none;
+}
+
+.member {
+	display: flex;
+    position: absolute;
+	margin-right: 100px;
+	right: 0;
+}
+
+.login, .logout, .member-name {
 	text-decoration: none;
 	color: #477500;
 	font-weight: bold;
+}
+
+.member-name, .join {
+	margin-right:50px;
 }
 
 .join {
@@ -53,20 +69,26 @@
 	text-decoration: none;
 	color: #477500;
 	font-weight: bold;
+	list-style: none;
 }
 </style>
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath()%>" />
 	<div class="member">
-		<ul>
+		<ul class="ul">
 			<c:if test="${sessionScope.login == null }">
-				<li><a class="login" href="login">로그인</a></li>
+			<li><a class="join" href="join">회원가입</a></li>
+			</c:if>
+			<c:if test="${sessionScope.login != null }">
+			<li class="member-name"><a>${sessionScope.name }</a>&nbsp;&nbsp;님</li>
+			</c:if>
+			<c:if test="${sessionScope.login == null }">
+				<li class="select-li"><a class="login" href="login">로그인</a></li>
 			</c:if> 
 			<c:if test="${sessionScope.login != null }">
-				<li><a class="logout" href="#">로그아웃</a><li>
+				<li class="select-li"><a class="logout" href="logout">로그아웃</a><li>
 			</c:if>
-			<li><a class="join" href="join">회원가입</a></li>
 		</ul>
 	</div>
 	<div class="titlebox">

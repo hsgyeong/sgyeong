@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,16 +42,15 @@ public class LoginController {
 		else
 		{
 			String id = (String)session.getAttribute("id");
+			String name = (String)session.getAttribute("name");
 			
 			if(id != null)
 			{
 				Optional<HMartMemberDto> memberOptional = hmartMemberService.getUserNameById(id); 
+		
+					String memberName = memberOptional.get().getName();
 				
-		//		if(memberOptional.isPresent())
-		//		{	
-					String name = memberOptional.get().getName();
-				
-					model.addAttribute("name", name);
+					model.addAttribute("name", memberName);
 					
 					return "/";
 			}
@@ -89,4 +89,19 @@ public class LoginController {
 	  }
 	 
 	  }
+	  
+	  @RequestMapping("logout")
+	  public String logout(HttpSession session, HttpServletResponse response)
+	  {
+		  String login = (String)session.getAttribute("login");
+		  
+		  if(login!=null)
+		  {
+			  session.removeAttribute("login");
+			  session.removeAttribute("id");
+			  session.removeAttribute("name");
+		  }
+		  return "redirect:/";
+	  }
+	  
 }

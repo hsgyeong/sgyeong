@@ -5,13 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import hmart.data.dao.HMartDao;
+import hmart.data.dao.HMartAdminDao;
 
 @Controller
 public class MainController {
 
 	@Autowired
-	HMartDao hmartDao;
+	HMartAdminDao hmartDao;
 
 	@GetMapping("/")
 	public String main()

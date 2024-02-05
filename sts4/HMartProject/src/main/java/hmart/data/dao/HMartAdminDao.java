@@ -12,10 +12,10 @@ import hmart.data.dto.HMartMemberDto;
 import hmart.data.dto.productDto;
 
 @Repository
-public class HMartDao {
+public class HMartAdminDao {
 
 	@Autowired
-	HMartDaoInter hmartDaoInter;
+	HMartAdminDaoInter hmartDaoInter;
 	
 	public void insertHMart(productDto dto)
 	{

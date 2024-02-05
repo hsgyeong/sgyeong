@@ -29,7 +29,7 @@
 	height:100vh;
 	display: flex;
 }
-.kakao-inquiry, .individual-inquiry, .bulk-inquiry {
+.kakao-inquiry, .individual-inquiry, .bulk-inquiry, .product-insert-btn {
 	margin-bottom: 30px;
 	margin-right: 50px;
 	width:160px;
@@ -38,6 +38,7 @@
 	background-color: white;
 	color: #7DAB12;
 	border-color: #7DAB12;
+	product-insert-btn
 }
 
 .run {
@@ -80,6 +81,12 @@
 .information {
 	border: 1px solid pink;
 }
+
+.ad {
+	color:gray;
+	cursor:pointer;
+}
+
 </style>
 </head>
 <body>
@@ -129,6 +136,11 @@
 	<span class="infobt">이용안내</span>
 	</div>
 	</div>
+	<c:if test="${sessionScope.login !=null && sessionScope.id =='admin'}">
+	<button class="btn product-insert-btn" type="submit">상품등록</button>
+	</c:if>
+	
+	<span class="ad">관리자</span>
 </div>
 </body>
 </html>
