@@ -12,7 +12,7 @@
 <style type="text/css">
 
 .uploadTable {
-	width:800px;
+	width:600px;
 }
 
 .upload-title {
@@ -54,6 +54,15 @@
 	margin-bottom: -30px;
 	font-size: 30px;
 }
+
+.radio-bt {
+	display: flex;
+}
+
+.rd {
+	margin-right: 15px;
+}
+
 </style>
 <title>Insert title here</title>
 </head>
@@ -66,6 +75,12 @@
 			<th>상품명</th>
 			<td>
 			<input type="text" class="form-control" name="product" required="required">
+			</td>
+		</tr>
+		<tr>
+			<th>상품 사진</th>
+			<td>
+			<input type="file" class="form-control" name="productphoto" required="required">
 			</td>
 		</tr>
 		<tr>
@@ -83,9 +98,9 @@
 		<tr>
 			<th>포장타입</th>
 			<td>
-			<input type="radio" class="form-control" value="상온(종이포장)" name="packingtype" required="required">상온&nbsp;(종이포장)
-			<input type="radio" class="form-control" value="냉장(종이포장)" name="packingtype" required="required">냉장&nbsp;(종이포장)
-			<input type="radio" class="form-control" value="냉동(종이포장)" name="packingtype" required="required">냉동&nbsp;(종이포장)
+			<div class="radio-bt"><input type="radio" class="rd" value="상온(종이포장)" name="packingtype" required="required">상온&nbsp;(종이포장)</div>
+			<div class="radio-bt"><input type="radio" class="rd" value="냉장(종이포장)" name="packingtype" required="required">냉장&nbsp;(종이포장)</div>
+			<div class="radio-bt"><input type="radio" class="rd" value="냉동(종이포장)" name="packingtype" required="required">냉동&nbsp;(종이포장)</div>
 			</td>
 		</tr>
 		<tr>

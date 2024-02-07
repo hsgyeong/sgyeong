@@ -12,6 +12,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<table class="table">
+	<tr>
+		<td>${product.productphoto }</td>
+		<td>${product.product }</td>
+		<td>${product.price }</td>
+	<%-- 	<td>${product.reviewcount }</td> --%>
+	</tr>
+</table>
 </body>
 </html>

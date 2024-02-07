@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Data;
 
@@ -35,13 +36,16 @@ public class productDto {
 	private String packingtype;
 	
 	@Column
-	private String photo;
+	private String productphoto;
 	
 	@Column
 	private String unit;
 	
 	@Column
 	private String volumn;
+	
+	@Column
+	private int reviewcount;
 	
 	@CreationTimestamp
 	@Column
