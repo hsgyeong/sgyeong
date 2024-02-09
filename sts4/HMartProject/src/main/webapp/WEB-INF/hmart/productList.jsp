@@ -12,9 +12,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:set var="root" value="<%=request.getServletContext() %>"/>
 <table class="table">
 	<tr>
-		<td>${product.productphoto }</td>
+		<td>${product.productPhoto }</td>
 		<td>${product.product }</td>
 		<td>${product.price }</td>
 	<%-- 	<td>${product.reviewcount }</td> --%>

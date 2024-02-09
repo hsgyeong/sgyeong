@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan("hmart.data.*")
+@ComponentScan({"hmart.data.*"})
 @ComponentScan("boot.spring.hmart")
 @EntityScan("hmart.data.dto")
 @EnableJpaRepositories("hmart.data.dao")

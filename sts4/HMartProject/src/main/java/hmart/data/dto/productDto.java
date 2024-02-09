@@ -36,13 +36,19 @@ public class productDto {
 	private String packingtype;
 	
 	@Column
-	private String productphoto;
+	private String productPhoto;
 	
 	@Column
 	private String unit;
 	
 	@Column
 	private String volumn;
+	
+	@Column
+	private String group;
+	
+	@Column
+	private String category;
 	
 	@Column
 	private int reviewcount;

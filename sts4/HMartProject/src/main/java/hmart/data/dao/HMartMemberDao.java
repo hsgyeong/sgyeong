@@ -35,5 +35,10 @@ public class HMartMemberDao {
 			return 0;
 		}
 	 }
+
+	public Optional<HMartMemberDto> findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	 
 }
