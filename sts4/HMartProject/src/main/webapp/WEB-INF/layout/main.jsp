@@ -65,19 +65,19 @@ position:absolute;
 }
 
 .img .active{
-	display:block;
+display:block;
 }
 
 #changeleft{
-	top:50%;
-	left:0;
-	margin-top: 28%;
+top:50%;
+left:0;
+margin-top: 28%;
 }
 
 #changeright{
-	top:50%;
-	right:0;
-	margin-top: 28%;
+top:50%;
+right:0;
+margin-top: 28%;
 }
 .slider{
 position: absolute;
@@ -138,6 +138,9 @@ $(document).ready(function(){
 	</div>
 	</div>
 		<div class="hotitem">현재 인기상품</div>
+		<div class="layout mainList">
+			<jsp:include page="mainList.jsp"/>
+		</div>
 </div>
 </body>
 </html>

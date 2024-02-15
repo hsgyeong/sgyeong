@@ -91,39 +91,34 @@ select {
 		</tr>
 		<!-- 파일 업로드의 경우 이름과 dto가 같다고 해서 바로 올라가는게 아니다.. -->
 			<!-- 이름을 똑같이 할 경우 오류 찾기가 어려워,, 구분을 위해 dto name과 여기 input의 Name을 다르게 준다. -->
-		<tr>
-			<th>분류</th>
-			<td>
-			<input type="file" class="form-control" name="productupload" id="productupload" required="required">
-			</td>
-		</tr>
+		
 		<tr>
 			<th>그룹</th>
 			<td>
-			<select class="sel">
-				<option name="group" value="베스트">베스트</option>
-				<option name="group" value="세일">세일</option>
-				<option name="group" value="신상품">신상품</option>
+			<select class="sel" name="maingroup" >
+				<option value="best">베스트</option>
+				<option value="sale">세일</option>
+				<option value="new">신상품</option>
 			</select>
 			</td>
 		</tr>
 		<tr>
 			<th>카테고리</th>
 			<td>
-			<select class="sel">
-				<option name="category" value="채소,쌀">채소,쌀</option>
-				<option name="category" value="과일,견과">과일,견과</option>
-				<option name="category" value="수산,해산,건어물">수산,해산,건어물</option>
-				<option name="category" value="정육,가공육,계란">정육,가공육,계란</option>
-				<option name="category" value="국,반찬,샐러드">국,반찬,샐러드</option>
-				<option name="category" value="메인요리,밀키트">메인요리,밀키트</option>
-				<option name="category" value="면,양념,오일">면,양념,오일</option>
-				<option name="category" value="생수,음료,커피">생수,음료,커피</option>
-				<option name="category" value="간식,과자,떡">간식,과자,떡</option>
-				<option name="category" value="베이커리">베이커리</option>
-				<option name="category" value="유제품">유제품</option>
-				<option name="category" value="건강식품">건강식품</option>
-				<option name="category" value="주류">주류</option>
+			<select class="sel" name="category">
+				<option value="vegetableandrice">채소,쌀</option>
+				<option value="fruitandnut">과일,견과</option>
+				<option value="seafood">수산,해산,건어물</option>
+				<option value="meatandeggs">정육,가공육,계란</option>
+				<option value="soupand">국,반찬,샐러드</option>
+				<option value="메인요리,밀키트">메인요리,밀키트</option>
+				<option value="면,양념,오일">면,양념,오일</option>
+				<option value="생수,음료,커피">생수,음료,커피</option>
+				<option value="간식,과자,떡">간식,과자,떡</option>
+				<option value="베이커리">베이커리</option>
+				<option value="유제품">유제품</option>
+				<option value="건강식품">건강식품</option>
+				<option value="주류">주류</option>
 			</select>
 			</td>
 		</tr>

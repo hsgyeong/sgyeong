@@ -15,10 +15,15 @@
 <c:set var="root" value="<%=request.getServletContext() %>"/>
 <table class="table">
 	<tr>
-		<td>${product.productPhoto }</td>
-		<td>${product.product }</td>
-		<td>${product.price }</td>
-	<%-- 	<td>${product.reviewcount }</td> --%>
+		<c:forEach var="mainlist" items="${list }" varStatus="i">
+			<tr>
+				<td>${i.count }</td>
+				<td><img alt="" src="../save/${mainlist.product_photo }"></td>
+				<td>${mainlist.product }</td>
+				<td>${mainlist.price }</td>
+				<td>${mainlist.reviewcount }</td>
+			</tr>
+		</c:forEach>
 	</tr>
 </table>
 </body>

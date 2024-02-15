@@ -77,11 +77,15 @@ public class AdminController {
 		@PostMapping("registration")
 		public String upload(@ModelAttribute productDto dto,
 		 MultipartFile productupload,HttpSession session) //MultipartFile name = <input name>  파일 업로드의 경우 이름과 dto 이름을 똑같이 할 경우 오류 찾기가 어려워 구분을 위해 dto name과 여기 input의 Name을 다르게 준다.
-		{											
+		{							
+			
+			//업로드할 save 위치 구하기
 			String path = session.getServletContext().getRealPath("/save");
 		
+			//업로드할 파일 dto 얻기
 			dto.setProductPhoto(productupload.getOriginalFilename());
 			
+			//실제 업로드
 			try {
 				productupload.transferTo(new File(path+"/"+productupload.getOriginalFilename()));
 				

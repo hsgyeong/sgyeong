@@ -31,7 +31,7 @@ position:absolute;
 top:180px;
 margin-top:30px;
 width:100%;
-height:1000px;
+height:100%;
 font-size: 17px;
 margin-bottom: 100px;
 }
@@ -46,8 +46,9 @@ div.layout div.info
 {
 position:absolute;
 width: 100%;
-height: 200px;
+height: 20%;
  top: calc(180px + 30px + 1000px + 50px);
+bottom: 0;
 }
 
 div.layout div.category

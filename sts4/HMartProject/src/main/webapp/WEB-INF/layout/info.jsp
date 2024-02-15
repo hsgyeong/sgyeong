@@ -26,8 +26,9 @@
 .infobox {
 	justify-content: center;
 	align-items: center;
-	height:100vh;
+	height:40vh;
 	display: flex;
+	bottom: 0;
 }
 .kakao-inquiry, .individual-inquiry, .bulk-inquiry, .product-insert-btn {
 	margin-bottom: 30px;
@@ -62,7 +63,7 @@
 }
 
 .left, .right {
-	height: 100vh;
+	height: 40vh;
 }
 
 .left {
@@ -89,6 +90,7 @@
 
 .information {
 	border: 1px solid pink;
+	bottom: 0;
 }
 
 .ad {

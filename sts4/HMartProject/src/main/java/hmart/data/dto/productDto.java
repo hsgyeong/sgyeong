@@ -45,7 +45,7 @@ public class productDto {
 	private String volumn;
 	
 	@Column
-	private String group;
+	private String maingroup;
 	
 	@Column
 	private String category;
