@@ -47,8 +47,8 @@ div.layout div.info
 position:absolute;
 width: 100%;
 height: 20%;
- top: calc(180px + 30px + 1000px + 50px);
-bottom: 0;
+top: calc(180px + 30px + 1000px + 50px);
+bottom: 0 !important;
 }
 
 div.layout div.category

@@ -85,7 +85,7 @@ margin-top:30px;
 	<a href="#" class="b">베스트</a>
 	</li>
 	<li>
-	<a href="#" class="sa">세일</a>
+	<a href="/" class="sa">세일</a>
 	</li>
 	<li>
 	<a href="#" class="sin">신상품</a>

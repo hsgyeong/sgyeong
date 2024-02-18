@@ -9,16 +9,13 @@ import org.springframework.stereotype.Repository;
 import hmart.data.dto.productDto;
 
 @Repository
-public class HMartAdminDao {
+public class HMartMainDao {
 
 	@Autowired
-	HMartAdminDaoInter hmartAdminDaoInter;
+	HMartMainDaoInter hmartMainDaoInter;
 	
-	public void insertHMart(productDto dto)
+	public List<productDto> getAllDatas()
 	{
-		hmartAdminDaoInter.save(dto);
+		return hmartMainDaoInter.findAll(Sort.by(Sort.Direction.ASC, "price"));
 	}
-	
-	
-
 }

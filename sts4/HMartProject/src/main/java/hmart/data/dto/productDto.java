@@ -36,7 +36,7 @@ public class productDto {
 	private String packingtype;
 	
 	@Column
-	private String productPhoto;
+	private String product_photo;
 	
 	@Column
 	private String unit;

@@ -38,7 +38,9 @@ height:550px;
 flex-direction: column;
 align-items: center;
 width:100%;
+height: 100vh;
 }
+
 
 #imgholder
 {
@@ -49,7 +51,7 @@ display: flex;
 
 .mainbox{
 width:900px; 
-height:550px; 
+height:60vh; 
 border:1px solid red;
 margin: 50px auto 0 auto;
 position: relative;
@@ -79,6 +81,7 @@ top:50%;
 right:0;
 margin-top: 28%;
 }
+
 .slider{
 position: absolute;
 }
@@ -89,6 +92,9 @@ font-size: 30px;
 font-weight: bold;
 }
 
+.mainList {
+margin-top:0px;
+}
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -108,6 +114,12 @@ $(document).ready(function(){
 		updateSlider();
 	});
 	
+	setInterval(function(){
+		currentIndex = (currentIndex+1)%totalImages;
+		updateSlider();
+	},4000);
+	
+	
 	function updateSlider(){
 		const translateValue = -currentIndex*imgWidth+"px";
 		
@@ -125,7 +137,7 @@ $(document).ready(function(){
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<div id="main">
+<div>
 	<div class="mainbox">
 	<div class="slider" style="position:relative;">
 	<img alt="" src="${root }/mainimage/left-arrow.png" class="bt" id="changeleft" >
@@ -139,7 +151,7 @@ $(document).ready(function(){
 	</div>
 		<div class="hotitem">현재 인기상품</div>
 		<div class="layout mainList">
-			<jsp:include page="mainList.jsp"/>
+			<jsp:include page="../layout/mainList.jsp"/>
 		</div>
 </div>
 </body>

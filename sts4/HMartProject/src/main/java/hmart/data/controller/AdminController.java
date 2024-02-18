@@ -83,7 +83,7 @@ public class AdminController {
 			String path = session.getServletContext().getRealPath("/save");
 		
 			//업로드할 파일 dto 얻기
-			dto.setProductPhoto(productupload.getOriginalFilename());
+			dto.setProduct_photo(productupload.getOriginalFilename());
 			
 			//실제 업로드
 			try {
