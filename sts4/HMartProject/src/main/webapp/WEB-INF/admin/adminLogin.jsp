@@ -31,8 +31,8 @@
 
 .admin-loginform {
 	display:flex;
-	align-content: center !important;
-	justify-content: center !important;
+	align-content: center; 
+	justify-content: center; 
 }
 
 .loginTitle {
@@ -55,7 +55,7 @@
 }
 
 .input-myid, .input-mypass {
-	width: 240px !important;
+	width: 240px;
 	height: 50px;
 	border-color: gray;
 	font-size: 14px;
@@ -69,7 +69,7 @@
 }
 
 .loginbt {
-	width:350px !important;
+	width:350px;
 	height:50px;
 }
 

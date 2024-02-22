@@ -12,29 +12,43 @@
 <title>Insert title here</title>
 <style>
 .center {
-	margin-bottom: 650px;
+	/* margin-bottom: 650px; */
 	color: #477500;
 }
 .centerNumber{
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 	font-size: 32px;
 	font-weight: bold;
 	margin-right:40px;
 	color: #477500;
 }
 
-.infobox {
-	justify-content: center;
-	align-items: center;
+#infobox {
+	justify-content: space-between;/**/
+/* 	align-items: center; */
 	height:40vh;
 	display: flex;
+	width: 100%;
 	bottom: 0;
 }
-.kakao-inquiry, .individual-inquiry, .bulk-inquiry, .product-insert-btn {
-	margin-bottom: 30px;
+
+.information{
+	display: flex;
+}
+
+#information{
+	display: flex;
+/* 	align-items: center; */
+	flex-direction: column;/**/
+	width: 100%;
+	height: 150px;/**/
+/* 	justify-content: center; */
+}
+.kakao-inquiry, .individual-inquiry, .bulk-inquiry, .item-insert-btn {
+	margin-bottom: 25px;
 	margin-right: 50px;
-	width:160px;
-	height: 50px;
+	width:140px;
+	height: 38px;
 	border-radius: 5px;
 	background-color: white;
 	color: white;
@@ -42,7 +56,7 @@
 	background-color: #7DAB12;
 	font-weight: bold;
 }
-.product-insertbt, .event-insertbt{
+.item-insertbt, .event-insertbt{
 	background-color: #7DAB12;
 	color: white;
 	border-color: #7DAB12;
@@ -63,11 +77,10 @@
 }
 
 .left, .right {
-	height: 40vh;
+	bottom: 0;
 }
-
-.left {
-	margin-right:100px;
+.left{
+	left: 0;
 }
 
 .day {
@@ -102,15 +115,15 @@
 	text-decoration: none;
 	color:gray;
 }
-
 </style>
+
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<div id="info" class="information">
-	<div class="infobox">
+<div id="information" class="information">
+	<div id="infobox">
 	<hr>
-	<div class="left">
+	<div id="left">
 		<span class="center"><span class="mt">H-Mart</span> 고객센터</span><br>
 		<div class="run">
 			<span class="centerNumber">1500-0000</span>
@@ -144,7 +157,7 @@
 		</div>
 		</div>
 	</div>
-	<div class="right">
+	<div id="right">
 	<span class="infobt">투자정보</span>
 	<span class="infobt">인재채용</span>
 	<span class="infobt">이용약관</span>
@@ -153,11 +166,11 @@
 	</div>
 	
 	</div>
-	<c:if test="${sessionScope.login == null }">
+	<%-- <c:if test="${sessionScope.login == null }">
 	<div>
 	<span class="ad"><a href="admin-login" class="ad-style">관리자</a></span>
 	</div>
-	</c:if>
+	</c:if> --%>
 </div>
 </body>
 </html>

@@ -6,22 +6,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap"
-	rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
 .member-join {
-	font-size: 25px;
+	font-size: 22px;
 	font-weight: bold;
 	text-align: center;
-	margin-bottom: 100px;
+	margin-top: 25px;
+	margin-bottom: 10px;
 }
 
 .join-form {
-	margin-top: 100px;
 	width: 100%;
 	height: 800px;
 	display: flex;
@@ -169,6 +168,10 @@
 	display: flex;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#joinform {
+	margin-top: 270px;
 }
 
 </style>

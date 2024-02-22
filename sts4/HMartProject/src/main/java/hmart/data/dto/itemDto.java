@@ -15,16 +15,16 @@ import org.springframework.web.multipart.MultipartFile;
 import lombok.Data;
 
 @Entity
-@Table(name="product")
+@Table(name="item")
 @Data
-public class productDto {
+public class itemDto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long num;
 	
-	@Column(name = "product")
-	private String product;
+	@Column(name = "item")
+	private String item;
 	
 	@Column
 	private int price;
@@ -36,7 +36,7 @@ public class productDto {
 	private String packingtype;
 	
 	@Column
-	private String product_photo;
+	private String item_photo;
 	
 	@Column
 	private String unit;

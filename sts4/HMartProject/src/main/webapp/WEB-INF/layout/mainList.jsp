@@ -13,25 +13,26 @@
 <title>Insert title here</title>
 <style type="text/css">
 .mainItemPhoto {
-width: 300px;
-height: 380px;
-margin-bottom: 25px;
+width: 200px;
+height: 260px;
+margin-bottom: 35px;
+border-radius: 5px;
 }
 
 .inputBasket {
-width: 300px;
-height: 40px;
+width: 200px;
+height: 36px;
 }
 
 .price {
 font-weight: bold;
-font-size: 23px;
+font-size: 20px;
 }
 
-.productName {
-font-size: 23px;
+.itemName {
+font-size: 18px;
 margin-bottom: 4px;
-width: 300px;
+width: 200px;
 }
 
 .bi-chat-dots {
@@ -40,17 +41,33 @@ margin-right: 10px;
 
 .review {
 margin-bottom: 10px;
+font-size: 13px;
 }
+
 
 .inputBasket{
 background-color: #7DAB12;
 color: white;
 border-color: #7DAB12;
 border-radius: 5px;
-font-size: 20px;
+font-size: 18px;
+margin-bottom: 100px;
+}
+
+.container{
+top: 1200px;/**/
+}
+
+.buy-bt{
+margin-bottom: 30px;
+}
+
+.row .col {
+padding: 5px;
 }
 
 </style>
+
 </head>
 <body>
 <c:set var="root" value="<%=request.getServletContext() %>"/>
@@ -58,17 +75,19 @@ font-size: 20px;
 	<div class="row">
 	<c:forEach var="dto" items="${list }" varStatus="i">
 			<div class="col">
-				<div class="product-item">
-				<img alt="" src="../save/${dto.product_photo }" class="mainItemPhoto">
-				<div class="product-info"> 
-					<div class="productName">${dto.product }</div>
+				<div class="item-item">
+				<a href="itemDetail?num=${dto.num }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
+				</div>
+				<div class="buy-bt">
+					<button type="button" class="bt inputBasket">담기</button>
+				</div>
+				<div class="item-info"> 
+					<div class="itemName">${dto.item }</div>
 					<div class="price">
 					<fmt:formatNumber value="${dto.price }" type="currency" currencySymbol=""
 					maxFractionDigits="0"/>
 					</div>
 					<div class="review"><i class="bi bi-chat-dots"></i>${dto.reviewcount }</div>
-				</div>
-					<button type="button" class="bt inputBasket">담기</button>
 				</div>
 			</div>
 	</c:forEach>

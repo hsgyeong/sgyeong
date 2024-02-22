@@ -60,7 +60,7 @@ public class LoginController {
 			
 		}
 
-	  @PostMapping("loginproc") 
+	  @PostMapping("/loginproc") 
 	  public String loginproc(@RequestParam String id,
 	  @RequestParam String password,
 	  @RequestParam(required=false) 
@@ -90,7 +90,7 @@ public class LoginController {
 	 
 	  }
 	  
-	  @RequestMapping("logout")
+	  @RequestMapping("/logout")
 	  public String logout(HttpSession session, HttpServletResponse response)
 	  {
 		  String login = (String)session.getAttribute("login");

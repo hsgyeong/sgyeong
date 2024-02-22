@@ -8,12 +8,13 @@
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
 .imgs
 {
-height:80vh;
+height:50vh;
 margin:0;
 padding:0;
 transition: transform 0.5s ease-in-out;
@@ -22,14 +23,14 @@ display: flex;
 position: absolute;
 margin: auto;
 z-index: 1;
-width:2700px;
+width:2400px;
 
 }
 
 .img
 {
-width:900px;
-height:550px;
+width:800px; 
+height:420px; 
 
 } 
 
@@ -38,24 +39,29 @@ height:550px;
 flex-direction: column;
 align-items: center;
 width:100%;
-height: 100vh;
+height: 50vh;
+top:200px;/**/
 }
 
+#main{
+margin-top:100px;	
+}
 
 #imgholder
 {
 list-style: none;
 display: flex;
-
+height: 550px;
 }
 
 .mainbox{
-width:900px; 
-height:60vh; 
+width:800px; 
+height:420px; 
 border:1px solid red;
 margin: 50px auto 0 auto;
 position: relative;
 overflow: hidden;
+top: 135px;/**/
 }
 
 .bt
@@ -64,6 +70,7 @@ z-index: 2;
 width:40px;
 height:40px;
 position:absolute;
+transform: translateY(-50%);
 }
 
 .img .active{
@@ -86,15 +93,27 @@ margin-top: 28%;
 position: absolute;
 }
 .hotitem{ 
-margin-top: 100px;
+margin-top: 200px;
 text-align: center;
 font-size: 30px;
 font-weight: bold;
+margin-bottom: 40px;
 }
 
 .mainList {
 margin-top:0px;
+margin-bottom: 250px;
+align-content: center;
+justify-content: center;
 }
+
+.infopage{
+width: 100%;
+align-content: center;
+justify-content: center;
+}
+
+
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -122,22 +141,17 @@ $(document).ready(function(){
 	
 	function updateSlider(){
 		const translateValue = -currentIndex*imgWidth+"px";
-		
-	/*	$(".img").each(function(index){
-			if(index===currentIndex){
-				$(this).addClass("active");
-			}else{
-				$(this).removeClass("active");
-			}
-		} */
+	
 		$(".imgs").css("transform","translateX("+translateValue+")");
 	}
 })
+
+	
 </script>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<div>
+<div id="main">
 	<div class="mainbox">
 	<div class="slider" style="position:relative;">
 	<img alt="" src="${root }/mainimage/left-arrow.png" class="bt" id="changeleft" >
@@ -150,8 +164,13 @@ $(document).ready(function(){
 	</div>
 	</div>
 		<div class="hotitem">현재 인기상품</div>
-		<div class="layout mainList">
+		<div style="position:relative;">
+		<div class="layout mainList" id="mainList">
 			<jsp:include page="../layout/mainList.jsp"/>
+		</div>
+		</div>
+		<div   class="infopage">
+		<jsp:include page="info.jsp"/>
 		</div>
 </div>
 </body>

@@ -9,72 +9,60 @@
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
 div.layout{
 	position:relative;
 }
-div.layout div.menu
-{
-position:absolute;
-top:100px;
-width:100%;
-margin-top: 50px;
-height:100px;
-border: 1px solid green;
+
+.marttitle {
+	 font-family: 'gugi';
+	 color: #7DAB12;
+	 text-align: center;
+	 justify-content: center;
+	 text-decoration: none;
+	 cursor:pointer !important;
+	 position: relative;
+	 z-index: 9999;
 }
 
-div.layout div.main
-{
-position:absolute;
-top:180px;
-margin-top:30px;
-width:100%;
-height:100%;
-font-size: 17px;
-margin-bottom: 100px;
+.titlebox {
+	font-family: 'gugi';
+	font-size: 70px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	top: 40px;/**/
+	position: absolute;
+	width: 100%;
+	display: flex;
 }
-div.layout div.title
-{
-position:absolute;
-width:100%;
-height:150px;
+.menu {
+	margin-top: 60px;
 }
-
-div.layout div.info
-{
-position:absolute;
-width: 100%;
-height: 20%;
-top: calc(180px + 30px + 1000px + 50px);
-bottom: 0 !important;
-}
-
-div.layout div.category
-{
-position: absolute;
-height: 100%;
-width: 300px;
-}
-
 
 </style>
 </head>
 <body>
 <div class="layout">
+<div class="titlebox">
+		<a href="/" class="marttitle">HMart</a>
+	</div>
+	<div class="title" id="title">
+		<tiles:insertAttribute name="title"/>
+	</div>
+	<div class="menu" id="menu">
+		<tiles:insertAttribute name="menu"/>
+	</div>
 	<div class="main">
-	<tiles:insertAttribute name="main"/>
+		<tiles:insertAttribute name="main"/>
 	</div>
-	<div class="title">
-	<tiles:insertAttribute name="title"/>
-	</div>
-	<div class="menu">
-	<tiles:insertAttribute name="menu"/>
-	</div>
-	<div class="info">
+	
+<%-- <div class="info" id="info">
 	<tiles:insertAttribute name="info"/>
-	</div>
+	</div> --%>
 </div>
 </body>
 </html>

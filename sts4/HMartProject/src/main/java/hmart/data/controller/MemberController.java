@@ -18,7 +18,7 @@ public class MemberController {
 	@Autowired
 	HMartMemberDao memberDao;
 	
-	@PostMapping("join-success")
+	@PostMapping("/join-success")
 	public String join(@ModelAttribute HMartMemberDto memberDto)
 	{
 		memberDao.insertMember(memberDto);

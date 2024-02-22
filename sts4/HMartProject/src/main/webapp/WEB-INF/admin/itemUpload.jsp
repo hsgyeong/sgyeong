@@ -24,7 +24,7 @@
 	display: block;
 
 }
-.product-upload {
+.item-upload {
 	margin-right:100px;
 }
 
@@ -34,17 +34,17 @@
 	margin-bottom: -40px;
 }
 
-.product-form {
+.item-form {
 	display: flex;
 	margin-top: 180px;
 	flex-direction: column;
 }
 
-.product-tablebt {
+.item-tablebt {
 	text-align: center;
 }
 
-.product-upload, .upload-cancle {
+.item-upload, .upload-cancle {
 	width: 180px;
 	height:30px;
 	border-radius: 4px;
@@ -79,14 +79,14 @@ select {
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="registration" method="post" enctype="multipart/form-data"  class="product-form">
+	<form action="registration" method="post" enctype="multipart/form-data"  class="item-form">
 	<span class="title-div"><a class="upload-title">상품 등록</a></span>
 		<table class="table uploadTable" style="width:800px; margin: auto; margin-top: 160px;">
 		
 		<tr>
 			<th>상품명</th>
 			<td>
-			<input type="text" class="form-control" name="product" required="required">
+			<input type="text" class="form-control" name="item" required="required">
 			</td>
 		</tr>
 		<!-- 파일 업로드의 경우 이름과 dto가 같다고 해서 바로 올라가는게 아니다.. -->
@@ -96,9 +96,9 @@ select {
 			<th>그룹</th>
 			<td>
 			<select class="sel" name="maingroup" >
-				<option value="best">베스트</option>
-				<option value="sale">세일</option>
-				<option value="new">신상품</option>
+				<option value="베스트">베스트</option>
+				<option value="세일">세일</option>
+				<option value="신상품">신상품</option>
 			</select>
 			</td>
 		</tr>
@@ -106,11 +106,11 @@ select {
 			<th>카테고리</th>
 			<td>
 			<select class="sel" name="category">
-				<option value="vegetableandrice">채소,쌀</option>
-				<option value="fruitandnut">과일,견과</option>
-				<option value="seafood">수산,해산,건어물</option>
-				<option value="meatandeggs">정육,가공육,계란</option>
-				<option value="soupand">국,반찬,샐러드</option>
+				<option value="채소,쌀">채소,쌀</option>
+				<option value="과일,견과">과일,견과</option>
+				<option value="수산,해산,건어물">수산,해산,건어물</option>
+				<option value="정육,가공육,계란">정육,가공육,계란</option>
+				<option value="국,반찬,샐러드">국,반찬,샐러드</option>
 				<option value="메인요리,밀키트">메인요리,밀키트</option>
 				<option value="면,양념,오일">면,양념,오일</option>
 				<option value="생수,음료,커피">생수,음료,커피</option>
@@ -125,7 +125,7 @@ select {
 		<tr>
 			<th>상품 사진</th>
 			<td>
-			<input type="file" class="form-control" name="productupload" id="productupload" required="required">
+			<input type="file" class="form-control" name="itemupload" id="itemupload" required="required">
 			</td>
 		</tr>
 		<tr>
@@ -161,8 +161,8 @@ select {
 			</td>
 		</tr>
 		<tr>
-			<td class="product-tablebt" colspan="2">
-			<button class="product-upload" type="submit">상품등록</button>
+			<td class="item-tablebt" colspan="2">
+			<button class="item-upload" type="submit">상품등록</button>
 			<button class="upload-cancle" type="button" onclick="location.href='/'">취소</button>
 			</td>
 		</tr>

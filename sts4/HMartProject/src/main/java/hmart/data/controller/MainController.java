@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import hmart.data.dao.HMartAdminDao;
 import hmart.data.dao.HMartMainDao;
-import hmart.data.dto.productDto;
+import hmart.data.dto.itemDto;
 
 @Controller
 public class MainController {
@@ -22,22 +22,27 @@ public class MainController {
 	HMartMainDao hmartMainDao;
 
 	@GetMapping("/")
-	public String main()
+	public String main(Model model)
 	{
+		List<itemDto> itemList = hmartMainDao.getAllDatas();
+		
+		model.addAttribute("list", itemList);
+		model.addAttribute("totalCount", itemList.size());
+		
 		return "/layout/main";
 	}
 
-	@GetMapping("/mainList")
+/*	@GetMapping("/mainList")
 	public String mainList(Model model)
 	{	
-		List<productDto> productList = hmartMainDao.getAllDatas();
+		List<itemDto> itemList = hmartMainDao.getAllDatas();
 		
-		model.addAttribute("list", productList);
-		model.addAttribute("totalCount", productList.size());
+		model.addAttribute("list", itemList);
+		model.addAttribute("totalCount", itemList.size());
 		
 		return "/layout/mainList";
 	}
-	
+*/
 	@GetMapping("/join")
 	public String join()
 	{
@@ -49,6 +54,5 @@ public class MainController {
 	{
 		return "/login/login";
 	}
-	
-	
+		
 }

@@ -18,6 +18,10 @@ position:absolute;
 justify-content:center;
 width:100%;
 display: flex;
+font-weight:bold;	
+font-size: 15px;
+text-decoration: none;
+color:#477500;
 }
 
 ul.menu li
@@ -30,16 +34,9 @@ display: flex;
 float: left;
 align-items: center;
 justify-content: center;
-margin-left: 100px;
+margin-left: 28px;
 cursor: pointer;
-
-}
-
-.menu a {
-font-weight:bold;	
-font-size: 15px;
-text-decoration: none;
-color:#477500;
+border-radius: 3px;
 }
 
 .categorylist {
@@ -49,7 +46,7 @@ height: 560px;
 width: 240px;
 margin-top: 100px;
 margin-left: 40px;
-float: right;
+/* float: right; */
 }
 
 .li {
@@ -59,14 +56,14 @@ margin-bottom: 0px;
 cursor: pointer;
 height:40px;
 vertical-align: middle;
-display: flex;
+display: inline-flex;
 align-items: center;
-padding-left: 20px;
 }
 
-.li:hover{
-color:#477500;
-background-color: #F6F6F6;
+.menu li:hover{
+color:white;
+background-color: #7DAB12;
+border-radius: 3px;
 }
 
 .type{
@@ -78,20 +75,20 @@ margin-top:30px;
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <ul class="menu">
-	<li>
-	<a href="#" class="cate">카테고리</a>
+	<li class="cate">
+	카테고리
 	</li>
-	<li>
-	<a href="#" class="b">베스트</a>
+	<li class="b">
+	베스트
 	</li>
-	<li>
-	<a href="/" class="sa">세일</a>
+	<li class="sa">
+	세일
 	</li>
-	<li>
-	<a href="#" class="sin">신상품</a>
+	<li class="sin">
+	신상품
 	</li>
-	<li>
-	<a href="#" class="evt">이벤트</a>
+	<li class="evt">
+	이벤트
 	</li>
 </ul>
 <div class="categorylist">

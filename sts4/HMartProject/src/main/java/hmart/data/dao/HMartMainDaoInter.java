@@ -2,8 +2,8 @@ package hmart.data.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import hmart.data.dto.productDto;
+import hmart.data.dto.itemDto;
 
-public interface HMartMainDaoInter extends JpaRepository<productDto, Long> {
+public interface HMartMainDaoInter extends JpaRepository<itemDto, Long> {
 
 }

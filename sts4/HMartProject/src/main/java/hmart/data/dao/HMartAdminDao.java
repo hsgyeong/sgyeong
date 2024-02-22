@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
-import hmart.data.dto.productDto;
+import hmart.data.dto.itemDto;
 
 @Repository
 public class HMartAdminDao {
@@ -14,7 +14,7 @@ public class HMartAdminDao {
 	@Autowired
 	HMartAdminDaoInter hmartAdminDaoInter;
 	
-	public void insertHMart(productDto dto)
+	public void insertHMart(itemDto dto)
 	{
 		hmartAdminDaoInter.save(dto);
 	}
