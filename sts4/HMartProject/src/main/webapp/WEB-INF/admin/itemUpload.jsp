@@ -74,6 +74,9 @@ select {
 	border-radius: 0.2em;
 }
 
+.item-form {
+	margin-top: 270px;
+}
 
 </style>
 <title>Insert title here</title>
@@ -89,9 +92,7 @@ select {
 			<input type="text" class="form-control" name="item" required="required">
 			</td>
 		</tr>
-		<!-- 파일 업로드의 경우 이름과 dto가 같다고 해서 바로 올라가는게 아니다.. -->
-			<!-- 이름을 똑같이 할 경우 오류 찾기가 어려워,, 구분을 위해 dto name과 여기 input의 Name을 다르게 준다. -->
-		
+	
 		<tr>
 			<th>그룹</th>
 			<td>
@@ -122,12 +123,17 @@ select {
 			</select>
 			</td>
 		</tr>
+			
+			<!-- 파일 업로드의 경우 이름과 dto가 같다고 해서 바로 올라가는게 아니다.. -->
+			<!-- 이름을 똑같이 할 경우 오류 찾기가 어려워,, 구분을 위해 dto name과 여기 input의 Name을 다르게 준다. -->
+		
 		<tr>
 			<th>상품 사진</th>
 			<td>
-			<input type="file" class="form-control" name="itemupload" id="itemupload" required="required">
+			<input type="file" class="form-control" name="upload" id="itemupload" required="required">
 			</td>
 		</tr>
+		
 		<tr>
 			<th>가격</th>
 			<td>

@@ -76,7 +76,7 @@ padding: 5px;
 	<c:forEach var="dto" items="${list }" varStatus="i">
 			<div class="col">
 				<div class="item-item">
-				<a href="itemDetail?num=${dto.num }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
+				<a href="Detail?num=${dto.num }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
 				</div>
 				<div class="buy-bt">
 					<button type="button" class="bt inputBasket">담기</button>

@@ -67,7 +67,7 @@ public class LoginController {
 	  String cbsave, HttpSession session) 
 	  { 
 		  int check = hmartMemberService.idPassCheck(id, password);
-		System.out.println(check+"확인하세용요요요요요용");
+		System.out.println(check);
 	
 	  if(check==1) { 
 	  session.setMaxInactiveInterval(60*60*8);

@@ -33,4 +33,13 @@ public class HMartMemberDto {
 	@Column
 	private String addr;
 	
+	@Column
+	private String streetaddr;
+	
+	@Column
+	private String cadastraladdr;
+	
+	@Column
+	private String detailaddr;
+	
 }

@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
 .member-join {
@@ -69,11 +70,6 @@
 	margin-bottom: 5px;
 }
 
-.password {
-	margin: auto;
-	display: flex;
-}
-
 .idbox {
 	display: flex;
 }
@@ -119,30 +115,30 @@
 }
 
 #email {
-	margin-left:160px;
+	margin-left:150px;
 	width: 340px;
 }
 
-.passwordchk {
+.password, .passwordchk, .namebox {
 	margin: auto;
 	display: flex;
 
-}
-
-.namebox {
-	margin: auto;
-	display: flex;
 }
 
 #name {
 	margin: auto;
-	margin-left: 180px;
+	margin-left: 158px;
 	width: 340px;
 }
 
 #addr {
 	width: 340px;
-	margin-left: 170px;
+	margin-left: 160px;
+	margin-bottom: 50px;
+}
+
+#postcode {
+	width: 120px;
 }
 
 .emailbox {
@@ -153,10 +149,6 @@
 .inputemail {
 	margin-left:-150px;
 	margin-bottom: 50px;
-}
-
-.inputaddr {
-	margin-bottom: 100px;
 }
 
 #successbtn {
@@ -172,6 +164,10 @@
 
 #joinform {
 	margin-top: 270px;
+}
+
+.input	{
+	width: 340px;
 }
 
 </style>
@@ -191,7 +187,7 @@
 							<button type="button" class="btn" id="idcheck">중복확인</button>
 					</span>
 				</div>
-					<br>
+					
 				<span class="validid"></span>
 				</div>
 			    
@@ -201,7 +197,7 @@
 							<input type="text" class="form-control" name="password" id="pass1">
 						</div>
 					</span>
-						<br>
+						
 				<span class="validpass"></span>
 				</div>
 				
@@ -211,7 +207,7 @@
 							<input type="text" class="form-control passchk" name="pass2" id="pass2">
 						</div>
 				   </span>
-				   <br>
+				   
 						<span class="passok"></span>
 				</div>
 				
@@ -233,10 +229,19 @@
 				<div class="inputaddr">
 					<span class="addrbox">주소
 						<div class="addr">
-							<button type="button" class="btn btn-ouline" name="addr" id="addr">주소 검색</button>
+							<button type="button" class="btn btn-ouline" name="addr" id="addr"
+							onclick="DaumPostCode()">주소 검색</button>
 						</div>
 					</span>
 				</div>
+                <div style="display:flex;">			
+				<input type="text" id="postcode" name="postcode" class="form-control input postcode" placeholder="우편번호"
+				style="height:38px;;">
+				<input type="text" id="addr" name="addr" class="form-control input addr" placeholder="주소">
+				</div>
+				<br>
+				<input type="text" id="detailaddr" name="detailaddr" class="form-control input detailaddr" placeholder="상세주소"><br>
+ 				
 				</div>
 				<button type="submit" class="btn btn success" style="background-color:#7DAB12; color: white;" id="successbtn"
 				onclick="location.href='/'">가입하기</button>
@@ -346,7 +351,46 @@
 			}
 		})
 		})
+	
 		
+		function DaumPostCode(){
+			
+			new daum.PostCode({
+				complete: function(data){
+					
+					var addr = '';
+					
+					if(data.userSelectedType === 'street'){
+						addr = data.streetaddr;
+					}else{
+						addr = data.cadastraladdr;
+					}
+					
+					if(data.userSelectedType === 'street'){
+						
+						if(data.legalName !== '' && /[동/로/가]$/g.test(data.legalName))
+							{
+								extraAddr += data.legalname;
+							}
+						
+						if(data.buildingName !== '' && data.apartment === 'Y'){
+								extraAddr += '('+extraAddr+')';
+							}
+						
+						document.getElementById('extraAddr').value = extraAddr;
+					}
+					else{
+						document.getElementById('extraAddr').value = '';
+					}
+				
+					document.getElementById('postcode').value = data.zonecode;
+					document.getElementById('address').value = addr;
+					
+					document.getElementById('detailaddr').focuse();
+				}
+			}).open();
+		
+		}
 		
 </script>
 </html>

@@ -68,10 +68,10 @@ public class AdminController {
 		 
 		  }
 		
-		@GetMapping("/-upload") 
+		@GetMapping("/item-upload") 
 		public String Upload()
 		{
-			return "/admin/Upload";
+			return "/admin/itemUpload";
 		}
 		
 		@PostMapping("/registration")

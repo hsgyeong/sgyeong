@@ -10,8 +10,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+<style>
+	.loginbenefit {
+		width: 250px;
+		height: 60px;
+		border-radius: 5px;
+	}	
+</style>
 </head>
 <body>
-
+	<table>
+		<tr>
+			<td><img alt="" src="../save/${dto.item_photo }" style="width:400; height:360"></td>
+			<td>${dto.item }</td>
+			<td>${dto.price }</td>
+			<c:if test="${sessionScope.login == null }">
+				로그인 후, 쿠폰이 제공됩니다.<br>
+				<button type="button" class="loginbenefit">3,000원 할인 쿠폰 받고 구매하기</button>
+			</c:if>
+		</tr>
+		<tr>
+			<td>
+			<div>판매자</div>
+			<div>${dto.seller }</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div>포장타입</div>
+			<div>${dto.packingtype }</div>	
+			</td>
+		</tr>
+	</table>
 </body>
 </html>

@@ -59,6 +59,17 @@
 	cursor: pointer;
 }
 
+.item-insertbt, .event-insertbt {
+    cursor:pointer !important;
+	 position: relative;
+	 z-index: 9999;
+	 background-color: #7DAB12;
+	 color: white;
+	 border-color: #7DAB12;
+	 width: 120px;
+	 height: 40px;
+	 border-radius: 5px;
+}
 
 
 </style>
