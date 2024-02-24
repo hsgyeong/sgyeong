@@ -355,37 +355,53 @@
 		
 		function DaumPostCode(){
 			
-			new daum.PostCode({
-				complete: function(data){
+			new daum.Postcode({
+				oncomplete: function(data){
 					
-					var addr = '';
+					var addr = '';			//주소 변수
+					var extraAddr = '';		//참고항목 변수
 					
-					if(data.userSelectedType === 'street'){
-						addr = data.streetaddr;
-					}else{
-						addr = data.cadastraladdr;
+					//사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+					if(data.userSelectedType === 'R'){		//도로명 주소 선택시
+						addr = data.roadAddress;
+					}else{									//지번 주소 선택했을 경우
+						addr = data.jibunAddress;
 					}
 					
-					if(data.userSelectedType === 'street'){
+					//사용자가 선택한 주소가 도로명 타입일 때 참고항목을 조합한다.
+					if(data.userSelectedType === 'R'){
 						
-						if(data.legalName !== '' && /[동/로/가]$/g.test(data.legalName))
-							{
-								extraAddr += data.legalname;
-							}
+						//법정동명이 있을 경우 추가한다. (법정리는 제외)
+						//법정동의 경우 마지막 문자가 "동/로/가로 끝난다.'
+						if(data.bname !== '' && /[동/로/가]$/g.test(data.bname))
+						{
+								extraAddr += data.bname;
+						}
 						
-						if(data.buildingName !== '' && data.apartment === 'Y'){
-								extraAddr += '('+extraAddr+')';
-							}
+						//건물명이 있고, 공동주택일 경우 추가한다.
+						if(data.buildingName !== '' && data.apartment === 'Y')
+						{
+							extraAddr += (extraAddr !== '' ? ', '+ data.buildingName : data.buildingName);	
+						}
 						
-						document.getElementById('extraAddr').value = extraAddr;
+						//표시할 참고항목이 있을 경우 괄호까지 추가한 최종 문자열
+						if(extraAddr !== '')
+						{
+							extraAddr = '('+ extraAddr +')';
+						}
+						
+						//조합된 참고항목을 필드에 넣는다.
+						document.getElementById('extraAddress').value = extraAddr;
 					}
 					else{
-						document.getElementById('extraAddr').value = '';
+						document.getElementById('extraAddress').value = '';
 					}
 				
+					//우편번호와 주소 정보를 해당 필드에 넣는다
 					document.getElementById('postcode').value = data.zonecode;
 					document.getElementById('address').value = addr;
 					
+					//커서를 상세주소 필드로 이동한다.
 					document.getElementById('detailaddr').focuse();
 				}
 			}).open();
