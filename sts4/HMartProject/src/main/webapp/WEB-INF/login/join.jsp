@@ -77,6 +77,9 @@
 #idcheck {
 	width: 200px;
 	margin-left:10px;
+	border-color: #7DAB12;
+	color: #7DAB12;
+	font-weight: bold;
 }
 
 .validid, .passok, .validpass  {
@@ -139,6 +142,8 @@
 
 #postcode {
 	width: 120px;
+	height:38px; 
+	margin-right: 80px;
 }
 
 .emailbox {
@@ -170,6 +175,22 @@
 	width: 340px;
 }
 
+.addr2	{
+	 display:flex; 
+	 margin-left: -150px;
+	 margin-bottom: 50px;
+}
+
+#extraAddress {
+	margin-bottom: 50px;
+	margin-left: 55px;
+}
+
+.addrbt {
+	border-color: #7DAB12;
+	color: #7DAB12;
+	font-weight: bold;
+}
 </style>
 </head>
 <body>
@@ -229,19 +250,17 @@
 				<div class="inputaddr">
 					<span class="addrbox">주소
 						<div class="addr">
-							<button type="button" class="btn btn-ouline" name="addr" id="addr"
+							<button type="button" class="btn btn-ouline addrbt" name="addr" id="addr"
 							onclick="DaumPostCode()">주소 검색</button>
 						</div>
 					</span>
 				</div>
-                <div style="display:flex;">			
-				<input type="text" id="postcode" name="postcode" class="form-control input postcode" placeholder="우편번호"
-				style="height:38px;;">
-				<input type="text" id="addr" name="addr" class="form-control input addr" placeholder="주소">
+                <div class="addr2">			
+					<input type="text" id="postcode" name="postcode" class="form-control input postcode" placeholder="우편번호">
+					<input type="text" id="address" name="address" class="form-control input addr" placeholder="주소">
 				</div>
-				<br>
-				<input type="text" id="detailaddr" name="detailaddr" class="form-control input detailaddr" placeholder="상세주소"><br>
- 				
+			
+				<input type="text" id="extraAddress" name="extraAddress" class="form-control input extraAddress" placeholder="상세주소"><br>
 				</div>
 				<button type="submit" class="btn btn success" style="background-color:#7DAB12; color: white;" id="successbtn"
 				onclick="location.href='/'">가입하기</button>
@@ -402,7 +421,7 @@
 					document.getElementById('address').value = addr;
 					
 					//커서를 상세주소 필드로 이동한다.
-					document.getElementById('detailaddr').focuse();
+					document.getElementById('detailAddress').focus();
 				}
 			}).open();
 		

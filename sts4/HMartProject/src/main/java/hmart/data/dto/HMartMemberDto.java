@@ -31,12 +31,12 @@ public class HMartMemberDto {
 	private String email;
 	
 	@Column
-	private String addr;
+	private String address;
 	
 	@Column
-	private String detailaddr;
+	private String detailAddress;
 	
 	@Column
-	private String zonecode;
+	private String postcode;
 	
 }
