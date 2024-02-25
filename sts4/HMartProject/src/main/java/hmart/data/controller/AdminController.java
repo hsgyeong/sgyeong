@@ -99,7 +99,7 @@ public class AdminController {
 			
 			hmartAdminDao.insertHMart(dto);
 			
-			return "/layout/main";
+			return "redirect:/";
 		}
 		
 	}

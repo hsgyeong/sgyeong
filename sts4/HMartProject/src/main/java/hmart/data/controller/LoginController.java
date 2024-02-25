@@ -44,22 +44,22 @@ public class LoginController {
 			String id = (String)session.getAttribute("id");
 			String name = (String)session.getAttribute("name");
 			
-			if(id != null)
-			{
 				Optional<HMartMemberDto> memberOptional = hmartMemberService.getUserNameById(id); 
 		
+				if(memberOptional.isPresent()) {
+				
 					String memberName = memberOptional.get().getName();
 				
 					model.addAttribute("name", memberName);
 					
 					return "/";
 			}
-				else
+				else {
 					return "/login/login";
-			}
-			
+				}
 		}
-
+		
+	}
 	  @PostMapping("/loginproc") 
 	  public String loginproc(@RequestParam String id,
 	  @RequestParam String password,

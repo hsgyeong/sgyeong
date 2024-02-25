@@ -14,7 +14,7 @@
 $(function(){
 	alert("존재하지 않는 정보입니다. 다시 로그인해주세요.");
 	
-	"redirect:/";
+	window.location.href="/login";
 })
 </script>
 </head>

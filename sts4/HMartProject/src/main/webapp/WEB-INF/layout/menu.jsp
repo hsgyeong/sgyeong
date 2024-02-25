@@ -13,62 +13,66 @@
 <style type="text/css">
 ul.menu
 {
-list-style: none;
-position:absolute;
-justify-content:center;
-width:100%;
-display: flex;
-font-weight:bold;	
-font-size: 15px;
-text-decoration: none;
-color:#477500;
+	list-style: none;
+	position:absolute; 
+	justify-content:center;
+	width:100%;
+	display: flex;
+	font-weight:bold;	
+	font-size: 15px;
+	text-decoration: none;
+	color:#477500;
+	z-index: 9999;
 }
 
 ul.menu li
 {
-border: 1px solid blue;
-width:140px;
-height:60px;
-text-align: center;
-display: flex;
-float: left;
-align-items: center;
-justify-content: center;
-margin-left: 28px;
-cursor: pointer;
-border-radius: 3px;
+	border: 1px solid blue;
+	width:140px;
+	height:60px;
+	text-align: center;
+	display: flex;
+	float: left;
+	align-items: center;
+	justify-content: center;
+	margin-left: 28px;
+	cursor: pointer;
+	border-radius: 3px;
 }
 
 .categorylist {
-border: 1px solid orange;
-position: absolute;
-height: 560px;
-width: 240px;
-margin-top: 100px;
-margin-left: 40px;
-/* float: right; */
+	border: 1px solid orange;
+	position: absolute;
+	height: 560px;
+	width: 240px;
+	margin-top: 100px;
+	margin-left: 250px;
+	/* float: right; */
 }
 
 .li {
-font-weight: bold;
-list-style: none;
-margin-bottom: 0px;
-cursor: pointer;
-height:40px;
-vertical-align: middle;
-display: inline-flex;
-align-items: center;
+	font-weight: bold;
+	list-style: none;
+	margin-bottom: 0px;
+	cursor: pointer;
+	height:40px;
+	vertical-align: middle;
+	align-items: center;
 }
 
 .menu li:hover{
-color:white;
-background-color: #7DAB12;
-border-radius: 3px;
+	color:white;
+	background-color: #7DAB12;
+	border-radius: 3px;
 }
 
 .type{
-margin-left:40px;
-margin-top:30px;
+	margin-left:40px;
+	margin-top:30px;
+}
+
+.l{
+	margin-left: 35px;
 }
 </style>
 </head>
@@ -93,19 +97,19 @@ margin-top:30px;
 </ul>
 <div class="categorylist">
 	<div class="type">
-	<li class="li">채소,쌀</li>
-	<li class="li">과일,견과</li>
-	<li class="li">수산,해산,건어물</li>
-	<li class="li">정육,가공육,계란</li>
-	<li class="li">국,반찬,샐러드</li>
-	<li class="li">메인요리,밀키트</li>
-	<li class="li">면,양념,오일</li>
-	<li class="li">생수,음료,커피</li>
-	<li class="li">간식,과자,떡</li>
-	<li class="li">베이커리</li>
-	<li class="li">유제품</li>
-	<li class="li">건강식품</li>
-	<li class="li">주류</li>
+	<li class="li"><span class="l">채소,쌀</span></li>
+	<li class="li"><span class="l">과일,견과</span></li>
+	<li class="li"><span class="l">수산,해산,건어물</span></li>
+	<li class="li"><span class="l">정육,가공육,계란</span></li>
+	<li class="li"><span class="l">국,반찬,샐러드</span></li>
+	<li class="li"><span class="l">메인요리,밀키트</span></li>
+	<li class="li"><span class="l">면,양념,오일</span></li>
+	<li class="li"><span class="l">생수,음료,커피</span></li>
+	<li class="li"><span class="l">간식,과자,떡</span></li>
+	<li class="li"><span class="l">베이커리</span></li>
+	<li class="li"><span class="l">유제품</span></li>
+	<li class="li"><span class="l">건강식품</span></li>
+	<li class="li"><span class="l">주류</span></li>
 	</div>
 </div>
 </body>
@@ -114,7 +118,7 @@ $(document).ready(function(){
 	
 	$("div.categorylist").hide();
 	
-	$("a.cate").mouseover(function(){
+	$("li.cate").mouseover(function(){
 		$("div.categorylist").show();
 	})
 	

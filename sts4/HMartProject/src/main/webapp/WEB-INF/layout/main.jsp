@@ -14,103 +14,102 @@
 <style type="text/css">
 .imgs
 {
-height:50vh;
-margin:0;
-padding:0;
-transition: transform 0.5s ease-in-out;
-overflow: hidden;
-display: flex;
-position: absolute;
-margin: auto;
-z-index: 1;
-width:2400px;
-
+	height:50vh;
+	margin:0;
+	padding:0;
+	transition: transform 0.5s ease-in-out;
+	overflow: hidden;
+	display: flex;
+	position: absolute;
+	margin: auto;
+	z-index: 1;
+	width:2400px;
 }
 
 .img
 {
-width:800px; 
-height:420px; 
-
+	width:800px; 
+	height:420px; 
 } 
 
 .main
 {
-flex-direction: column;
-align-items: center;
-width:100%;
-height: 50vh;
-top:200px;/**/
+	flex-direction: column;
+	align-items: center;
+	width:100%;
+	height: 50vh;
+	top:200px;/**/
 }
 
 #main{
-margin-top:100px;	
+	margin-top:100px;	
 }
 
 #imgholder
 {
-list-style: none;
-display: flex;
-height: 550px;
+	list-style: none;
+	display: flex;
+	height: 550px;
 }
 
 .mainbox{
-width:800px; 
-height:420px; 
-border:1px solid red;
-margin: 50px auto 0 auto;
-position: relative;
-overflow: hidden;
-top: 135px;/**/
+	width:800px; 
+	height:420px; 
+	border:1px solid red;
+	margin: 50px auto 0 auto;
+	position: relative;
+	overflow: hidden;
+	top: 135px;/**/
 }
 
 .bt
 {
-z-index: 2;
-width:40px;
-height:40px;
-position:absolute;
-transform: translateY(-50%);
+	z-index: 2;
+	width:40px;
+	height:40px;
+	position:absolute;
+	transform: translateY(-50%);
 }
 
 .img .active{
-display:block;
+	display:block;
 }
 
 #changeleft{
-top:50%;
-left:0;
-margin-top: 28%;
+	top:50%;
+	left:0;
+	margin-top: 28%;
 }
 
 #changeright{
-top:50%;
-right:0;
-margin-top: 28%;
+	top:50%;
+	right:0;
+	margin-top: 28%;
 }
 
 .slider{
-position: absolute;
+	position: absolute;
 }
 .hotitem{ 
-margin-top: 200px;
-text-align: center;
-font-size: 30px;
-font-weight: bold;
-margin-bottom: 40px;
+	margin-top: 200px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 40px;
 }
 
 .mainList {
-margin-top:0px;
-margin-bottom: 250px;
-align-content: center;
-justify-content: center;
+	margin-top:0px;
+	margin-bottom: 250px;
+	align-content: center;
+	justify-content: center;
+	z-index: 2;
 }
 
 .infopage{
-width: 100%;
-align-content: center;
-justify-content: center;
+	width: 100%;
+	align-content: center;
+	justify-content: center;
 }
 
 

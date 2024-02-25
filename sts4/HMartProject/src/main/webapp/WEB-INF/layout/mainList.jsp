@@ -13,57 +13,57 @@
 <title>Insert title here</title>
 <style type="text/css">
 .mainItemPhoto {
-width: 200px;
-height: 260px;
-margin-bottom: 35px;
-border-radius: 5px;
+	width: 200px;
+	height: 260px;
+	margin-bottom: 35px;
+	border-radius: 5px;
 }
 
 .inputBasket {
-width: 200px;
-height: 36px;
+	width: 200px;
+	height: 36px;
 }
 
 .price {
-font-weight: bold;
-font-size: 20px;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .itemName {
-font-size: 18px;
-margin-bottom: 4px;
-width: 200px;
+	font-size: 18px;
+	margin-bottom: 4px;
+	width: 200px;
 }
 
 .bi-chat-dots {
-margin-right: 10px;
+	margin-right: 10px;
 }
 
 .review {
-margin-bottom: 10px;
-font-size: 13px;
+	margin-bottom: 10px;
+	font-size: 13px;
 }
 
 
 .inputBasket{
-background-color: #7DAB12;
-color: white;
-border-color: #7DAB12;
-border-radius: 5px;
-font-size: 18px;
-margin-bottom: 100px;
+	background-color: #7DAB12;
+	color: white;
+	border-color: #7DAB12;
+	border-radius: 5px;
+	font-size: 18px;
+	margin-bottom: 100px;
 }
 
 .container{
-top: 1200px;/**/
+	top: 1200px;/**/
 }
 
 .buy-bt{
-margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .row .col {
-padding: 5px;
+	padding: 5px;
 }
 
 </style>
@@ -74,6 +74,9 @@ padding: 5px;
 <div class="container">
 	<div class="row">
 	<c:forEach var="dto" items="${list }" varStatus="i">
+			<c:if test="${i.index%4==0 }">
+				<div class="row">
+			</c:if>
 			<div class="col">
 				<div class="item-item">
 				<a href="Detail?num=${dto.num }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
@@ -90,6 +93,9 @@ padding: 5px;
 					<div class="review"><i class="bi bi-chat-dots"></i>${dto.reviewcount }</div>
 				</div>
 			</div>
+			<c:if test="">
+				</div>
+			</c:if>
 	</c:forEach>
 	</div>
 </div>

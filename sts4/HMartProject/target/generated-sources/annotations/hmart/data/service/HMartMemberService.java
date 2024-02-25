@@ -23,13 +23,16 @@ public class HMartMemberService {
 	public int idPassCheck(String id, String password)
 	{
 		Optional<HMartMemberDto> memberDto = hmartMemberDaoInter.findById(id);
+		
+		if(memberDto.isPresent()) {
 		String pass = hmartMemberDaoInter.findById(id).get().getPassword();
 	//	System.out.println(pass+"비밀번호닷다다랏");
-		if(memberDto.isPresent()) { 
+	//	if(memberDto.isPresent()) { 
 		boolean passMatch = hmartMemberDaoInter.findById(id).get().getPassword().equals(password);
 		
 	//	System.out.println(passMatch);
 		return passMatch ? 1:0;
+		
 		}else {
 			return 0; 
 		} 

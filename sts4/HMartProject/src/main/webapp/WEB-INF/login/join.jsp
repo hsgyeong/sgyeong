@@ -84,6 +84,7 @@
 
 .validid, .passok, .validpass  {
 	font-size:12px;
+	margin-top: 8px;
 }
 
 #pass1, #pass2 {
@@ -260,7 +261,8 @@
 					<input type="text" id="address" name="address" class="form-control input addr" placeholder="주소">
 				</div>
 			
-				<input type="text" id="extraAddress" name="extraAddress" class="form-control input extraAddress" placeholder="상세주소"><br>
+				<input type="text" id="detailAddress" name="detailAddress" class="form-control input detailAddress" placeholder="상세주소"><br>
+				<input type="text" id="extraAddress"  name="extraAddress" placeholder="참고항목">
 				</div>
 				<button type="submit" class="btn btn success" style="background-color:#7DAB12; color: white;" id="successbtn"
 				onclick="location.href='/'">가입하기</button>

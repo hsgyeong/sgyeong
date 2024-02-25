@@ -34,6 +34,9 @@ public class HMartMemberDto {
 	private String address;
 	
 	@Column
+	private String extraAddress;
+	
+	@Column
 	private String detailAddress;
 	
 	@Column
