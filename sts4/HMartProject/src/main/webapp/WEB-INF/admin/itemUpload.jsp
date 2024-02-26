@@ -96,7 +96,7 @@ select {
 		<tr>
 			<th>그룹</th>
 			<td>
-			<select class="sel" name="maingroup" >
+			<select class="form-control sel" name="maingroup" >
 				<option value="베스트">베스트</option>
 				<option value="세일">세일</option>
 				<option value="신상품">신상품</option>
@@ -106,7 +106,7 @@ select {
 		<tr>
 			<th>카테고리</th>
 			<td>
-			<select class="sel" name="category">
+			<select class="form-control sel" name="category">
 				<option value="채소,쌀">채소,쌀</option>
 				<option value="과일,견과">과일,견과</option>
 				<option value="수산,해산,건어물">수산,해산,건어물</option>
@@ -140,6 +140,39 @@ select {
 			<input type="text" class="form-control" name="price" required="required">
 			</td>
 		</tr>
+		
+		<tr>
+			<th>원산지</th>
+			<td>
+			<select class="form-control origin" name="origin" reuired="required">
+			<option value="국산">국산</option>
+			<option value="네덜란드산">네덜란드산</option>
+			<option value="노르웨이산">노르웨이산</option>
+			<option value="뉴질랜드산">뉴질랜드산</option>
+			<option value="덴마크산">덴마크산</option>
+			<option value="독일산">독일산</option>
+			<option value="러시아산">러시아산</option>
+			<option value="미국산">미국산</option>
+			<option value="벨기에산">벨기에산</option>
+			<option value="스웨덴산">스웨덴산</option>
+			<option value="스위스산">스위스산</option>
+			<option value="스페인산">스페인산</option>
+			<option value="싱가포르산">싱가포르산</option>
+			<option value="아랍에미리트산">아랍에미리트산</option>
+			<option value="아일랜드산">아일랜드산</option>
+			<option value="영국산">영국산</option>
+			<option value="오스트리아산">오스트리아산</option>
+			<option value="이탈리아산">이탈리아산</option>
+			<option value="일본산">일본산</option>
+			<option value="중국산">중국산</option>
+			<option value="캐나다산">캐나다산</option>
+			<option value="프랑스산">프랑스산</option>
+			<option value="핀란드산">핀란드산</option>
+			<option value="호주산">호주산</option>
+			</select>
+			</td>
+		</tr>
+		
 		<tr>
 			<th>판매자</th>
 			<td>

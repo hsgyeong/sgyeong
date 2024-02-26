@@ -45,6 +45,9 @@ public class itemDto {
 	private String volumn;
 	
 	@Column
+	private String origin;
+	
+	@Column
 	private String maingroup;
 	
 	@Column

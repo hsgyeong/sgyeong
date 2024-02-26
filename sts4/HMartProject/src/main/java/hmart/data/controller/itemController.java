@@ -14,14 +14,14 @@ public class itemController {
 	@Autowired
 	HMartItemDao hmartItemDao;
 	
-	@GetMapping("/item/Detail")
+	@GetMapping("/item/detail")
 	public String detail(Long num, Model model)
 	{
 		itemDto dto = hmartItemDao.getData(num);
 		
 		model.addAttribute("dto", dto);
 		
-		return "itemDetail";
+		return "item/detail";
 	}
 	
 }

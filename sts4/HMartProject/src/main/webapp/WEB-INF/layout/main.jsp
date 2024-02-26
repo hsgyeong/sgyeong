@@ -168,7 +168,7 @@ $(document).ready(function(){
 			<jsp:include page="../layout/mainList.jsp"/>
 		</div>
 		</div>
-		<div   class="infopage">
+		<div  class="infopage">
 		<jsp:include page="info.jsp"/>
 		</div>
 </div>
