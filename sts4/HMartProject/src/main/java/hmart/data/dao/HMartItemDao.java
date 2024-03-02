@@ -3,7 +3,7 @@ package hmart.data.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import hmart.data.dto.itemDto;
+import hmart.data.dto.ItemDto;
 
 @Repository
 public class HMartItemDao {
@@ -11,7 +11,7 @@ public class HMartItemDao {
 	@Autowired 
 	HMartItemDaoInter hmartItemDaoInter;
 	
-	public itemDto getData(Long num)
+	public ItemDto getData(Long num)
 	{
 		return hmartItemDaoInter.getReferenceById(num);
 	}

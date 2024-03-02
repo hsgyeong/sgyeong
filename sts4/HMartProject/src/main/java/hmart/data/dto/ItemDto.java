@@ -17,11 +17,11 @@ import lombok.Data;
 @Entity
 @Table(name="item")
 @Data
-public class itemDto {
+public class ItemDto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long num;
+	private long item_id;
 	
 	@Column(name = "item")
 	private String item;

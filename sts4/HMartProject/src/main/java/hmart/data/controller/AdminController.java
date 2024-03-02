@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import hmart.data.dao.HMartAdminDao;
 import hmart.data.dao.HMartMemberDao;
 import hmart.data.dto.HMartMemberDto;
-import hmart.data.dto.itemDto;
+import hmart.data.dto.ItemDto;
 import hmart.data.service.HMartMemberService;
 
 @Controller
@@ -75,7 +75,7 @@ public class AdminController {
 		}
 		
 		@PostMapping("/registration")
-		public String upload(@ModelAttribute itemDto dto,
+		public String upload(@ModelAttribute ItemDto dto,
 		 MultipartFile upload,HttpSession session) //MultipartFile name = <input name>  파일 업로드의 경우 이름과 dto 이름을 똑같이 할 경우 오류 찾기가 어려워 구분을 위해 dto name과 여기 input의 Name을 다르게 준다.
 		{							
 			

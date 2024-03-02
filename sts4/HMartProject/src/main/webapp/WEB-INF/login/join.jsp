@@ -42,21 +42,21 @@
 	width: 340px;
 }
 
-.inputid {
+.input-id {
 	display: flex;
     flex-direction: column;
     margin-left: 100px;
     margin-bottom: 50px;
 }
 
-.inputname {
+.input-name {
 	display: flex;
     flex-direction: column;
     margin-left: -150px;
     margin-bottom: 50px;
 }
 
-.inputpassword {
+.input-password {
 	display: flex;
 	margin-left:-160px;
 	flex-direction: column;
@@ -142,9 +142,9 @@
 }
 
 #postcode {
-	width: 120px;
+	width: 150px;
 	height:38px; 
-	margin-right: 80px;
+	margin-right: 50px;
 }
 
 .emailbox {
@@ -152,7 +152,7 @@
 	float: right;
 }
 
-.inputemail {
+.input-email {
 	margin-left:-150px;
 	margin-bottom: 50px;
 }
@@ -166,14 +166,11 @@
 	display: flex;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 200px;
 }
 
 #joinform {
 	margin-top: 270px;
-}
-
-.input	{
-	width: 340px;
 }
 
 .addr2	{
@@ -192,6 +189,19 @@
 	color: #7DAB12;
 	font-weight: bold;
 }
+
+#address {
+	width: 350px;
+}
+
+#detailAddress {
+	width: 350px;
+	margin-bottom: 75px;
+}
+
+.detailaddr{
+	margin-left: 55px;
+}
 </style>
 </head>
 <body>
@@ -202,7 +212,7 @@
 				<div class="member-join">회원가입</div>
 				<hr>
 				
-				<div class="inputid">
+				<div class="input-id">
 				<div class="idbox">
 					<span class="id">아이디
 							<input type="text" class="form-control" name="id" id="id">
@@ -213,7 +223,7 @@
 				<span class="validid"></span>
 				</div>
 			    
-				<div class="inputpassword">
+				<div class="input-password">
 					<span class="password">비밀번호
 						<div class="passwordbox">
 							<input type="text" class="form-control" name="password" id="pass1">
@@ -233,7 +243,7 @@
 						<span class="passok"></span>
 				</div>
 				
-				<div class="inputname">
+				<div class="input-name">
 					<span class="namebox">이름
 						<div class="name">
 							<input type="text" class="form-control" name="name" id="name">
@@ -241,14 +251,14 @@
 					</span>
 				</div>
 			
-				<div class="inputemail">
+				<div class="input-email">
 					<span class="emailbox">이메일
 						<div class="email">
 							<input type="text" class="form-control" name="email" id="email">
 						</div>
 					</span>
 				</div>
-				<div class="inputaddr">
+				<div class="input-addr">
 					<span class="addrbox">주소
 						<div class="addr">
 							<button type="button" class="btn btn-ouline addrbt" name="addr" id="addr"
@@ -257,12 +267,15 @@
 					</span>
 				</div>
                 <div class="addr2">			
-					<input type="text" id="postcode" name="postcode" class="form-control input postcode" placeholder="우편번호">
-					<input type="text" id="address" name="address" class="form-control input addr" placeholder="주소">
+					<input type="text" id="postcode" name="postcode" class="form-control input-postcode" placeholder="우편번호">
+					<input type="text" id="address" name="address" class="form-control input-addr" placeholder="주소">
 				</div>
-			
+				
+				<div class="detailaddr">
 				<input type="text" id="detailAddress" name="detailAddress" class="form-control input detailAddress" placeholder="상세주소"><br>
-				<input type="text" id="extraAddress"  name="extraAddress" placeholder="참고항목">
+				</div>
+				
+				<input type="hidden" id="extraAddress"  name="extraAddress" placeholder="참고항목">
 				</div>
 				<button type="submit" class="btn btn success" style="background-color:#7DAB12; color: white;" id="successbtn"
 				onclick="location.href='/'">가입하기</button>

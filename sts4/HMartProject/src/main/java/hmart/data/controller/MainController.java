@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import hmart.data.dao.HMartAdminDao;
 import hmart.data.dao.HMartMainDao;
-import hmart.data.dto.itemDto;
+import hmart.data.dto.ItemDto;
 
 @Controller
 public class MainController {
@@ -24,7 +24,7 @@ public class MainController {
 	@GetMapping("/")
 	public String main(Model model)
 	{
-		List<itemDto> itemList = hmartMainDao.getAllDatas();
+		List<ItemDto> itemList = hmartMainDao.getAllDatas();
 		
 		model.addAttribute("list", itemList);
 		model.addAttribute("totalCount", itemList.size());

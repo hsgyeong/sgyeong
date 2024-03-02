@@ -45,8 +45,7 @@ ul.menu li
 	height: 560px;
 	width: 240px;
 	margin-top: 100px;
-	margin-left: 100px;
-	position: absolute !important;
+	position: absolute;
 }
 
 .li {

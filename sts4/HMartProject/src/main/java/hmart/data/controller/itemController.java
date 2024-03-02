@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import hmart.data.dao.HMartItemDao;
-import hmart.data.dto.itemDto;
+import hmart.data.dto.ItemDto;
 
 @Controller
 public class itemController {
@@ -17,7 +17,7 @@ public class itemController {
 	@GetMapping("item/detail")
 	public String detail(Long num, Model model)
 	{
-		itemDto dto = hmartItemDao.getData(num);
+		ItemDto dto = hmartItemDao.getData(num);
 		
 		model.addAttribute("dto", dto);
 		
