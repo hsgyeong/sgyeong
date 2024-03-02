@@ -42,7 +42,6 @@ div.layout{
 .menu {
 	margin-top: 60px;
 }
-
 </style>
 </head>
 <body>
@@ -59,10 +58,9 @@ div.layout{
 	<div class="main">
 		<tiles:insertAttribute name="main"/>
 	</div>
-	
-<%-- <div class="info" id="info">
-	<tiles:insertAttribute name="info"/>
-	</div> --%>
+   <div class="info" id="info">
+		<tiles:insertAttribute name="info"/>
+	</div> 
 </div>
 </body>
 </html>

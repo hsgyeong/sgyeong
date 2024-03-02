@@ -42,12 +42,11 @@ ul.menu li
 
 .categorylist {
 	border: 1px solid orange;
-	position: absolute;
 	height: 560px;
 	width: 240px;
 	margin-top: 100px;
-	margin-left: 250px;
-	/* float: right; */
+	margin-left: 100px;
+	position: absolute !important;
 }
 
 .li {
@@ -74,6 +73,7 @@ ul.menu li
 .l{
 	margin-left: 35px;
 }
+
 </style>
 </head>
 <body>

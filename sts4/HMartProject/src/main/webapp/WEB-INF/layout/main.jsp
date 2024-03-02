@@ -112,7 +112,9 @@
 	justify-content: center;
 }
 
-
+#main {
+	margin-bottom: 400px;
+}
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -143,8 +145,8 @@ $(document).ready(function(){
 	
 		$(".imgs").css("transform","translateX("+translateValue+")");
 	}
-})
-
+	
+});
 	
 </script>
 </head>
@@ -164,13 +166,11 @@ $(document).ready(function(){
 	</div>
 		<div class="hotitem">현재 인기상품</div>
 		<div style="position:relative;">
-		<div class="layout mainList" id="mainList">
+		<div class="layout mainList">
 			<jsp:include page="../layout/mainList.jsp"/>
 		</div>
 		</div>
-		<div  class="infopage">
-		<jsp:include page="info.jsp"/>
-		</div>
+
 </div>
 </body>
 </html>

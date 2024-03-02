@@ -70,8 +70,8 @@
 	justify-content: center;
 }
 
-.loginbt {
-	width:350px;
+#loginbt, #joinbt {
+	width:400px;
 	height:50px;
 }
 
@@ -97,6 +97,9 @@
 	margin-bottom: 15px;
 }
 
+#myid, #mypass {
+	width: 300px;
+}
 
 </style>
 </head>
@@ -131,24 +134,25 @@
 	<tr>
 	<tr>
 		<td style="height:50px;">
-		<div class="idPass">
-		<span class="searchId" style="color:#477500;">아이디 찾기</span>
-		<span class="searchPass" style="color:#477500;">비밀번호 찾기</span>
-		</div>
-		</td>
-	</tr>
-	<tr>
-		<td style="height:50px;">
 		<div class="submitlogin">
-		<button type="submit" class="form-control loginbt" style="background-color: #7DAB12; color:white;" >로그인</button>
+		<button type="submit" class="form-control loginbt" id="loginbt" style="background-color: #7DAB12; 
+		 color:white;" >로그인</button>
 		</div>
 		</td>
 	</tr>
 	<tr>
 		<td style="height:50px;">
 		<div class="submitjoin">
-		<button type="button" class="form-control loginbt" 
+		<button type="button" class="form-control joinbt" id="joinbt"
 		onclick="location.href='join'">회원가입</button>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td style="height:50px;">
+		<div class="idPass">
+		<span class="searchId" style="color:#477500;">아이디 찾기</span>
+		<span class="searchPass" style="color:#477500;">비밀번호 찾기</span>
 		</div>
 		</td>
 	</tr>

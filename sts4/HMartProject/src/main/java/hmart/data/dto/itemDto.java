@@ -59,4 +59,7 @@ public class itemDto {
 	@CreationTimestamp
 	@Column
 	private Timestamp ipgoday;
+	
+	@Column
+	private String expiration;
 }

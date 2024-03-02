@@ -79,16 +79,16 @@
 	<div class="member">
 		<ul class="ul">
 			<c:if test="${sessionScope.login == null }">
-			<li><a class="join" href="join">회원가입</a></li>
+			<li><a class="join" href="/join">회원가입</a></li>
 			</c:if>
 			<c:if test="${sessionScope.login != null }">
 			<li class="member-name"><a>${sessionScope.name }</a>&nbsp;&nbsp;님</li>
 			</c:if>
 			<c:if test="${sessionScope.login == null }">
-				<li class="select-li"><a class="login" href="login">로그인</a></li>
+				<li class="select-li"><a class="login" href="/login">로그인</a></li>
 			</c:if> 
 			<c:if test="${sessionScope.login != null }">
-				<li class="select-li"><a class="logout" href="logout">로그아웃</a><li>
+				<li class="select-li"><a class="logout" href="/logout">로그아웃</a><li>
 			</c:if>
 		</ul>
 		<i class="bi bi-heart"></i>

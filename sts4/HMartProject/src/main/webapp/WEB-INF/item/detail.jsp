@@ -11,10 +11,13 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style>
-.loginbenefit {
+.gologin {
 	width: 250px;
 	height: 60px;
 	border-radius: 5px;
+	color: #7DAB12;
+	background-color: white;
+	border-color: #7DAB12;
 }	
 	
 .item_photo {
@@ -29,7 +32,7 @@
 }
 
 .item-price {
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 }
 
 .fmt {
@@ -42,10 +45,22 @@
 	font-size: 18px;
 	font-weight: bold;
 }
+
+.detail-table {
+	margin-top: 300px;
+	display: flex;
+	justify-content: center;
+}
+
+#go {
+	margin-bottom: 1px;
+}
 </style>
 </head>
 <body>
-	<table>
+<c:set var="root" value="<%=request.getContextPath() %>"/>
+	<div class="detail-table">
+	<table class="detail">
 		<tr>
 			<td rowspan="4"><img alt="" src="../save/${dto.item_photo }" class="item_photo"></td>
 			<td>
@@ -54,8 +69,9 @@
 			<span class="won">원</span></div>
 			<div>
 			<c:if test="${sessionScope.login == null }">
-				로그인 후, 쿠폰이 제공됩니다.<br>
-				<button type="button" class="loginbenefit">3,000원 할인 쿠폰 받고 구매하기</button>
+				<div id="go">로그인 후, 쿠폰이 제공됩니다.</div><br>
+				<button type="button" class="gologin"
+				onclick="location.href='/login'">3,000원 할인 쿠폰 받고 구매하기</button>
 			</c:if>
 			</div>
 			</td>
@@ -72,6 +88,13 @@
 			<div>${dto.packingtype }</div>	
 			</td>
 		</tr>
+		<tr>
+			<td>
+			<div>소비기한(유통기한)</div>
+			<div>${dto.expiration }</div>	
+			</td>
+		</tr>
 	</table>
+	</div>
 </body>
 </html>

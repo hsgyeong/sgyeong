@@ -56,6 +56,7 @@
 
 .container{
 	top: 1200px;/**/
+	margin-bottom: 400px;
 }
 
 .buy-bt{
@@ -66,12 +67,15 @@
 	padding: 5px;
 }
 
+#mainList {
+	justify-content: center;
+}
 </style>
 
 </head>
 <body>
 <c:set var="root" value="<%=request.getServletContext() %>"/>
-<div class="container">
+<div class="container"  id="mainList">
 	<div class="row">
 	<c:forEach var="dto" items="${list }" varStatus="i">
 			<c:if test="${i.index%4==0 }">
@@ -79,7 +83,7 @@
 			</c:if>
 			<div class="col">
 				<div class="item-item">
-				<a href="item/detail?num=${dto.num }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
+				<a href="/item/detail?num=${dto.num }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
 				</div>
 				<div class="buy-bt">
 					<button type="button" class="bt inputBasket">담기</button>
@@ -93,11 +97,10 @@
 					<div class="review"><i class="bi bi-chat-dots"></i>${dto.reviewcount }</div>
 				</div>
 			</div>
-			<c:if test="">
+			<c:if test="${i.index%4==3 ||i.last }">
 				</div>
 			</c:if>
 	</c:forEach>
 	</div>
-</div>
 </body>
 </html>

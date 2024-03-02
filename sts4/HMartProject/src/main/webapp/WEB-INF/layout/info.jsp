@@ -24,12 +24,12 @@
 }
 
 #infobox {
-	justify-content: space-between;/**/
-/* 	align-items: center; */
+	justify-content: center;/**/
 	height:40vh;
 	display: flex;
 	width: 100%;
-	bottom: 0;
+	bottom: 0 !important;
+	margin: auto;
 }
 
 .information{
@@ -38,11 +38,9 @@
 
 #information{
 	display: flex;
-/* 	align-items: center; */
 	flex-direction: column;/**/
 	width: 100%;
 	height: 150px;/**/
-/* 	justify-content: center; */
 }
 .kakao-inquiry, .individual-inquiry, .bulk-inquiry, .item-insert-btn {
 	margin-bottom: 25px;
@@ -79,8 +77,9 @@
 .left, .right {
 	bottom: 0;
 }
-.left{
+#left{
 	left: 0;
+	margin-right: 18%;
 }
 
 .day {
@@ -120,7 +119,7 @@
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<div id="information" class="information">
+<div class="info">
 	<div id="infobox">
 	<hr>
 	<div id="left">
