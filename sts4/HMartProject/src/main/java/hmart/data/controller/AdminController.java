@@ -76,23 +76,29 @@ public class AdminController {
 		
 		@PostMapping("/registration")
 		public String upload(@ModelAttribute ItemDto dto,
-		 MultipartFile upload,HttpSession session) //MultipartFile name = <input name>  파일 업로드의 경우 이름과 dto 이름을 똑같이 할 경우 오류 찾기가 어려워 구분을 위해 dto name과 여기 input의 Name을 다르게 준다.
+		 MultipartFile mainphoto,
+		 MultipartFile detailphoto, HttpSession session) //MultipartFile name = <input name>  파일 업로드의 경우 이름과 dto 이름을 똑같이 할 경우 오류 찾기가 어려워 구분을 위해 dto name과 여기 input의 Name을 다르게 준다.
 		{							
 			
 			//업로드할 save 위치 구하기
 			String path = session.getServletContext().getRealPath("/save");
 		
 			//업로드할 파일 dto 얻기
-			dto.setItem_photo(upload.getOriginalFilename());
+			dto.setItem_photo(mainphoto.getOriginalFilename());
+			dto.setItem_detail(detailphoto.getOriginalFilename());
 			
 			//실제 업로드
 			try {
-				upload.transferTo(new File(path+"/"+upload.getOriginalFilename()));
+				mainphoto.transferTo(new File(path+"/"+mainphoto.getOriginalFilename()));
 				
-			} catch (IllegalStateException e) {
+			} catch (IllegalStateException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} catch (IOException e) {
+			}
+			
+			try {
+				detailphoto.transferTo(new File(path+"/"+detailphoto.getOriginalFilename()));
+			} catch (IllegalStateException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

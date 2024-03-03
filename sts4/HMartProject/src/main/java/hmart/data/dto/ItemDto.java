@@ -62,4 +62,7 @@ public class ItemDto {
 	
 	@Column
 	private String expiration;
+	
+	@Column
+	private String item_detail;
 }

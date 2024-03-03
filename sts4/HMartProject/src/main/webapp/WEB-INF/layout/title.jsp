@@ -94,6 +94,7 @@
 		<i class="bi bi-heart"></i>
 		<i class="bi bi-truck"></i>
 		<i class="bi bi-basket3"></i>
+		
 	</div>
 	<c:if test="${sessionScope.login != null && sessionScope.myid == 'admin'}">
 		<div style="text-align:right; margin-right: 60px; margin-top:40px;">

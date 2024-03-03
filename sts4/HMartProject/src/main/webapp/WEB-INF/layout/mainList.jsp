@@ -42,6 +42,8 @@
 .review {
 	margin-bottom: 10px;
 	font-size: 13px;
+	margin-right: 25px;
+	
 }
 
 
@@ -70,6 +72,13 @@
 #mainList {
 	justify-content: center;
 }
+
+.icons {
+	display: flex;
+}
+.like, .chat {
+	color: #7DAB12;
+}
 </style>
 
 </head>
@@ -83,7 +92,7 @@
 			</c:if>
 			<div class="col">
 				<div class="item-item">
-				<a href="/item/detail?num=${dto.num }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
+				<a href="/item/detail?item_id=${dto.item_id }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
 				</div>
 				<div class="buy-bt">
 					<button type="button" class="bt inputBasket">담기</button>
@@ -94,7 +103,10 @@
 					<fmt:formatNumber value="${dto.price }" type="currency" currencySymbol=""
 					maxFractionDigits="0"/>
 					</div>
-					<div class="review"><i class="bi bi-chat-dots"></i>${dto.reviewcount }</div>
+				<div class="icons">
+					<div class="review"><i class="bi bi-chat-dots chat"></i>${dto.reviewcount }</div>
+					<i class="bi bi-heart like"></i>
+				</div>
 				</div>
 			</div>
 			<c:if test="${i.index%4==3 ||i.last }">

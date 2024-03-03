@@ -130,7 +130,7 @@ select {
 		<tr>
 			<th>상품 사진</th>
 			<td>
-			<input type="file" class="form-control" name="upload" id="itemupload" required="required">
+			<input type="file" class="form-control" name="mainphoto" id="itemupload" required="required">
 			</td>
 		</tr>
 		
@@ -203,6 +203,13 @@ select {
 			<td class="item-tablebt" colspan="2">
 			<button class="item-upload" type="submit">상품등록</button>
 			<button class="upload-cancle" type="button" onclick="location.href='/'">취소</button>
+			</td>
+		</tr>
+		
+		<tr>
+			<th>상품 상세사진</th>
+			<td>
+			<input type="file" class="form-control" name="upldetailphoto" id="detailupload" required="required">
 			</td>
 		</tr>
 		</table>

@@ -15,9 +15,9 @@ public class itemController {
 	HMartItemDao hmartItemDao;
 	
 	@GetMapping("item/detail")
-	public String detail(Long num, Model model)
+	public String detail(Long item_id, Model model)
 	{
-		ItemDto dto = hmartItemDao.getData(num);
+		ItemDto dto = hmartItemDao.getData(item_id);
 		
 		model.addAttribute("dto", dto);
 		

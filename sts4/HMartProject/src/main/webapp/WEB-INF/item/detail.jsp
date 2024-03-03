@@ -7,15 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <title>Insert title here</title>
 <style>
 .gologin {
 	width: 250px;
 	height: 60px;
 	border-radius: 5px;
-	color: #7DAB12;
+	color: #477500;
 	background-color: white;
 	border-color: #7DAB12;
 }	
@@ -55,12 +56,37 @@
 #go {
 	margin-bottom: 1px;
 }
+
+.item-detail {
+	margin-top: 200px;
+	margin-bottom: 500px;
+}
+
+.selectlist {
+	display: flex;
+	margin-top: 100px;
+	justify-content: center;
+}
+
+.selectlist span {
+	cursor: pointer;
+	border: 1px solid #7DAB12;
+	padding: 5px 10px;
+	width: 280px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #477500;
+	font-weight: bold;
+}
 </style>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 	<div class="detail-table">
 	<table class="detail">
+	<div class="item-top">
 		<tr>
 			<td rowspan="4"><img alt="" src="../save/${dto.item_photo }" class="item_photo"></td>
 			<td>
@@ -93,6 +119,22 @@
 			<div>소비기한(유통기한)</div>
 			<div>${dto.expiration }</div>	
 			</td>
+		</tr>
+		</div>
+			<tr>
+				<td colspan="2">
+				<div class="selectlist">
+					<span class="detail-info"><a>상세정보</a></span>
+					<span class="item-review"><a>후기</a></span>
+					<span class="qna"><a>문의</a></span>
+					<span class="delivery-info"><a>배송정보</a></span>
+				</div>
+				</td>
+			</tr>
+	  		<tr>
+				<td colspan="2">
+			<div><img alt="" src="../save/${dto.item_detail }" class="item-detail"></div>
+				</td>
 		</tr>
 	</table>
 	</div>
