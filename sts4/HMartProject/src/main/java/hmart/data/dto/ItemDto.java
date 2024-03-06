@@ -42,7 +42,7 @@ public class ItemDto {
 	private String unit;
 	
 	@Column
-	private String volumn;
+	private String volume;
 	
 	@Column
 	private String origin;

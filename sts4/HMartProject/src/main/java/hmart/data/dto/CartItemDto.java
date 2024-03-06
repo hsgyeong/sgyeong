@@ -1,4 +1,4 @@
-/*package hmart.data.dto;
+package hmart.data.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +15,6 @@ public class CartItemDto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long num;
+	private long item_id;
 	
 }
-*/
