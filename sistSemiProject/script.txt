@@ -1,0 +1,39 @@
+<script>
+
+ $("#theme").change(function(){
+      var theme = $(this).val();
+      
+      $.ajax({
+         type: "post",
+         url: "tourReview/logoutTourSpotReviewForm.jsp",
+         data: { theme: theme },
+         dataType:"html",
+         success: function(response){
+            alert("성공");
+            
+            // 이곳에서 select 태그 내용을 업데이트합니다.
+            $("#selDay").empty(); // 기존 옵션을 지웁니다.
+            
+            // AJAX 응답을 파싱하여 옵션을 추가합니다.
+      
+            for (var i = 0; i < list.size(); i++) {
+               // 여기에 if 문을 추가하여 원하는 조건에 따라 옵션을 추가합니다.
+               <%     
+               int i=0;
+               TourSpotDto tourSpotDto = list.get(i);
+               
+               %>
+               if (<%=tourSpotDto.getMain_cat()%> === theme) {
+                  var option = "<option value='" + data[i].value + "'>" + data[i].text + "</option>";
+                  $("#selDay").append(option);
+               }
+               <%i++;%>
+            }
+         }
+      })
+   }) 
+   //select로 name = theme . class나 id를 줘서 구별할 수 있게 해서 옵션으로 강, 산, 바다 등등 있으면 스크립트 했을때 밑에다가 달러 해서 클래스나 아이디 하튼 테마를 줬다거나 테마가 바뀌면 function 
+   //괄호 열고 해서 var에다가 테마의 값을 넣어줘야되는데 테마 넣고 무슨 발 할건데 거기에 뭘 넣을거다 해줘서 하나 만들어줘서 if 만약 e.theme.val option으로는 강이름 1,2,3,4 해서 
+   // else if 하나 더 걸어서 
+   
+   $(document).on("click","input[]")

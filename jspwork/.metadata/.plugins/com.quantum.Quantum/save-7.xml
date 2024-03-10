@@ -1,0 +1,212 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="oracle.jdbc.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="23.2.0.0.0">
+			<jar fileName="C:\sist0615\util\ojdbc11.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="C:/Users/sksk0/.p2/pool/plugins/com.quantum.derby_3.3.10/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="com.mysql.cj.jdbc.Driver" name="MySQL Connector/J" type="MYSQL" version="mysql-connector-j-8.1.0 (Revision: 7b6f9a337afe6ccb41823df485bf848ca7952b09)">
+			<jar fileName="C:\sist0615\util\mysql-connector-j-8.1.0.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:C:/Users/sksk0/.p2/pool/plugins/com.quantum.derby_3.3.10/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:/Users/sksk0/.p2/pool/plugins/com.quantum.derby_3.3.10/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+		<bookmark>
+			<name>oracle_sgyeong</name>
+			<username>sgyeong</username>
+			<password>a1234</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:XE</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\sist0615\util\ojdbc11.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>SGYEONG</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList />
+		</bookmark>
+		<bookmark>
+			<name>mysql_sgyeong</name>
+			<username>sgyeong</username>
+			<password>1234</password>
+			<prompt>false</prompt>
+			<connect>jdbc:mysql://localhost:3306/coffee?serverTimezone=Asia/Seoul</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>com.mysql.cj.jdbc.Driver</driver>
+			<type>MYSQL</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\sist0615\util\mysql-connector-j-8.1.0.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>coffee</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>delete from spmember where num=5</queryString>
+				</query>
+				<query>
+					<queryString>delete from spmember where num=6</queryString>
+				</query>
+				<query>
+					<queryString>create table location (num smallint auto_increment primary key,
+name varchar(30), addr varchar(50), photo varchar(50),
+cate varchar(20))</queryString>
+				</query>
+				<query>
+					<queryString>insert into location values(null, '협재해수욕장', '제주시 한림읍', '../협재해수욕장.jpeg','바다')</queryString>
+				</query>
+				<query>
+					<queryString>insert into location values(null, '한라산', '제주 서귀포시', '../한라산.jpeg','산')</queryString>
+				</query>
+				<query>
+					<queryString>insert into location values(null, '쌍용동굴', '제주시 한림읍', '../쌍용동굴.jpeg','기타')</queryString>
+				</query>
+				<query>
+					<queryString>create table member (num smallint auto_increment primary key,
+id varchar(30), pass varchar(30), name varchar(30), hp varchar(50), 
+email varchar(50))</queryString>
+				</query>
+				<query>
+					<queryString>create table member (num smallint auto_increment primary key,
+id varchar(30), pass varchar(30), name varchar(30), hp varchar(50), 
+email varchar(80))</queryString>
+				</query>
+				<query>
+					<queryString>insert into member values(null, 'ksoo', '1234', '경수', '010-1111-2222', 'kss@gmail.com')</queryString>
+				</query>
+				<query>
+					<queryString>create table guest(num smallint auto_increment primary key,
+myid varchar(20), content varchar(2000), photoname varchar(50),
+chu int(10), writeday date)</queryString>
+				</query>
+				<query>
+					<queryString>drop table member</queryString>
+				</query>
+				<query>
+					<queryString>create table member(num smallint auto_increment primary key,
+name varchar(20), id varchar(30), pass varchar(30), 
+hp varchar(50), addr varchar(100), email varchar(100), 
+gaipday date)</queryString>
+				</query>
+				<query>
+					<queryString>create table smartboard (num smallint auto_increment primary key,
+writer varchar(20), subject varchar(500),
+content varchar(2000), readcount int, writeday date)</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE `review` (
+	`c_seq`	smallint	NULL,
+	`photo`	varchar(100)	NULL,
+	`title`	varchar(50)	NULL,
+	`writer`	varchar(50)	NULL,
+	`writeday`	varchar(50)	NULL,
+	`readcount`	smallint	NULL,
+	`like`	int	NULL,
+	`content`	varchar(1000)	NULL,
+	`comment`	varchar(1000)	NULL,
+	`stars`	smallint	NULL
+)</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE `MyCourse` (
+	`seq`	smallint	NULL,
+	`id`	varchar(30)	NULL,
+	`name`	varchar(30)	NULL,
+	`day`	smallint	NULL,
+	`tour1`	varchar(30)	NOT NULL,
+	`tour2`	varchar(30)	NOT NULL,
+	`tour3`	varchar(30)	NOT NULL,
+	`tour4`	varchar(30)	NOT NULL,
+	`tour5`	varchar(30)	NOT NULL
+)</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE `tourspot` (
+	`code`	int	NOT NULL,
+	`name`	varchar(30)	NOT NULL,
+	`hp`	varchar(50)	NOT NULL,
+	`addr`	varchar(200)	NOT NULL,
+	`photo`	varchar(100)	NOT NULL,
+	`intro`	varchar(10000)	NOT NULL,
+	`area`	varchar(100)	NOT NULL,
+	`thema`	varchar(100)	NOT NULL,
+	`cat1`	varchar(100)	NOT NULL,
+	`cat2`	varchar(100)	NOT NULL,
+	`remark`	varchar(1000)	NULL,
+	`price`	int	NULL,
+	`selected_cnt`	int	NULL
+)</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE `Recom Course` (
+	`seq`	smallint	NULL,
+	`name`	varchar(30)	NULL,
+	`day`	smallint	NULL,
+	`tour1`	varchar(30)	NOT NULL,
+	`tour2`	varchar(30)	NOT NULL,
+	`tour3`	varchar(30)	NOT NULL,
+	`tour4`	varchar(30)	NOT NULL,
+	`tour5`	varchar(30)	NOT NULL
+)</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE `MyCourse` ADD CONSTRAINT `PK_MYCOURSE` PRIMARY KEY (
+	`seq`,
+	`id`
+)</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE `tourspot` ADD CONSTRAINT `PK_TOURSPOT` PRIMARY KEY (
+	`code`
+)</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE `Recom Course` ADD CONSTRAINT `PK_RECOM COURSE` PRIMARY KEY (
+	`seq`
+)</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>

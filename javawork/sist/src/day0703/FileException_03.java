@@ -1,0 +1,38 @@
+package day0703;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class FileException_03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// xxxStream > 원시문자. 변환못함
+		
+		InputStream is=System.in;
+		
+		int a=0;
+		
+		System.out.println("한글자 입력: ");
+		
+		try {
+			a=is.read();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println("오류: "+e.getMessage());
+		}
+		
+		System.out.println("**3초뒤출력**");
+		
+		try {
+			Thread.sleep(3000);  //3초뒤
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		System.out.println("입력값: "+(char)a);
+	}
+
+}

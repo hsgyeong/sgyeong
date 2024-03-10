@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\sksk0\Desktop\spring\sgyeong\git test\practice\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2141129171.index
+3089196737.index
+1755401707.index
+773083374.index
+3281356416.index
+568734469.index

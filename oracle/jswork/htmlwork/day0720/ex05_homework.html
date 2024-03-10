@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <style>
+
+
+        img{
+            width: 200px;
+            height: 180px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 만화이미지 01.png ~ 10.png까지 출력하시오(for문 이용) -->
+
+    <!-- 2. 음식사진 1.jpg를 img태그로 나타낸 후 id를 img1으로 주고 그 아이디로 이벤트 추가합니다
+            사진에 마우스 올리면 3.jpg로 바뀌고 클릭하면 5.jpg로 바뀌며 마우스를 벗어나면 다시 원래
+             사진으로 돌아가게 이벤트 추가 -->
+    <!-- 3. img로 width=200 height=180으로 사진(아무거나) body에 넣은 후 이미지를 클릭하면 
+            아래 div 태그 안에 각종 정보(src, width, height)를 얻어서 출력하시오
+            (getAttribute, innerHTML 사용) -->
+    <!-- 4. 버튼을 하나 만든 후 클릭하면 prompt 창에 이름을 입력받아서 div 태그 안에 
+            "내 이름은 ***입니다" 라고 출력하세요
+            (div에 class="bts"라고 준 후 css로 예쁘게 스타일 적용할것) -->
+            <!-- /<img src="../만화이미지/01.png" width="50" height="50"> -->
+            <script>
+
+                //1.
+            
+                for(var i=1;i<=10;i++)
+                {
+                    var img1="<img src='../만화이미지/"+(i<10?"0":"")+i+".png' style='width:100px;'>";
+                    document.write(img1+"&nbsp;&nbsp;");
+            
+                }
+            </script>
+            <hr>
+
+
+            <img src="../Food/1.jpg" id="img1" onclick="click1()" onmouseover="on1()" onmouseleave="leave1()">
+            <script>
+                //2.
+                var photo=document.getElementById("img1");
+
+                function click1(){
+
+                    photo.setAttribute("src","../Food/5.jpg");
+            
+                }
+
+                function on1(){
+
+                    photo.setAttribute("src","../Food/3.jpg");
+                
+                }
+               
+                function leave1(){
+
+                    photo.setAttribute("src","../Food/1.jpg");
+                
+                }
+              </script>   
+               
+               <hr>
+               <img src="../flower_ani/redhair11.PNG" width="200" height="180" onclick="click2()" id="red">
+               <script>
+                //3.
+
+                function click2(){
+
+                    var hair=document.getElementById("red")
+                    var src=hair.getAttribute("src");
+                    var width=hair.getAttribute("width");
+                    var height=hair.getAttribute("height");
+
+                    amu.innerHTML="경로 ="+src+"<br>너비 ="+width+"<br> 높이="+height;
+                }
+                
+
+               </script>
+            <div id="amu"></div>
+
+            <style>
+                .bts{
+                    width: 400px;
+                    height: 200px;
+                    font-size: 50px;
+                    border: 1px solid gray ;
+                    text-align: center;
+                }
+            </style>
+              <script>
+                //4.
+                
+                window.onload=function(){
+
+                document.getElementById("btn").onclick=function(){
+
+                var name=prompt("이름을 입력하세요");
+
+                out.innerHTML="내 이름은 "+name+" 입니다";
+                }
+
+               }                   
+            
+            </script>
+
+              <input type="button" value="button" id="btn" class="btn-lightpink">
+<div id="out" class="bts"></div>
+<div> </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+full text index  - int, date 제외 varchar로 된 것 전부
+auto_increment - 관광지정보, 추천코스, 나만의코스

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <title>Document</title>
+    <style>
+        #out{
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+            background-color:darkseagreen;
+            padding: 70px;
+            left: 10px;
+
+        }
+    </style>    
+
+    <script>
+        function click1(){
+            var f = confirm("음식을 출력할까요?")
+            if(f==1){
+                var img = "<img src='../Food/8.jpg' width=500 height=500>"
+                out.innerHTML=img;
+            }
+            else{
+                alert("취소합니다");
+            }
+        }
+
+        function click2(){
+            var c = confirm("연예인을 출력할까요?")
+            if(c==1){
+                var img = "<img src='../연예인사진/다운로드1.jpg' width=500 height=500>"
+                out.innerHTML=img;
+            }
+            else{
+                alert("취소합니다");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--<form> 태그: 사용자가 데이터를 입력하고 서버로 제출할 수 있도록 함 
+        action="#": 현재 페이지에 데이터를 전송하도록 지정. 
+        '#': 현재 페이지의 URL 끝을 의미하는 해시기호. 일반적으로 현재 페이지를 가리킴 -->
+    <form action="#" name="frm">
+        <input type="button" name="food" value="음식" class="btn" id="img1" onclick="click1()">
+        <input type="button" name="cel" value="연예인" class="btn" id="img1" onclick="click2()">
+    <div id="out">
+        <img src="" width="" height="" id="img">
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            margin-left: 30px;
+            margin-bottom: 50px;
+        }
+    </style>
+    <script>
+        function photosmall(){
+            // .getElementById(): 특정 ID를 가진 요소를 찾는 메서드.  이 ID를 사용하여 해당 요소를 가져옴
+            // .getAttribute(): 특정 HTML 요소의 속성을 가져오는 메서드. 메서드에 속성 이름을 전달하여 해당 속성의 값을 반환
+            var p=document.getElementById("img");
+            var w=p.getAttribute("width");
+            console.log(typeof(w)); //string인데 - *는 숫자로 계산됨(+만 안됨)
+            w-=10;
+            p.setAttribute("width",w)
+            //typeof():피연산자(w)의 데이터 타입을 문자열 형태로 반환
+        }
+
+        function photolarge(){
+            
+            var p=document.getElementById("img");
+            var w=p.getAttribute("width");
+            console.log(typeof(w)); //string인데 - *는 숫자로 계산됨(+만 안됨)
+            w=parseInt(w);
+            w+=10;
+            p.setAttribute("width",w)
+        }
+    </script>
+</head>
+<body>
+    <div id="one">
+        <button type="button" onclick="photosmall()">점점작게</button>
+        <button type="button" onclick="photolarge()">점점크게</button>
+    </div>
+    <img src="../만화이미지/16.png" width="200px" id="img">
+</body>
+</html>

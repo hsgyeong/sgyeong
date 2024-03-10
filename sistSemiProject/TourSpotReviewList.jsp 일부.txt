@@ -1,0 +1,36 @@
+MemberDao memberdao = new MemberDao();
+			for(TourReviewDto dto:list)
+			{	
+				
+
+
+TourSpotReviewDao tourspotreviewdao = new TourSpotReviewDao();
+				String name = memberdao.getName(dto.getId());
+				List<TourReviewDto> tlist = tourspotreviewdao.getAllTourReviews(tourReviewDto.ge)
+		%>
+		<table class="table table-bordered" style="width: 1200px;">
+		<div>
+			<tr>
+				<td><b><i class="bi bi-person-square"></i><%=name%>(<%=dto.getId()%>)</b>
+				<b><%=tourReviewDto.getTitle() %></b>
+				</div>
+						<div class="col-md-4 text-end">
+						<td>
+							<div float="right;">
+								<span class="likes"><a style="font-size: 0.7em; color: gray;">좋아요</a>&nbsp;<i
+									class="bi bi-hand-thumbs-up" style="color: gray;"></i>&nbsp;&nbsp;&nbsp;<%=tourReviewDto.getLikes()%></span>
+								<a style="font-size: 0.7em; color: gray;">작성일&nbsp;<%=sdf.format(tourReviewDto.getWriteday())%></a>&nbsp;&nbsp;
+								<a style="font-size: 0.7em; color: gray;">조회수&nbsp;<%=tourReviewDto.getViewcount()%></a>
+							</div>
+							<br>
+			<tr class="photo">
+				<td><%=tourReviewDto.getPhoto()%></td>
+			</tr>
+			<br>
+
+			<td>내용&nbsp;&nbsp;<%=tourReviewDto.getContent()%></td> <br> <br>
+			<br>
+		</div>
+						</td>
+					</div>
+					<%
