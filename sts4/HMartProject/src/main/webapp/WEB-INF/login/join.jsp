@@ -369,6 +369,15 @@
 		
 		$("#joinform").submit(function(){
 			
+			var id = $("#id").val();
+			
+			if(id=="")
+			{
+				alert("아이디를 입력해주세요.");
+				e.preventDefault();
+				return;
+			}
+			
 			var pass1 = $("#pass1").val();
 			var pass2 = $("#pass2").val();
 			

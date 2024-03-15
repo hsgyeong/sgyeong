@@ -76,7 +76,7 @@ public class LoginController {
 	  session.setAttribute("login", id);
 	  session.setAttribute("saveok", cbsave);
 	  
-	  Optional<HMartMemberDto> memberDto = hmartMemberService.getMemberInforById(id);
+	  Optional<HMartMemberDto> memberDto = hmartMemberService.getMemberInfoById(id);
 	  
 	  session.setAttribute("name", memberDto.get().getName());
 	  

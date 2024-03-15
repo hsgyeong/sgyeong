@@ -133,7 +133,19 @@
 			</tr>
 	  		<tr>
 				<td colspan="2">
-			<div><img alt="" src="../save/${dto.item_detail }" class="item-detail"></div>
+			<div class="detail-photo"><img alt="" src="../save/${dto.item_detail }" class="item-detail"></div>
+			<div class="review-list">
+				<c:forEach var="dto" items="${list }" varStatus="i">
+					<table>
+						<tr>
+							<td>
+							<div type="hidden">${i.count }</div>
+							<div>${dto.name }</div>
+							</td>
+						</tr>
+					</table>
+				</c:forEach>
+			</div>
 				</td>
 		</tr>
 	</table>

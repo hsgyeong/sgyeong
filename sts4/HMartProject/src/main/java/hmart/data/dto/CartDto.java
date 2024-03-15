@@ -20,7 +20,7 @@ public class CartDto {
 	private long cart_id;
 	
 	@ManyToOne
-	@JoinColumn(name="num", referencedColumnName = "num")
+	@JoinColumn(name="user_idx", referencedColumnName = "user_idx")
 	private HMartMemberDto membership;
 	
 	@ManyToOne

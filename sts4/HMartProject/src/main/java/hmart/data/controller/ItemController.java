@@ -9,7 +9,7 @@ import hmart.data.dao.HMartItemDao;
 import hmart.data.dto.ItemDto;
 
 @Controller
-public class itemController {
+public class ItemController {
 
 	@Autowired
 	HMartItemDao hmartItemDao;

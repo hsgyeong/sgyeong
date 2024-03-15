@@ -16,7 +16,7 @@ public class HMartMemberDto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long num;
+	private long user_idx;
 	
 	@Column
 	private String id;
