@@ -19,11 +19,21 @@ public class HMartMemberService implements HMartMemberServiceInter {
 		return hmartMemberDaoInter.findById(id);
 	}
 	
-	public int getSerchId(String id)
+	public int getSearchId(String id)
 	{
 		Optional<HMartMemberDto> memberDto = hmartMemberDaoInter.findById(id);
 		
-		return memberDto.isPresent()? 1:0;
+		if(memberDto.isPresent()) 
+		{
+			String usedID = hmartMemberDaoInter.findById(id).get().getId();
+			boolean idMatch = hmartMemberDaoInter.findById(id).get().getId().equals(id);
+		
+			return idMatch? 1:0;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 	
 	public int idPassCheck(String id, String password)

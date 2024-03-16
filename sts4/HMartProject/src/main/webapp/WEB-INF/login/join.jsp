@@ -278,12 +278,12 @@
 				
 				<input type="hidden" id="extraAddress"  name="extraAddress" placeholder="참고항목">
 				</div>
-				<button type="submit" class="btn btn success" style="background-color:#7DAB12; color: white;" id="successbtn"
-				onclick="location.href='/'">가입하기</button>
+				<button type="submit" class="btn btn success" style="background-color:#7DAB12; color: white;" id="successbtn">가입하기</button>
 			</div>
 	</form>
 </body>
 <script>
+	
 	$(function(){
 		
 		$("#id").keyup(function(){
@@ -300,11 +300,11 @@
 			if(validId){
 				$("span.validid").text("");
 			}
-				else
-				{	
+			else
+			{	
 				$("span.validid").text("6~12자의 영문 소문자와 숫자만 가능합니다.").css("color","red");
-				}
-			})
+			}
+		})
 			
 		$("#idcheck").click(function(){
 			
@@ -322,15 +322,15 @@
 					if(res.count==0){
 						alert("사용 가능한 아이디입니다.");
 						$("span.validid").text("사용 가능한 아이디입니다.").css("color","green");
-					}else
+					}
+					else
 					{
 						alert("이미 사용중인 아이디입니다. 다시 입력해주세요.");
 						$("span.validid").text("이미 사용중인 아이디입니다. 다시 입력해주세요.").css("color","red");
 					}
 				}
-			})	
-		})
-			
+			});	
+		});
 			
 		$("#pass1").keyup(function(){
 			
@@ -340,15 +340,21 @@
 			var validPass = ValidPass(pass1);
 			if(validPass){
 				$("span.validpass").text("");
-			}else {
-				$("span.validpass").text("비밀번호는 8~12자리의 영소문자 또는 대문자, 숫자, 특수문자를 포함해야합니다.").css("color","red");
 			}
-				
+			else 
+			{
+				$("span.validpass").text("비밀번호는 8~12자리의 영소문자 또는 대문자, 숫자, 특수문자를 포함해야합니다.").css("color","red");
+			}	
 		})
 		
 		function ValidPass(pass1){
 			var passvalid = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
 			return passvalid.test(pass1);
+		}
+		
+		function ValidPass2(pass2){
+			var passvalid = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
+			return passvalid.test(pass2);
 		}
 		
 		$("#pass2").keyup(function(){
@@ -358,16 +364,22 @@
 			
 		//	var passval = $("span.validpass").text("");
 			
-			if(pass1==pass2 && ValidPass(pass1)){
+			if(!ValidPass2(pass2)){
+				$("span.passok").text("유효하지 않은 비밀번호입니다. 다시 입력해주세요").css("color","red");
+			}		
+		
+			
+			if(pass1==pass2){
 				$("span.passok").text("비밀번호가 일치합니다.").css("color","green");
-			}else
+			}
+			else
 			{
 				$("span.passok").text("비밀번호가 일치하지 않습니다.").css("color","red");
 				$("#pass2").focus();
 			}
 		})
 		
-		$("#joinform").submit(function(){
+		$("#joinform").submit(function(e){
 			
 			var id = $("#id").val();
 			
@@ -377,26 +389,33 @@
 				e.preventDefault();
 				return;
 			}
-			
+		
 			var pass1 = $("#pass1").val();
 			var pass2 = $("#pass2").val();
 			
+			if(pass1 == "" || pass2 == "" || (pass1 == "" && pass2 ==""))
+			{
+				alert("비밀번호를 입력해주세요.");
+				e.preventDefault();
+				return;
+			}
+		
 			if(!ValidPass(pass1))
-				{
-					alert("유효하지 않은 비밀번호입니다. 다시 입력해주세요.");
-					e.preventDefault();
-					return;
-				}
+			{
+				alert("유효하지 않은 비밀번호입니다. 다시 입력해주세요.");
+				e.preventDefault();
+				return;
+			}
 			
-			if(pass1 !== pass2){
-					alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
-					e.preventDefault();
-					return;
+			if(pass1 !== pass2)
+			{
+				alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
+				e.preventDefault();
+				return;
 			}
 		})
-		})
+	});
 	
-		
 		function DaumPostCode(){
 			
 			new daum.Postcode({

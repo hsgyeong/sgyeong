@@ -14,7 +14,7 @@
 $(function(){
 	alert("회원가입이 완료되었습니다. 다시 로그인해주세요.");
 	
-	"redirect:/";
+	window.location.href="/";
 })
 </script>
 </head>

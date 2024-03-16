@@ -33,7 +33,7 @@ public class MemberController {
 	public Map<String, Integer> idCheck(@RequestParam String id)
 	{
 		Map<String, Integer> map = new HashMap<>();
-		int i = hmartMemberService.getSerchId(id);
+		int i = hmartMemberService.getSearchId(id);
 		
 		map.put("count", i);
 		
