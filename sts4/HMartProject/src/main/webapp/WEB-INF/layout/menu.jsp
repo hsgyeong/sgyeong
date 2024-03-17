@@ -115,7 +115,7 @@ ul.menu li
 <script type="text/javascript">
 $(document).ready(function(){
 	
-	$("div.categorylist").hide();
+	$("div.categorylist").hide(); 
 	
 	$("li.cate").mouseover(function(){
 		$("div.categorylist").show();

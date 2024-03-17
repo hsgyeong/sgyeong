@@ -35,8 +35,9 @@
 	width: 200px;
 }
 
-.bi-chat-dots {
+.bi-chat-dots, .like {
 	margin-right: 10px;
+	font-size: 18px;
 }
 
 .review {
@@ -66,7 +67,7 @@
 }
 
 .row .col {
-	padding: 5px;
+	padding: 2px;
 }
 
 #mainList {
@@ -85,7 +86,7 @@
 <body>
 <c:set var="root" value="<%=request.getServletContext() %>"/>
 <div class="container"  id="mainList">
-	<div class="row">
+	<div class="rowclass">
 	<c:forEach var="dto" items="${list }" varStatus="i">
 			<c:if test="${i.index%4==0 }">
 				<div class="row">

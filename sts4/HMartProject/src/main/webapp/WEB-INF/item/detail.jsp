@@ -20,13 +20,6 @@
 	background-color: white;
 	border-color: #7DAB12;
 }	
-	
-.item_photo {
-	width: 350px;
-	height: 450px;
-	border-radius: 5px;
-	margin-right: 50px;
-}
 
 .item-name {
 	font-size: 22px;
@@ -60,6 +53,7 @@
 .item-detail {
 	margin-top: 200px;
 	margin-bottom: 500px;
+	width: 950px;
 }
 
 .selectlist {
@@ -80,49 +74,69 @@
 	color: #477500;
 	font-weight: bold;
 }
+
+#detail {
+	width: 950px;
+	table-layout: fixed;
+}
+
+div .a {
+	margin-bottom: 100px;
+}
+
+td.info-data {
+	width: 450px;
+	margin-left: 20px;
+}
+
+.info-label {
+	width: 100px;
+	margin-left: 20px;
+}
+
+td img.img {
+	width: 350px;
+}
+
 </style>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 	<div class="detail-table">
-	<table class="detail">
-	<div class="item-top">
+	<table class="detail" id="detail">
+	<div class="a">
 		<tr>
-			<td rowspan="4"><img alt="" src="../save/${dto.item_photo }" class="item_photo"></td>
-			<td>
+			<td rowspan="4"><img alt="" src="../save/${dto.item_photo }" class="img"></td>
+			<td style="width: 300px;" colspan="2">
 			<div class="item-name">${dto.item}</div> 
-			<div class="item-price"><span class="fmt"><fmt:formatNumber value="${dto.price }" var="price"/>${price }</span>
-			<span class="won">원</span></div>
-			<div>
+			<div class="item-price">
+			<span class="fmt"><fmt:formatNumber value="${dto.price }" var="price"/>${price }</span>
+			<span class="won">원</span>
+			</div>
+		<div>
 			<c:if test="${sessionScope.login == null }">
 				<div id="go">로그인 후, 쿠폰이 제공됩니다.</div><br>
 				<button type="button" class="gologin"
 				onclick="location.href='/login'">3,000원 할인 쿠폰 받고 구매하기</button>
 			</c:if>
-			</div>
+		</div>
 			</td>
 		</tr>
 		<tr>
-			<td>
-			<div>판매자</div>
-			<div>${dto.seller }</div>
-			</td>
+			<td class="info-label">판매자</td>
+			<td class="info-data" colspan="2">${dto.seller }</td>
 		</tr>
 		<tr>
-			<td>
-			<div>포장타입</div>
-			<div>${dto.packingtype }</div>	
-			</td>
+			<td class="info-label">포장타입</td>
+			<td class="info-data" colspan="2">${dto.packingtype }</td>
 		</tr>
 		<tr>
-			<td>
-			<div>소비기한(유통기한)</div>
-			<div>${dto.expiration }</div>	
-			</td>
+			<td class="info-label">소비기한<br>(유통기한)</td>
+			<td class="info-data" colspan="2">${dto.expiration }</td>	
 		</tr>
 		</div>
 			<tr>
-				<td colspan="2">
+				<td colspan="4">
 				<div class="selectlist">
 					<span class="detail-info"><a>상세정보</a></span>
 					<span class="item-review"><a>후기</a></span>
