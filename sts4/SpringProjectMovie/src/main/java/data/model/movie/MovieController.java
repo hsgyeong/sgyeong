@@ -28,14 +28,12 @@ public class MovieController {
 	MovieMapperInter mapper;
 	
 	@GetMapping("/")
-	public String start()
-	{
+	public String start() {
 		return "redirect:movie/list";
 	}
 	
 	@GetMapping("/movie/list")
-	public ModelAndView list()
-	{
+	public ModelAndView list(){
 		ModelAndView model = new ModelAndView();
 		
 		int totalCount = mapper.getTotalCount();
@@ -50,16 +48,14 @@ public class MovieController {
 	}
 	
 	@GetMapping("/movie/writeform")
-	public String form()
-	{
+	public String form(){
 		return "movie/addform";
 	}
 	
 	@PostMapping("/movie/insert") //modelattribute는 addform의 name과 dto가 일치할 때 값을 넣어주기 위해 쓰는것
 	public String insert(@ModelAttribute MovieDto dto,//입력한 정보를 받고싶을때
-			@RequestParam MultipartFile poster,
-			HttpSession request)
-	{
+						 @RequestParam MultipartFile poster,
+						 HttpSession request) {
 		String path = request.getServletContext().getRealPath("/moviephoto");
 		System.out.println(path);
 		
@@ -87,8 +83,7 @@ public class MovieController {
 	}
 	
 	@GetMapping("/movie/detail")
-	public ModelAndView detail(int num)
-	{	
+	public ModelAndView detail(int num){	
 		ModelAndView model = new ModelAndView();
 		
 		MovieDto dto = mapper.getData(num);
@@ -101,14 +96,12 @@ public class MovieController {
 	}
 	
 	@GetMapping("/movie/updateform")
-	public String updateform()
-	{
+	public String updateform(){
 		return "/movie/updateform";
 	}
 	
 	@PostMapping("/movie/update")
-	public String update(@ModelAttribute MovieDto dto)
-	{
+	public String update(@ModelAttribute MovieDto dto){
 		mapper.updateMovie(dto);
 		
 		return "redirect:list";
@@ -117,18 +110,13 @@ public class MovieController {
 	
 	@GetMapping("/movie/delete")
 	public String delete(@RequestParam int num,
-			HttpServletRequest request)
-	{
+						 HttpServletRequest request){
 		String poster = mapper.getData(num).getMv_poster();
 		
-		if(!poster.equals(null))
-		{
+		if(!poster.equals(null)){
 			String path=request.getServletContext().getRealPath("/moviephoto");
-			
 			File file = new File(path+"\\"+poster);
-			
 			file.delete();
-			
 		}
 		
 		mapper.deleteMovie(num);
@@ -137,10 +125,8 @@ public class MovieController {
 		
 	}
 	
-	
 	@GetMapping("/movie/redirect")
-	public String redirect()
-	{
+	public String redirect(){
 		return "movie/movielist";
 	}
 }

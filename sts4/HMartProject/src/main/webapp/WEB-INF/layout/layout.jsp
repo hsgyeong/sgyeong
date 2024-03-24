@@ -13,7 +13,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-div.layout{
+div.layout {
 	position:relative;
 }
 
@@ -46,7 +46,7 @@ div.layout{
 </head>
 <body>
 <div class="layout">
-<div class="titlebox">
+	<div class="titlebox">
 		<a href="/" class="marttitle">HMart</a>
 	</div>
 	<div class="title" id="title">
@@ -58,7 +58,7 @@ div.layout{
 	<div class="main">
 		<tiles:insertAttribute name="main"/>
 	</div>
-   <div class="info" id="info">
+    <div class="info" id="info">
 		<tiles:insertAttribute name="info"/>
 	</div> 
 </div>

@@ -5,14 +5,14 @@
 <tiles-definitions>
 <!--definition이 하나의 layout이 됨-->
 	<definition name="layout" template="/WEB-INF/layout/layout.jsp">
-	<put-attribute name="title" value="/WEB-INF/layout/title.jsp"/>
-	<put-attribute name="main" value="/WEB-INF/layout/main.jsp" />
-	<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
-	<put-attribute name="info" value="/WEB-INF/layout/info.jsp"/> 
-	<put-attribute name="category" value="/WEB-INF/layout/category.jsp"/>
+		<put-attribute name="title" value="/WEB-INF/layout/title.jsp"/>
+		<put-attribute name="main" value="/WEB-INF/layout/main.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+		<put-attribute name="info" value="/WEB-INF/layout/info.jsp"/> 
+		<put-attribute name="category" value="/WEB-INF/layout/category.jsp"/>
 	</definition>
 	
 	<definition name="/*/*" extends="layout">
-	<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp"/>
+		<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp"/>
 	</definition>
 </tiles-definitions>

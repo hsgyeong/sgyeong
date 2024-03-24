@@ -13,7 +13,6 @@
 <title>Insert title here</title>
 <style type="text/css">
 	
-	
 	div.layout div.title{
 		position:absolute;
 		top: 10px;
@@ -51,7 +50,6 @@
 		font-family: 'IBM Plex Sans KR', sans-serif;
 		font-size: 17px;
 	}
-	
 		div.layout div.main{
 		position:absolute;
 		top: 180px;
@@ -81,8 +79,6 @@
 	<div class="main">
 		<tiles:insertAttribute name="main"/>
 	</div>
-	
 </div>
-
 </body>
 </html>

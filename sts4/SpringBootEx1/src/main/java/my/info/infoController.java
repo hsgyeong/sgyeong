@@ -11,8 +11,7 @@ public class infoController {
 
 	@ResponseBody	
 	@GetMapping("/my/info")
-	public HashMap<String, String> myinfo()
-	{
+	public HashMap<String, String> myinfo(){
 		HashMap<String, String> info = new HashMap<>();
 		
 		info.put("name", "홍성경");

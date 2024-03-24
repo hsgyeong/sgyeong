@@ -27,9 +27,8 @@
 	background-color:white;
 	cursor: pointer;
 	vertical-align: center;
-		transition: background-color 0.3s;
-		&:hover{background-color:yellowgreen;
-				color:white;}
+	transition: background-color 0.3s;
+	&:hover{background-color:yellowgreen; color:white;}
 	}
 	
 	ul.menu li a{
@@ -68,8 +67,7 @@
 		</li>
 		<li>
 			<a href="${root }/load/map" class="btn">오시는길</a>
-		</li>
-		
+		</li>	
 	</ul>
 </body>
 </html>

@@ -13,13 +13,12 @@ public class HMartMemberDao {
 	@Autowired
 	HMartMemberDaoInter hmartMemberDaoInter;
 	
-	public void insertMember(HMartMemberDto dto)
-	{
+	public void insertMember(HMartMemberDto dto){
 		hmartMemberDaoInter.save(dto);
 	}
 	  
-	 public int idPassCheck(String id, String password) //아이디에 대한 값 반환
-	 {
+	 public int idPassCheck(String id, String password){ //아이디에 대한 값 반환
+	 
 		Optional<HMartMemberDto> loginId = hmartMemberDaoInter.findById(id);
 		//Optional<HMartMemberDto> loginPass = hmartMemberDaoInter.findByPassword(password);
 		
@@ -27,16 +26,14 @@ public class HMartMemberDao {
 		String storedPass = loginId.get().getPassword();
 		System.out.println(storedId+"이게 나오려나????");
 		
-		if(storedId.equals(id) && storedPass.equals(password)) {
-			
+		if(storedId.equals(id) && storedPass.equals(password)){
 			return 1;
-		}else {
-			
+		}else {	
 			return 0;
 		}
 	 }
 
-	public Optional<HMartMemberDto> findById(String id) {
+	public Optional<HMartMemberDto> findById(String id){
 		// TODO Auto-generated method stub
 		return null;
 	}

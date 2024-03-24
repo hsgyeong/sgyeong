@@ -101,42 +101,41 @@
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <form action="admin-loginproc" method="post" id="admin-loginform" class="admin-loginform">
 	<table class="tb">
-	<div class="tb-box">
-	<tr>
-		<td>
-			<div class="loginTitle">
-		<span class="log" style="color: #477500;">관리자 로그인</span>
-			</div>
-		</td>
-	<tr>
+		<div class="tb-box">
+			<tr>
+				<td>
+					<div class="loginTitle">
+						<span class="log" style="color: #477500;">관리자 로그인</span>
+					</div>
+				</td>
+			<tr>
 
-	<tr>
-		<td>
-			<div class="inputid">
-			<span class="myid" style="color:#477500; font-weight:bold;">아이디</span>
-			<input type="text" id="myid" class="form-control input-myid" name="id" placeholder="아이디를 입력해주세요">
-			</div>
-		</td>
-	<tr>
+			<tr>
+				<td>
+					<div class="inputid">
+						<span class="myid" style="color:#477500; font-weight:bold;">아이디</span>
+						<input type="text" id="myid" class="form-control input-myid" name="id" placeholder="아이디를 입력해주세요">
+					</div>
+				</td>
+			<tr>
 	
-	<tr>
-		<td>
-			<div class="inputpassword">
-			<span class="mypassword" style="color:#477500; font-weight:bold;">비밀번호</span>
-			<input type="text" id="mypass" class="form-control input-mypass" name="password" placeholder="비밀번호를 입력해주세요">
-			</div>
-		</td>
-	<tr>
+			<tr>
+				<td>
+					<div class="inputpassword">
+						<span class="mypassword" style="color:#477500; font-weight:bold;">비밀번호</span>
+						<input type="text" id="mypass" class="form-control input-mypass" name="password" placeholder="비밀번호를 입력해주세요">
+					</div>
+				</td>
+			<tr>
 	
-	<tr>
-		<td>
-		<div class="submitlogin">
-		<button type="submit" class="form-control loginbt" style="background-color: #7DAB12; color:white;" >로그인</button>
+			<tr>
+				<td>
+					<div class="submitlogin">
+					<button type="submit" class="form-control loginbt" style="background-color: #7DAB12; color:white;" >로그인</button>
+					</div>
+				</td>
+			</tr>
 		</div>
-		</td>
-	</tr>
-	
-	</div>
 	</table>
 </form>
 </body>

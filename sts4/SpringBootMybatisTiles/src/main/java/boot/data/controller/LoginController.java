@@ -22,8 +22,7 @@ public class LoginController {
 	MemberService service;
 	
 	@GetMapping("/login/main")
-	public String loginform(HttpSession session, Model model)
-	{
+	public String loginform(HttpSession session, Model model){
 		//폼의 아이디			//set해준 게 있어야 get할 수 있음
 		String myid = (String)session.getAttribute("myid");
 		//로그인 상태인지 아닌지
@@ -40,24 +39,21 @@ public class LoginController {
 			
 			return "/login/logoutform";
 		}
-		
 	}
 	
 	@PostMapping("/login/loginprocess")
 	public String loginproc(@RequestParam String id,
-			@RequestParam String pass,
-			@RequestParam(required = false) String cbsave, //넘어가는 것이 없기 때문에 require을 false로 해줘야함
-			HttpSession session)
-	{
+							@RequestParam String pass,
+							@RequestParam(required = false) String cbsave, //넘어가는 것이 없기 때문에 require을 false로 해줘야함
+							HttpSession session){
 		HashMap<String, String> map = new HashMap<>();
 		
 		int check = service.loginPassCheck(id,pass);
 		System.out.println(check);
 		
 		if(check==1) {
-			
+	
 			session.setMaxInactiveInterval(60*60*8);  //8시간 저장
-			
 			session.setAttribute("myid", id);			
 			session.setAttribute("loginok", "yes");			
 			session.setAttribute("saveok", cbsave);
@@ -68,15 +64,12 @@ public class LoginController {
 			
 			return "redirect:main";
 		}else {
-			
 			return "/member/passfail";
 		}
-		
 	}
 	
 	@GetMapping("/login/logoutprocess")
-	public String logout(HttpSession session)
-	{
+	public String logout(HttpSession session){
 		session.removeAttribute("loginok");
 		
 		return "redirect:main";

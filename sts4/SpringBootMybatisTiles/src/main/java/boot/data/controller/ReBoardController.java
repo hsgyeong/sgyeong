@@ -77,8 +77,9 @@ public class ReBoardController {
 				  	endPage=startPage+perBlock-1;
 				    
 				 // 총페이지가 23일경우 마지막블럭은 25가아니라 23이다   
-				      if(endPage>totalPage)
-				        	endPage=totalPage;
+				    if(endPage>totalPage)
+				       
+				    	endPage=totalPage;
 				     
 					//각페이지에서 보여질 시작번호
 					//1페이지: 0,2페이지:5 3페이지:10....
@@ -108,13 +109,12 @@ public class ReBoardController {
 	
 	@GetMapping("/form")
 	public String reform(@RequestParam(defaultValue = "0") int num,
-			@RequestParam(defaultValue = "0") int regroup,
-			@RequestParam(defaultValue = "0") int restep,
-			@RequestParam(defaultValue = "0") int relevel,
-			@RequestParam(defaultValue = "1") int currentPage,
-			@ModelAttribute ReboardDto dto,
-			Model model)
-	{
+						 @RequestParam(defaultValue = "0") int regroup,
+						 @RequestParam(defaultValue = "0") int restep,
+						 @RequestParam(defaultValue = "0") int relevel,
+						 @RequestParam(defaultValue = "1") int currentPage,
+						 @ModelAttribute ReboardDto dto,
+						 Model model) {
 		//답글일 경우에만 넘어오는 값들이다
 		
 		//새글일 경우는 모두 null이므로 defaultValue만 값으로 전달
@@ -140,10 +140,9 @@ public class ReBoardController {
 	
 	@PostMapping("/insert")
 	public String insert(@ModelAttribute ReboardDto dto,
-			HttpSession session,
-			@RequestParam ArrayList<MultipartFile> upload,
-			@RequestParam int currentPage)
-	{
+						 HttpSession session,
+						 @RequestParam ArrayList<MultipartFile> upload,
+						 @RequestParam int currentPage){
 		String path = session.getServletContext().getRealPath("/rephoto");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		
@@ -153,8 +152,7 @@ public class ReBoardController {
 			photo = "no";
 		else {
 			
-			for(MultipartFile f:upload)
-			{
+			for(MultipartFile f:upload)	{
 			String photoname = sdf.format(new Date())+f.getOriginalFilename();
 			photo += photoname+",";
 			
@@ -168,9 +166,7 @@ public class ReBoardController {
 				e.printStackTrace();
 			}
 		}
-		
 			photo = photo.substring(0, photo.length()-1);
-		
 		}
 			
 		String myid = (String)session.getAttribute("myid");
@@ -187,8 +183,7 @@ public class ReBoardController {
 	
 	@GetMapping("/content")
 	public String detail(int num, int currentPage,
-			Model model)
-	{
+						 Model model){
 		//조회수 증가
 		service.updateReadCount(num);
 		
@@ -206,8 +201,7 @@ public class ReBoardController {
 	
 	@GetMapping("/updateLikes")
 	@ResponseBody
-	public Map<String, Integer> updateLikes(@RequestParam int num)
-	{
+	public Map<String, Integer> updateLikes(@RequestParam int num){
 		Map<String, Integer> map = new HashMap<>();
 		
 		int likes = service.getData(num).getLikes();

@@ -19,7 +19,9 @@ height:135px;
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<a href="/"><img src="${root }/image/title3.png" id="img">
-<b>SpringBoot+Mybatis+Tiles</b></a>
+	<a href="/">
+		<img src="${root }/image/title3.png" id="img">
+		<b>SpringBoot+Mybatis+Tiles</b>
+	</a>
 </body>
 </html>

@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class helloController {
 
 	@GetMapping("/sist/hello")
-	public HashMap<String, String> hello()
-	{
+	public HashMap<String, String> hello(){
 		HashMap<String, String> data=new HashMap<>();
-		
 		data.put("message", "오늘은 스프링부트 배우는 날");
 		
 		return data;

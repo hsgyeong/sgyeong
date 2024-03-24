@@ -33,8 +33,7 @@ public class ShopController {
 	
 	@PostMapping("/upload")
 	public String fileUpload(@RequestParam MultipartFile uploadFile,
-			HttpServletRequest request)
-	{
+							 HttpServletRequest request){
 		//업로드할 폴더 위치
 		String path=request.getServletContext().getRealPath("/save");
 		
@@ -63,8 +62,8 @@ public class ShopController {
 	}
 
 	@PostMapping("/insert")
-	public void insertShop(@RequestBody ShopDto dto) //@RequestBody는 json으로 보낸걸 자바클래스로 변환해야 하므로  
-	{
+	public void insertShop(@RequestBody ShopDto dto) { //@RequestBody는 json으로 보낸걸 자바클래스로 변환해야 하므로  
+
 		//업로드한 사진
 		dto.setPhoto(photoName);
 		
@@ -73,21 +72,18 @@ public class ShopController {
 	}
 	
 	@GetMapping("/list")
-	public List<ShopDto> list()
-	{
+	public List<ShopDto> list(){
 		return shopService.getShopDatas();
 	}
 	
 	@GetMapping("/detail")
-	public ShopDto detail(@RequestParam int num)
-	{
+	public ShopDto detail(@RequestParam int num){
 		return shopService.getData(num);
 	}
 	
 	@DeleteMapping("/delete")
 						//dto의 넘버값 넘기는 것
-	public void delete(@RequestParam int num, HttpServletRequest request)
-	{
+	public void delete(@RequestParam int num, HttpServletRequest request){
 		//save경로구하기
 		String path = request.getServletContext().getRealPath("/save");
 		

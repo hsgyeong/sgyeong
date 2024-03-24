@@ -1,17 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap"
-	rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap"
+rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -121,7 +117,6 @@ $(function(){
 				url:"/member/updateinfo", //모달창은 중간경로를 써줘야함
 				data:{"name":name,"email":email,"hp":hp,"addr":addr,"num":num},
 				success:function(res){
-					
 					location.reload();
 				}
 			})
@@ -135,38 +130,37 @@ $(function(){
 <div style="margin:200px;">
 	<table class="table table-bordered">
 		<c:forEach var="dto" items="${list }">  <!--리스트형식으로 받아옴  -->
-		<c:if test="${sessionScope.loginok!=null and sessionScope.myid==dto.id }">
-			<tr>							<!--또는 &&  -->
-				<td style="width: 250px;" align="center" rowspan="5">
-				<img src="../membersave/${dto.photo }" width="230" height="250"
-					border="1"> <br> 
-	<input type="file"	style="display: none;" id="newphoto">
-					<button type="button" class="btn btn-info btnnewphoto">사진수정</button></td>
-				<td style="width: 300px">회원명: ${dto.name }</td>
-				<td rowspan="5" align="ceneter" valign="botton" style="width:200px;
-				vertical-align: middle;">
-					<button type="button" class="btn btn-outline-secondary" id="update" 
-					 data-bs-toggle="modal" data-bs-target="#ModalUpdate" num=${dto.num }>정보수정</button>
-					<br>									<!--num을 넘겨주는 ajax 하나 더 만드는 방법  -->
-				<br>
-					<button type="button" class="btn btn-outline-secondary btndelete" num=${dto.num }>회원탈퇴</button>
-				</td>
-			</tr>
-			<tr>
-				<td>아이디:${dto.id }</td>
-			</tr>
-			<tr>
-				<td>이메일: ${dto.email }</td>
-			</tr>
-			<tr>
-				<td>핸드폰: ${dto.hp }</td>
-			</tr>
-			<tr>
-				<td>주소: ${dto.addr }</td>
-			</tr>
+			<c:if test="${sessionScope.loginok!=null and sessionScope.myid==dto.id }">
+				<tr>							<!--또는 &&  -->
+					<td style="width: 250px;" align="center" rowspan="5">
+						<img src="../membersave/${dto.photo }" width="230" height="250" border="1"> 
+						<br> 
+						<input type="file"	style="display: none;" id="newphoto">
+						<button type="button" class="btn btn-info btnnewphoto">사진수정</button>
+					</td>
+					<td style="width: 300px">회원명: ${dto.name }</td>
+					<td rowspan="5" align="ceneter" valign="botton" style="width:200px; vertical-align: middle;">
+						<button type="button" class="btn btn-outline-secondary" id="update" 
+						 data-bs-toggle="modal" data-bs-target="#ModalUpdate" num=${dto.num }>정보수정</button>
+						<br><br>								<!--num을 넘겨주는 ajax 하나 더 만드는 방법  -->
+						<button type="button" class="btn btn-outline-secondary btndelete" num=${dto.num }>회원탈퇴</button>
+					</td>
+				</tr>
+				<tr>
+					<td>아이디:${dto.id }</td>
+				</tr>
+				<tr>
+					<td>이메일: ${dto.email }</td>
+				</tr>
+				<tr>
+					<td>핸드폰: ${dto.hp }</td>
+				</tr>
+				<tr>
+					<td>주소: ${dto.addr }</td>
+				</tr>
 			</c:if>
 			
-			<div class="modal" id="ModalUpdate">
+<div class="modal" id="ModalUpdate">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
 
@@ -196,8 +190,6 @@ $(function(){
 </div>
 		</c:forEach>
 	</table>
-	</div>
-	
-
+</div>
 </body>
 </html>

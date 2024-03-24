@@ -14,8 +14,7 @@ public class HMartMainDao {
 	@Autowired
 	HMartMainDaoInter hmartMainDaoInter;
 	
-	public List<ItemDto> getAllDatas()
-	{
+	public List<ItemDto> getAllDatas(){
 		return hmartMainDaoInter.findAll(Sort.by(Sort.Direction.ASC, "price"));
 	}
 }

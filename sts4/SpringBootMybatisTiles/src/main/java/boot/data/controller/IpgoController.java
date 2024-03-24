@@ -33,14 +33,12 @@ public class IpgoController {
 	IpgoMapperInter mapper;
 	
 	@GetMapping("/")
-	public String start()
-	{
+	public String start(){
 		return "/layout/main";
 	}
 	
 	@GetMapping("/ipgo/list")
-	public ModelAndView list()
-	{
+	public ModelAndView list(){
 		ModelAndView model = new ModelAndView();
 		
 		int totalCount = mapper.getTotalCount();
@@ -58,16 +56,14 @@ public class IpgoController {
 	
 	
 	@GetMapping("/ipgo/ipgoform")
-	public String form()
-	{
+	public String form(){
 		return "/ipgo/ipgoform";
 	}
 	
 	@PostMapping("/ipgo/insert")
 	public String insert(@ModelAttribute IpgoDto dto,
-			@RequestParam ArrayList<MultipartFile> photo,
-			HttpSession session)
-	{	
+						 @RequestParam ArrayList<MultipartFile> photo,
+						 HttpSession session){	
 		String path = session.getServletContext().getRealPath("/upload");
 		
 		System.out.println(path);
@@ -77,10 +73,8 @@ public class IpgoController {
 		if(photo.get(0).getOriginalFilename().equals(""))
 		
 			uploadName="no";
-		else
-		{
-			for(MultipartFile f:photo)
-			{
+		else {
+			for(MultipartFile f:photo){
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 				String fName=sdf.format(new Date())+"_"+f.getOriginalFilename();
 				
@@ -111,37 +105,29 @@ public class IpgoController {
 	} 
 	
 	@GetMapping("/ipgo/content")
-	public String detail(@RequestParam String num, Model model)
-	{
+	public String detail(@RequestParam String num, Model model){
 		IpgoDto dto = mapper.getData(num);
-		
 		model.addAttribute("dto", dto);
-		
+
 		return "/ipgo/detail";
 	}
 	
 	@GetMapping("/ipgo/updateform")
-	public String uform()
-	{
+	public String uform(){
 		return "/ipgo/updateform";
-		
 	}
 	
 	@PostMapping("/ipgo/update")
 	public String update(@ModelAttribute IpgoDto dto,
-			@RequestParam ArrayList<MultipartFile> photo,
-			HttpSession session)
-	{
+						 @RequestParam ArrayList<MultipartFile> photo,
+						 HttpSession session){
 		String path = session.getServletContext().getRealPath("/upload");
-		
 		String uploadName="";
 		
 		if(photo.get(0).getOriginalFilename().equals(""))
 			uploadName="no";
-		else
-		{
-			for(MultipartFile f:photo)
-			{
+		else {
+			for(MultipartFile f:photo) {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
 				String fName = sdf.format(new Date())+"_"+f.getOriginalFilename();
 				
@@ -166,7 +152,6 @@ public class IpgoController {
 			mapper.updateIpgo(dto);
 			
 		}
-		
 		return "redirect:list";
 	}
 }

@@ -13,8 +13,7 @@ import boot.mvc.ex1.TestDto;
 public class TestController {
 
 	@GetMapping("/test")
-	public TestDto hello()
-	{
+	public TestDto hello(){
 		TestDto dto = new TestDto();
 		dto.setName("서민지");
 		dto.setAddr("서울시 서초구");
@@ -23,8 +22,7 @@ public class TestController {
 	}
 	
 	@GetMapping("/shop/list")
-	public List<ShopDto> list()
-	{
+	public List<ShopDto> list(){
 		List<ShopDto> list = new Vector<>();
 		
 		ShopDto d1 = new ShopDto();

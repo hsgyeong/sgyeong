@@ -25,43 +25,37 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@PostMapping("/insert")
-	public void insert(@RequestBody MemberDto dto)
-	{
-		System.out.println("insert>>"+dto.getEmail());
+	public void insert(@RequestBody MemberDto dto) {
+		//System.out.println("insert>>"+dto.getEmail());
 		memberService.insertMember(dto);
 	}
 	
 	@GetMapping("/idsearch")
-	public int idcheck(@RequestParam String id)
-	{
+	public int idcheck(@RequestParam String id){
 		return memberService.getSearchId(id);
 	}
 
 	@PostMapping("/login")
-	public int login(@RequestBody MemberDto dto)
-	{
+	public int login(@RequestBody MemberDto dto){
 		System.out.println("login>>"+dto.getId());
 		return memberService.loginPassCheck(dto.getId(), dto.getPass());
 	}
 	
 	@GetMapping("/getname")
-	public String getName(@RequestParam String id)
-	{
+	public String getName(@RequestParam String id){
 		return memberService.getName(id);
 	}
 	
 	//리스트
 	@GetMapping("/list")
-	public List<MemberDto> getList()
-	{
+	public List<MemberDto> getList(){
 		return memberService.getAllMembers();
 	}
 	
 	//삭제
 	@DeleteMapping("/delete")
 	@ResponseBody
-	public void deleteMember(@RequestParam int num)
-	{
+	public void deleteMember(@RequestParam int num){
 		memberService.deleteMember(num);
 	}
 }

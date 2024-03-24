@@ -54,7 +54,6 @@ public class SmartService implements SmartServiceInter {
 	@Override
 	public List<SmartDto> getList(int startPage, int perPage) {
 		// TODO Auto-generated method stub
-		
 		HashMap<String, Integer> map = new HashMap<>();
 		map.put("startPage", startPage);
 		map.put("perPage", perPage);

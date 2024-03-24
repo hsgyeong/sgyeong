@@ -30,8 +30,7 @@ public class MbanswerController {
 		//포워드에서 포워드가 아닌 걸로 오는 순간 void는 result값?
 	@PostMapping("/ainsert")
 	public void insert(@ModelAttribute MbanswerDto dto,
-			HttpSession session)
-	{
+					   HttpSession session){
 		//세션에 로그인한 id
 		String myid = (String)session.getAttribute("myid");
 		
@@ -47,34 +46,27 @@ public class MbanswerController {
 	}
 	
 	@GetMapping("/alist")
-	public List<MbanswerDto> alist(@RequestParam String num) 
-	{
+	public List<MbanswerDto> alist(@RequestParam String num){
 		//전체 리스트를 리턴해줌
 		return mapper.getAllAnswers(num);
-		
 	}
 	
 	@GetMapping("/deleteasw")
 	@ResponseBody
 	public void deleteanswer(@RequestParam String idx,
-			HttpSession session)
-	{
-		
+							 HttpSession session){
 		mapper.deleteAnswer(idx);
 	}
 	
 	//수정창 content띄우기
 	@GetMapping("/adata")
-	public MbanswerDto getData(String idx)
-	{
+	public MbanswerDto getData(String idx){
 		return mapper.getAnswer(idx);
 	}
-	
-	
+
 	//수정
 	@PostMapping("/aupdate")
-	public void aupdate(@ModelAttribute MbanswerDto dto)
-	{
+	public void aupdate(@ModelAttribute MbanswerDto dto){
 		mapper.updateMbanswer(dto);
 	}
 	

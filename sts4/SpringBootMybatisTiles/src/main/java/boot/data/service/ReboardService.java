@@ -49,7 +49,6 @@ public class ReboardService implements ReboardServiceInter {
 	@Override
 	public void insertReboard(ReboardDto dto) {
 		// TODO Auto-generated method stub
-		
 		int num = dto.getNum();
 		int regroup = dto.getRegroup();
 		int restep = dto.getRestep();
@@ -80,7 +79,6 @@ public class ReboardService implements ReboardServiceInter {
 	@Override
 	public void updateRestep(int regroup, int restep) {
 		// TODO Auto-generated method stub
-
 		Map<String, Integer> map = new HashMap<>();
 		
 		map.put("regroup", regroup);
@@ -92,7 +90,6 @@ public class ReboardService implements ReboardServiceInter {
 	@Override
 	public void updateReadCount(int num) {
 		// TODO Auto-generated method stub
-		
 		mapperInter.updateReadCount(num);
 
 	}
@@ -100,21 +97,18 @@ public class ReboardService implements ReboardServiceInter {
 	@Override
 	public void updateReboard(ReboardDto dto) {
 		// TODO Auto-generated method stub
-
 		mapperInter.updateReboard(dto);
 	}
 
 	@Override
 	public void deleteReboard(int num) {
 		// TODO Auto-generated method stub
-
 		mapperInter.deleteReboard(num);
 	}
 
 	@Override
 	public void updateLikes(int num) {
 		// TODO Auto-generated method stub
-
 		mapperInter.updateLikes(num);
 	}
 

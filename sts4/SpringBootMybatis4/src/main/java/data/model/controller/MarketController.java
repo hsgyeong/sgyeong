@@ -33,15 +33,12 @@ public class MarketController {
 	MarketService service;
 	
 	@GetMapping("/")
-	public String start()
-	{
-		
+	public String start(){
 		return "redirect:market/list";
 	}
 	
 	@GetMapping("/market/list")
-	public ModelAndView list()
-	{
+	public ModelAndView list(){
 		ModelAndView model = new ModelAndView();
 		
 		//db로부터 총개수 얻기
@@ -55,21 +52,18 @@ public class MarketController {
 		//포워드
 		model.setViewName("market/marketlist");
 		return model;
-		
 	}
 	
 	@GetMapping("/market/writeform")
-	public String form()
-	{
+	public String form(){
 		return "market/addform";
 	}
 	
 	
 	@PostMapping("/market/insert")  //sts3 8번, 5번 참고
 	public String insert(@ModelAttribute MarketDto mdto,
-			@RequestParam  MultipartFile photo,
-			HttpSession request)
-	{
+						 @RequestParam  MultipartFile photo,
+						 HttpSession request){
 		
 		//업로드할 save 위치 구하기
 		String path = request.getServletContext().getRealPath("/save");
@@ -101,10 +95,8 @@ public class MarketController {
 	}
 	
 	@GetMapping("/market/updateform")
-	public String updateform(@RequestParam String num, Model model)
-	{
+	public String updateform(@RequestParam String num, Model model){
 		MarketDto mdto = service.getData(num);
-		
 		model.addAttribute("mdto", mdto);
 		
 		return "market/updateform";
@@ -112,25 +104,23 @@ public class MarketController {
 	
 	@PostMapping("/market/update")
 	public String update(@ModelAttribute MarketDto mdto,
-			@RequestParam("photoupload") MultipartFile photoupload,
-			@RequestParam String num,
-			HttpSession session)
-	{
+						 @RequestParam("photoupload") MultipartFile photoupload,
+						 @RequestParam String num,
+						 HttpSession session){
+		
 		String pre_photo = service.getData(num).getPhotoname();
-		
 		String path = session.getServletContext().getRealPath("/save");
+		String []pre_fName = pre_photo.split(",");
 		
-	String []pre_fName = pre_photo.split(",");
-	for(String f:pre_fName)
-	{
-		File file = new File(path+"\\"+f);
-		file.delete();
-	}
+		for(String f:pre_fName){
+			File file = new File(path+"\\"+f);
+			file.delete();
+		}
 		
 		mdto.setPhotoname(photoupload.getOriginalFilename());
 		
-		if(photoupload != null && !photoupload.isEmpty())
-		{
+		if(photoupload != null && !photoupload.isEmpty()){
+			
 			mdto.setPhotoname(photoupload.getOriginalFilename());
 			
 			try {
@@ -151,17 +141,16 @@ public class MarketController {
 	
 	@GetMapping("/market/delete")
 	public String delete(@RequestParam String num,
-			HttpServletRequest request)
-	{
+						  HttpServletRequest request){
+		
 		String photo = service.getData(num).getPhotoname();
 		
-		if(!photo.equals("no"))
-		{
-			String path=request.getServletContext().getRealPath("/save");
+		if(!photo.equals("no")){
 			
+			String path=request.getServletContext().getRealPath("/save");
 			File file = new File(path+"\\"+photo);
 			
-			if(file.exists()) {
+			if(file.exists()){
 			file.delete();
 			}
 		}
@@ -174,14 +163,14 @@ public class MarketController {
 	
 /*	@GetMapping("/market/delete")
 	public String delete(@RequestParam String num,
-			HttpServletRequest request)
-	{
+			HttpServletRequest request){
+	
 		MarketDto dto = service.getData(num);
 		
 		String photo = dto.getPhotoname();
 		
-		if(photo != null)
-		{
+		if(photo != null){
+		
 			String path=request.getServletContext().getRealPath("/save");
 			
 			File file = new File(path+"\\"+photo);

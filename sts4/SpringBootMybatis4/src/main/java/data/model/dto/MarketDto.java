@@ -16,7 +16,4 @@ public class MarketDto {
 	private String photoname;
 	private Timestamp ipgoday;
 	
-	
-	
-
 }

@@ -11,8 +11,7 @@ public class HMartItemDao {
 	@Autowired 
 	HMartItemDaoInter hmartItemDaoInter;
 	
-	public ItemDto getData(Long item_id)
-	{
+	public ItemDto getData(Long item_id){
 		return hmartItemDaoInter.getReferenceById(item_id);
 	}
 }

@@ -15,7 +15,6 @@ public class ShopDto {
 	private int num;
 	private int su;
 	private int dan;
-	
 	private String sangpum;
 	private String photo;
 	@JsonFormat(pattern="yyyy-MM-dd")

@@ -21,6 +21,7 @@ public class TilesConfig {
 			tilesConfigurer.setPreparerFactoryClass(SimpleSpringPreparerFactory.class);
 			return tilesConfigurer;
 		}
+		
 		@Bean
 		public TilesViewResolver tilesViewResolver() {
 			TilesViewResolver viewResolver = new TilesViewResolver();
@@ -37,6 +38,5 @@ public class TilesConfig {
 			resolver.setOrder(1);
 			return resolver;
 		}
-
 
 	}

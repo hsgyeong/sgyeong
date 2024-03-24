@@ -30,29 +30,29 @@
 	<table style="width:600px;">
 		<tr>
 			<td width="350" rowspan="4">
-			<img alt="" src="../save/${dto.carphoto }" style="width:330px; height:330px;">
+				<img alt="" src="../save/${dto.carphoto }" style="width:330px; height:330px;">
 			</td>
 			<td>
-			<div class="box" style="background-color: ${dto.carcolor}">
-			</div>${dto.carcolor }
+				<div class="box" style="background-color: ${dto.carcolor}">
+				</div>${dto.carcolor }
 			</td>
 		</tr>
 		<tr>
-		<td>자동차명: ${dto.carname }</td>		
+			<td>자동차명: ${dto.carname }</td>		
 		</tr>
 		<tr>
-		<td>단가:<fmt:formatNumber value="${dto.carprice }" type="currency"/> </td>		
+			<td>단가:<fmt:formatNumber value="${dto.carprice }" type="currency"/> </td>		
 		</tr>
 		<tr>
-		<td>구입일: ${dto.carguip }</td>		
+			<td>구입일: ${dto.carguip }</td>		
 		</tr>
 		<tr>
-		<td colspan="2" align="center">
-		<button type="button" class="btn btn-outline-info" onclick="location.href=''">수정</button>
-		<button type="button" class="btn btn-outline-info" onclick="location.href=''">삭제</button>
-		<button type="button" class="btn btn-outline-info" onclick="location.href='carform'">등록</button>
-		<button type="button" class="btn btn-outline-info" onclick="location.href='carlist'">목록</button>
-		 </td>		
+			<td colspan="2" align="center">
+				<button type="button" class="btn btn-outline-info" onclick="location.href=''">수정</button>
+				<button type="button" class="btn btn-outline-info" onclick="location.href=''">삭제</button>
+				<button type="button" class="btn btn-outline-info" onclick="location.href='carform'">등록</button>
+				<button type="button" class="btn btn-outline-info" onclick="location.href='carlist'">목록</button>
+			 </td>		
 		</tr>
 	</table>
 </body>

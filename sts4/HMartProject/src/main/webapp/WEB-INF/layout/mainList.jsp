@@ -44,11 +44,9 @@
 	margin-bottom: 10px;
 	font-size: 13px;
 	margin-right: 25px;
-	
 }
 
-
-.inputBasket{
+.inputBasket {
 	background-color: #7DAB12;
 	color: white;
 	border-color: #7DAB12;
@@ -57,12 +55,12 @@
 	margin-bottom: 100px;
 }
 
-.container{
+.container {
 	top: 1200px;/**/
 	margin-bottom: 400px;
 }
 
-.buy-bt{
+.buy-bt {
 	margin-bottom: 30px;
 }
 
@@ -77,6 +75,7 @@
 .icons {
 	display: flex;
 }
+
 .like, .chat {
 	color: #7DAB12;
 }
@@ -87,13 +86,15 @@
 <c:set var="root" value="<%=request.getServletContext() %>"/>
 <div class="container"  id="mainList">
 	<div class="rowclass">
-	<c:forEach var="dto" items="${list }" varStatus="i">
+		<c:forEach var="dto" items="${list }" varStatus="i">
 			<c:if test="${i.index%4==0 }">
 				<div class="row">
 			</c:if>
 			<div class="col">
 				<div class="item-item">
-				<a href="/item/detail?item_id=${dto.item_id }"><img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto"></a>
+					<a href="/item/detail?item_id=${dto.item_id }">
+						<img alt="" src="../save/${dto.item_photo }" class="mainItemPhoto">
+					</a>
 				</div>
 				<div class="buy-bt">
 					<button type="button" class="bt inputBasket">담기</button>
@@ -101,19 +102,22 @@
 				<div class="item-info"> 
 					<div class="itemName">${dto.item }</div>
 					<div class="price">
-					<fmt:formatNumber value="${dto.price }" type="currency" currencySymbol=""
-					maxFractionDigits="0"/>
+						<fmt:formatNumber value="${dto.price }" type="currency" currencySymbol=""
+							maxFractionDigits="0"/>
 					</div>
-				<div class="icons">
-					<div class="review"><i class="bi bi-chat-dots chat"></i>${dto.reviewcount }</div>
-					<i class="bi bi-heart like"></i>
-				</div>
+					<div class="icons">
+						<div class="review">
+							<i class="bi bi-chat-dots chat"></i>${dto.reviewcount }
+						</div>
+						<i class="bi bi-heart like"></i>
+					</div>
 				</div>
 			</div>
 			<c:if test="${i.index%4==3 ||i.last }">
 				</div>
 			</c:if>
-	</c:forEach>
+		</c:forEach>
 	</div>
+</div>	
 </body>
 </html>

@@ -33,52 +33,47 @@ public class AdminController {
 		HMartAdminDao hmartAdminDao;
 	
 		@GetMapping("/admin-login") 
-		public String adminLogin()
-		{
+		public String adminLogin(){
 			return "/admin/adminLogin";
 		}
 		
 		 @PostMapping("/admin-loginproc") 
-		  public String loginproc(@RequestParam String id,
-		  @RequestParam String password,
-		  @RequestParam(required=false) 
-		  String cbsave, HttpSession session) 
-		  { 
-			  int check = hmartMemberService.idPassCheck(id, password);
-			System.out.println(check);
+		 public String loginproc(@RequestParam String id,
+				 				 @RequestParam String password,
+				 				 @RequestParam(required=false)String cbsave,
+		 						 HttpSession session){ 
+			 
+	      int check = hmartMemberService.idPassCheck(id, password);
+		  System.out.println(check);
 		
 		  if(check==1 && hmartMemberDao.findById(id).get().getId().equals("admin")) { 
-		  session.setMaxInactiveInterval(60*60*8);
+			  session.setMaxInactiveInterval(60*60*8);
+		  	  session.setAttribute("myid", id); 
+			  session.setAttribute("login", id);
+			  session.setAttribute("saveok", cbsave);
 		  
-		  session.setAttribute("myid", id); 
-		  session.setAttribute("login", id);
-		  session.setAttribute("saveok", cbsave);
+			  Optional<HMartMemberDto> memberDto = hmartMemberService.getMemberInfoById(id);
+			  session.setAttribute("name", memberDto.get().getName());
 		  
-		  Optional<HMartMemberDto> memberDto = hmartMemberService.getMemberInfoById(id);
-		  
-		  session.setAttribute("name", memberDto.get().getName());
-		  
-		  return "redirect:/";
+			  return "redirect:/";
 		  
 		  }else {
 		  
-		  return "/login/loginFail"; 
+			  return "/login/loginFail"; 
 		  
 		  }
 		 
-		  }
+	    }
 		
 		@GetMapping("/item-upload") 
-		public String Upload()
-		{
+		public String Upload(){
 			return "/admin/itemUpload";
 		}
 		
 		@PostMapping("/registration")
 		public String upload(@ModelAttribute ItemDto dto,
-		 MultipartFile mainphoto,
-		 MultipartFile detailphoto, HttpSession session) //MultipartFile name = <input name>  파일 업로드의 경우 이름과 dto 이름을 똑같이 할 경우 오류 찾기가 어려워 구분을 위해 dto name과 여기 input의 Name을 다르게 준다.
-		{							
+							 MultipartFile mainphoto,
+							 MultipartFile detailphoto, HttpSession session){	 //MultipartFile name = <input name>  파일 업로드의 경우 이름과 dto 이름을 똑같이 할 경우 오류 찾기가 어려워 구분을 위해 dto name과 여기 input의 Name을 다르게 준다.						
 			
 			//업로드할 save 위치 구하기
 			String path = session.getServletContext().getRealPath("/save");

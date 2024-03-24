@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class LoadController {
 
 	@GetMapping("/load/map")
-	public String map()
-	{
+	public String map(){
 		return "/load/map";
 	}
 }

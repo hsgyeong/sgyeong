@@ -11,34 +11,34 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-.sang{
+.sang {
 font-size: 22px;
 text-align: center;
 display: flex;
-align-items: center;}
-.sang img{
+align-items: center;
+}
+
+.sang img {
 margin-right:20px;
 }
 </style>
 </head>
 <body>
-<table class="table table-bordered sang"
-style="margin-left: 400px; margin-top: 120px;">
+<table class="table table-bordered sang" style="margin-left: 400px; margin-top: 120px;">
 	<tr>
 		<td>
-		<img src="../upload/${dto.photoname }" >
+			<img src="../upload/${dto.photoname }" >
 		</td>
 	</tr>
-
-<tr>
-	<td>
-		<h5>
-		<p>${dto.sangpum }</p>
-		<p>${dto.price }</p>
-		<p>${dto.ipgoday }</p>
-		</h5>
-	</td>
-</tr>
+	<tr>
+		<td>
+			<h5>
+			<p>${dto.sangpum }</p>
+			<p>${dto.price }</p>
+			<p>${dto.ipgoday }</p>
+			</h5>
+		</td>
+	</tr>
 </table>
 </body>
 </html>

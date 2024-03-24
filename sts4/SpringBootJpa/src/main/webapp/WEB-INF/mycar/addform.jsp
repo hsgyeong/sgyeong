@@ -12,56 +12,53 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div style="margin:100px 100px; width:500px;">
-		<form action="insert" method="post" enctype="multipart/form-data">
+<div style="margin:100px 100px; width:500px;">
+	<form action="insert" method="post" enctype="multipart/form-data">
 		<table class="table table-bordered">
-		<tr>
-			<th>자동차명</th>
+			<tr>
+				<th>자동차명</th>
 				<td>
-				<input type="text" name="carname" class="form-control"
-				style="width:120px;" required="required">
+					<input type="text" name="carname" class="form-control"
+					style="width:120px;" required="required">
 				</td>
-		</tr>
-		
-		<tr>
-			<th>가격</th>
+			</tr>	
+			<tr>
+				<th>가격</th>
 				<td>
-				<input type="text" name="carprice" class="form-control"
-				style="width:120px;" required="required">
+					<input type="text" name="carprice" class="form-control"
+					style="width:120px;" required="required">
 				</td>
-		</tr>
-		
-		<tr>
-			<th>색상</th>
+			</tr>
+			<tr>
+				<th>색상</th>
 				<td>
-				<input type="color" name="carcolor" class="form-control"
-				style="width:200px;" value="#ff0000">
+					<input type="color" name="carcolor" class="form-control"
+					style="width:200px;" value="#ff0000">
 				</td>
-		</tr>
-		<tr>
-			<th>자동사사진</th>
+			</tr>
+			<tr>
+				<th>자동사사진</th>
 				<td>
-				<input type="file" name="carupload" class="form-control"
-				style="width:200px;" required="required" >
+					<input type="file" name="carupload" class="form-control"
+					style="width:200px;" required="required" >
 				</td>
-		</tr>
-		<tr>
-			<th>구입일</th>
+			</tr>
+			<tr>
+				<th>구입일</th>
 				<td>
-				<input type="date" name="carguip" class="form-control"
-				style="width:200px;" required="2023-10-20">
+					<input type="date" name="carguip" class="form-control"
+					style="width:200px;" required="2023-10-20">
 				</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2" align="center">
-			<button type="submit" class="btn btn-success">저장</button>
-			<button type="button" class="btn btn-info"
-			onclick="location.href='carlist'">목록</button>
-			</td>
-		</tr>
+			</tr>		
+			<tr>
+				<td colspan="2" align="center">
+					<button type="submit" class="btn btn-success">저장</button>
+					<button type="button" class="btn btn-info"
+					onclick="location.href='carlist'">목록</button>
+				</td>
+			</tr>
 		</table>		
-		</form>
-	</div>
+	</form>
+</div>
 </body>
 </html>

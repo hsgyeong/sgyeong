@@ -12,8 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-.imgs
-{
+.imgs {
 	height:50vh;
 	margin:0;
 	padding:0;
@@ -26,14 +25,12 @@
 	width:2400px;
 }
 
-.img
-{
+.img {
 	width:800px; 
 	height:420px; 
 } 
 
-.main
-{
+.main {
 	flex-direction: column;
 	align-items: center;
 	width:100%;
@@ -41,18 +38,17 @@
 	top:200px;/**/
 }
 
-#main{
+#main {
 	margin-top:100px;	
 }
 
-#imgholder
-{
+#imgholder {
 	list-style: none;
 	display: flex;
 	height: 550px;
 }
 
-.mainbox{
+.mainbox {
 	width:800px; 
 	height:420px; 
 	border:1px solid red;
@@ -62,8 +58,7 @@
 	top: 135px;/**/
 }
 
-.bt
-{
+.bt {
 	z-index: 2;
 	width:40px;
 	height:40px;
@@ -71,26 +66,26 @@
 	transform: translateY(-50%);
 }
 
-.img .active{
+.img .active {
 	display:block;
 }
 
-#changeleft{
+#changeleft {
 	top:50%;
 	left:0;
 	margin-top: 28%;
 }
 
-#changeright{
+#changeright {
 	top:50%;
 	right:0;
 	margin-top: 28%;
 }
 
-.slider{
+.slider {
 	position: absolute;
 }
-.hotitem{ 
+.hotitem { 
 	margin-top: 200px;
 	text-align: center;
 	font-size: 30px;
@@ -106,7 +101,7 @@
 	z-index: 2;
 }
 
-.infopage{
+.infopage {
 	width: 100%;
 	align-content: center;
 	justify-content: center;
@@ -147,16 +142,15 @@ $(document).ready(function(){
 	}
 	
 });
-	
 </script>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <div id="main">
 	<div class="mainbox">
-	<div class="slider" style="position:relative;">
-	<img alt="" src="${root }/mainimage/left-arrow.png" class="bt" id="changeleft" >
-	<img alt="" src="${root }/mainimage/right-arroww.png" class="bt" id="changeright">
+		<div class="slider" style="position:relative;">
+		<img alt="" src="${root }/mainimage/left-arrow.png" class="bt" id="changeleft" >
+		<img alt="" src="${root }/mainimage/right-arroww.png" class="bt" id="changeright">
 		<ul id="imgholder" class="imgs">
 			<li><img src="${root }/mainimage/메인1.png" class="img img1" id="mainimg1"></li>
 			<li><img src="${root }/mainimage/메인2.png" class="img img2" id="mainimg2"></li>
@@ -164,13 +158,12 @@ $(document).ready(function(){
 		</ul>
 	</div>
 	</div>
-		<div class="hotitem">현재 인기상품</div>
-		<div style="position:relative;">
+	<div class="hotitem">현재 인기상품</div>
+	<div style="position:relative;">
 		<div class="layout mainList">
 			<jsp:include page="../layout/mainList.jsp"/>
 		</div>
-		</div>
-
+	</div>
 </div>
 </body>
 </html>

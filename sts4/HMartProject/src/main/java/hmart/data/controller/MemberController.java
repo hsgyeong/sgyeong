@@ -30,22 +30,18 @@ public class MemberController {
 	
 	@GetMapping("/idcheck")
 	@ResponseBody
-	public Map<String, Integer> idCheck(@RequestParam String id)
-	{
+	public Map<String, Integer> idCheck(@RequestParam String id){
 		Map<String, Integer> map = new HashMap<>();
 		int i = hmartMemberService.getSearchId(id);
 		
 		map.put("count", i);
 		
 		return map;
-		
 	}
-	/*
-	@PostMapping("/check-password")
-	public String checkPassword(@RequestParam("pass1") String pass1, @RequestParam("pass2") String pass2)
-	{
-		if(pass1 == null || pass1.isEmpty()||pass2 == null || pass2.isEmpty())
-		{
+	
+/*	@PostMapping("/check-password")
+	public String checkPassword(@RequestParam("pass1") String pass1, @RequestParam("pass2") String pass2){
+		if(pass1 == null || pass1.isEmpty()||pass2 == null || pass2.isEmpty()){
 			return "비밀번호를 확인해주세요.";
 		}
 		else
@@ -53,12 +49,10 @@ public class MemberController {
 	}*/
 	
 	@PostMapping("/join-success")
-	public String join(@ModelAttribute HMartMemberDto memberDto)
-	{
+	public String join(@ModelAttribute HMartMemberDto memberDto){
 		memberDao.insertMember(memberDto);
 		
 		return "/login/joinsuccess";
 	}
 	
-
 }

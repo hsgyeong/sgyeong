@@ -30,17 +30,13 @@ public class LoginController {
 	
 	@RequestMapping("/")
 	public String home(HttpServletRequest request, 
-			HttpSession session,
-			Model  model)
-	{
+					   HttpSession session,
+					   Model  model){
 		String loginSuccess = (String) session.getAttribute("loginSuccess");
 		
-		if(loginSuccess==null)
-		{
+		if(loginSuccess==null){
 			return "/login/login";
-		}
-		else
-		{
+		}else{
 			String id = (String)session.getAttribute("id");
 			String name = (String)session.getAttribute("name");
 			
@@ -49,59 +45,47 @@ public class LoginController {
 				if(memberOptional.isPresent()) {
 				
 					String memberName = memberOptional.get().getName();
-				
 					model.addAttribute("name", memberName);
-					
 					return "/";
-			}
-				else {
+				} else {
 					return "/login/login";
 				}
-		}
-		
+		}	
 	}
-	  @PostMapping("/loginproc") 
-	  public String loginproc(@RequestParam String id,
-	  @RequestParam String password,
-	  @RequestParam(required=false) 
-	  String cbsave, HttpSession session) 
-	  { 
-		  int check = hmartMemberService.idPassCheck(id, password);
+	
+	@PostMapping("/loginproc") 
+	public String loginproc(@RequestParam String id,
+							@RequestParam String password,
+							@RequestParam(required=false) 
+							String cbsave, HttpSession session){ 
+	    int check = hmartMemberService.idPassCheck(id, password);
 		System.out.println(check);
 	
-	  if(check==1) { 
-	  session.setMaxInactiveInterval(60*60*8);
+	    if(check==1) { 
+	    session.setMaxInactiveInterval(60*60*8);
+	    session.setAttribute("myid", id); 
+	    session.setAttribute("login", id);
+	    session.setAttribute("saveok", cbsave);
 	  
-	  session.setAttribute("myid", id); 
-	  session.setAttribute("login", id);
-	  session.setAttribute("saveok", cbsave);
+	    Optional<HMartMemberDto> memberDto = hmartMemberService.getMemberInfoById(id);
+	    session.setAttribute("name", memberDto.get().getName());
 	  
-	  Optional<HMartMemberDto> memberDto = hmartMemberService.getMemberInfoById(id);
-	  
-	  session.setAttribute("name", memberDto.get().getName());
-	  
-	  return "redirect:/";
-	  
+	    return "redirect:/";
 	  }else {
-	  
-	  return "/login/loginFail"; 
-	  
+	    return "/login/loginFail";  
 	  }
-	 
-	  }
+    }
 	  
-	  @RequestMapping("/logout")
-	  public String logout(HttpSession session, HttpServletResponse response)
-	  {
-		  String login = (String)session.getAttribute("login");
+	@RequestMapping("/logout")
+	public String logout(HttpSession session, HttpServletResponse response){
+		String login = (String)session.getAttribute("login");
 		  
-		  if(login!=null)
-		  {
-			  session.removeAttribute("login");
-			  session.removeAttribute("myid");
-			  session.removeAttribute("name");
-		  }
-		  return "redirect:/";
-	  }
+		if(login!=null){
+		   session.removeAttribute("login");
+		   session.removeAttribute("myid");
+		   session.removeAttribute("name");
+	    }
+		return "redirect:/";
+    }
 	  
 }

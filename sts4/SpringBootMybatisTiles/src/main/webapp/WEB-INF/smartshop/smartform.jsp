@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +11,8 @@
 	String root=request.getContextPath();
 %>
 <!-- se2 폴더에서 js 파일 가져오기 -->
-<script type="text/javascript" src="<%=root%>/se2/js/HuskyEZCreator.js"
-	charset="utf-8"></script>
-
-<script type="text/javascript" src="<%=root%>/se2/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js"
-	charset="utf-8"></script>	
+<script type="text/javascript" src="<%=root%>/se2/js/HuskyEZCreator.js"	charset="utf-8"></script>
+<script type="text/javascript" src="<%=root%>/se2/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js" charset="utf-8"></script>	
 </head>
 <body>
 <form action="insert" method="post" enctype="multipart/form-data">
@@ -25,13 +21,11 @@
 		<tr>
 			<th style="width:120px; text-align: center;">상품명</th>
 			<td>
-				<input type="text" name="sangname" class="form-control"
-					placeholder="상품명" required="required" style="width: 200px;">
+				<input type="text" name="sangname" class="form-control"	placeholder="상품명" required="required" style="width: 200px;">
 			</td>
 			<th  style="width:120px; text-align: center;">가격</th>
 			<td>
-			<input type="text" name="price" class="form-control"
-				required="required" placeholder="가격입력" style="width:200px;">
+				<input type="text" name="price" class="form-control" required="required" placeholder="가격입력" style="width:200px;">
 			</td>
 		</tr>
 		<tr>
@@ -41,34 +35,22 @@
 			</td>
 			<th  style="width:120px; text-align: center;">입고일</th>
 			<td>
-				<input type="date" name="ipgoday" class="form-control"
-				required="required" style="width:200px;">
-				
+				<input type="date" name="ipgoday" class="form-control"	required="required" style="width:200px;">
 			</td>
 		</tr>
 		<tr>
 			<td colspan="4">
-				<textarea name="content" id="content"		
-					required="required"			
-					style="width: 100%;height: 300px;display: none;"></textarea>		
-			
+				<textarea name="content" id="content" required="required" style="width: 100%;height: 300px;display: none;"></textarea>		
 			</td>
 		</tr>
 		<tr>
 			<td colspan="4" align="center">
-				<button type="button" class="btn btn-gray"
-					style="width: 120px;"
-					onclick="submitContents(this)">DB저장</button>
-				
-				<button type="button" class="btn btn-gray"
-					style="width: 120px;"
-					onclick="location.href='list'">목록</button>
+				<button type="button" class="btn btn-gray" style="width: 120px;" onclick="submitContents(this)">DB저장</button>
+				<button type="button" class="btn btn-gray" style="width: 120px;" onclick="location.href='list'">목록</button>
 			</td>
 		</tr>
-		
 	</table>   
 </form>
-
 <!-- 스마트게시판에 대한 스크립트 코드 넣기 -->
 <script type="text/javascript">
 var oEditors = [];
@@ -114,7 +96,6 @@ function pasteHTML(filepath){
 
 }
 </script>
-
 </body>
 </html>
 

@@ -34,19 +34,15 @@ public class MemberController {
 	MemberService service;
 	
 	@GetMapping("/member/myinfo")
-	public String info(@ModelAttribute MemberDto dto,Model model)
-	{
+	public String info(@ModelAttribute MemberDto dto,Model model){
 		List<MemberDto> list = service.getAllMembers();
-		
-		
 		model.addAttribute("list",list);
 					
 		return "/member/myinfo";
 	}
 
 	@GetMapping("/member/list")
-	public ModelAndView list()
-	{
+	public ModelAndView list(){
 		ModelAndView model = new ModelAndView();
 		
 		List<MemberDto> list = service.getAllMembers();
@@ -54,32 +50,26 @@ public class MemberController {
 		//list.size()로 totalCount 구할 수 있음
 		model.addObject("list", list);
 		model.addObject("totalCount", list.size());
-		
 		model.setViewName("/member/memberlist");
 		
 		return model;
 	}
 	
 	@GetMapping("/member/passfail")
-	public String passfail()
-	{
-		
+	public String passfail(){
 		return "/member/passfail";
 	}
 	
 	@GetMapping("/member/form")
-	public String form()
-	{
+	public String form(){
 		return "/member/addform";
 	}
 	
 	//아이디체크
 	@GetMapping("/member/idcheck")
 	@ResponseBody  //responsebody 해야 json으로 반환. ajax로 할 때 무조건 responsebody 줘야함
-	public Map<String, Integer> idCheck(@RequestParam String id)
-	{
+	public Map<String, Integer> idCheck(@RequestParam String id){
 		Map<String, Integer> map = new HashMap<>();
-		
 		int n=service.getSerchId(id);
 		
 			//string key / integer value
@@ -91,13 +81,10 @@ public class MemberController {
 	//insert membersave로 들어가도록 (일단 list로 가는데 admin이 아니면 gaipsuccess로 이동 예정)
 	@PostMapping("/member/insert")
 	public String insert(@ModelAttribute MemberDto dto,
-			@RequestParam MultipartFile myphoto,
-			HttpSession session)
-	{
+						 @RequestParam MultipartFile myphoto,
+						 HttpSession session){
 		String path = session.getServletContext().getRealPath("/membersave");
-		
 		SimpleDateFormat sdf= new SimpleDateFormat("yyyyMMddHHmmss");
-		
 		String fileName=sdf.format(new Date())+myphoto.getOriginalFilename();
 		
 		//dto저장
@@ -111,7 +98,6 @@ public class MemberController {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		
 		}
 		
 		service.insertMember(dto);
@@ -121,8 +107,7 @@ public class MemberController {
 	
 /*	@GetMapping("/member/out")  --강퇴
 	public String out(@RequestParam String num,
-			HttpServletRequest request)
-	{
+					  HttpServletRequest request){
 		String photo = serv
 		service.deleteMember(num);
 		
@@ -132,8 +117,7 @@ public class MemberController {
 	//삭제는 ajax
 	@GetMapping("/member/delete")
 	@ResponseBody
-	public void deleteMember(@RequestParam String num)
-	{
+	public void deleteMember(@RequestParam String num){
 		service.deleteMember(num);
 	}
 	
@@ -141,9 +125,8 @@ public class MemberController {
 	@PostMapping("/member/updatephoto")
 	@ResponseBody
 	public void photoupload(String num,
-			MultipartFile photo,
-			HttpSession session)
-	{
+				MultipartFile photo,
+				HttpSession session){
 		//업로드할 경로
 		String path = session.getServletContext().getRealPath("/membersave");
 		
@@ -172,15 +155,13 @@ public class MemberController {
 	//dto 자체를 그대로 res로 넘겨서 화면에 띄워줄 수 있음
 	@GetMapping("/member/updatemodal")
 	@ResponseBody
-	public MemberDto updateModal(@RequestParam String num)
-	{
+	public MemberDto updateModal(@RequestParam String num){
 		return service.getDataByNum(num);
 	}
 	
 	@GetMapping("/member/updateinfo")
 	@ResponseBody
-	public String updateinfo(@ModelAttribute MemberDto dto)
-	{
+	public String updateinfo(@ModelAttribute MemberDto dto){
 		service.updateMember(dto);
 		
 		return "redirect:myinfo";
@@ -193,8 +174,7 @@ public class MemberController {
 	@GetMapping("/member/deleteme")
 	@ResponseBody  //ajax로 처리하려면 responsebody 써야함
 	public void deleteinfo(@RequestParam String num,
-			HttpSession session)
-	{	
+						   HttpSession session)	{	
 		String path = session.getServletContext().getRealPath("/membersave");
 		String photo = service.getDataByNum(num).getPhoto();
 		File file = new File(path+"\\"+photo);

@@ -15,7 +15,7 @@
 	/* margin-bottom: 650px; */
 	color: #477500;
 }
-.centerNumber{
+.centerNumber {
 	margin-bottom: 40px;
 	font-size: 32px;
 	font-weight: bold;
@@ -32,11 +32,11 @@
 	margin: auto;
 }
 
-.information{
+.information {
 	display: flex;
 }
 
-#information{
+#information {
 	display: flex;
 	flex-direction: column;/**/
 	width: 100%;
@@ -54,7 +54,7 @@
 	background-color: #7DAB12;
 	font-weight: bold;
 }
-.item-insertbt, .event-insertbt{
+.item-insertbt, .event-insertbt {
 	background-color: #7DAB12;
 	color: white;
 	border-color: #7DAB12;
@@ -77,7 +77,7 @@
 .left, .right {
 	bottom: 0;
 }
-#left{
+#left {
 	left: 0;
 	margin-right: 18%;
 }
@@ -115,55 +115,52 @@
 	color:gray;
 }
 </style>
-
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <div class="info">
 	<div id="infobox">
-	<hr>
-	<div id="left">
-		<span class="center"><span class="mt">H-Mart</span> 고객센터</span><br>
-		<div class="run">
-			<span class="centerNumber">1500-0000</span>
-			<span class="day">월~토요일 오전 7시 ~ 오후 6시</span><br>
-		</div>
-	
-		<div>
-		<div class="kakao-inq-btn">
-			<button class="kakao-inquiry">카카오톡 문의</button>
-			<div class="runtime">
-			월~토요일 | 오전7시~오후6시<br>
-			일/공휴일 &nbsp;| 오전7시~오후1시
+		<hr>
+		<div id="left">
+			<span class="center"><span class="mt">H-Mart</span> 고객센터</span><br>
+			<div class="run">
+				<span class="centerNumber">1500-0000</span>
+				<span class="day">월~토요일 오전 7시 ~ 오후 6시</span><br>
 			</div>
-		</div>
-		<br>
-		<div class="indiv-inq-btn">
-		<button class="individual-inquiry">1:1 문의</button>
-		<span class="runtime">
-		365일
-		</span>
-		</div>
-		<br>
-		<div class="bulk-inq-btn">
 			<div>
-			<button class="bulk-inquiry">대량주문 문의</button>
-			</div>
-			<div class="runtime">
-			월~금요일 | 오전9시~오후6시<br>
-			점심시간 &nbsp;&nbsp;| 오후12시~오후1시
+				<div class="kakao-inq-btn">
+					<button class="kakao-inquiry">카카오톡 문의</button>
+					<div class="runtime">
+					월~토요일 | 오전7시~오후6시<br>
+					일/공휴일 &nbsp;| 오전7시~오후1시
+					</div>
+				</div>
+				<br>
+				<div class="indiv-inq-btn">
+					<button class="individual-inquiry">1:1 문의</button>
+					<span class="runtime">
+					365일
+					</span>
+				</div>
+				<br>
+				<div class="bulk-inq-btn">
+					<div>
+						<button class="bulk-inquiry">대량주문 문의</button>
+					</div>
+					<div class="runtime">
+						월~금요일 | 오전9시~오후6시<br>
+						점심시간 &nbsp;&nbsp;| 오후12시~오후1시
+					</div>
+				</div>
 			</div>
 		</div>
+		<div id="right">
+			<span class="infobt">투자정보</span>
+			<span class="infobt">인재채용</span>
+			<span class="infobt">이용약관</span>
+			<span class="infobt">개인정보처리방침</span>
+			<span class="infobt">이용안내</span>
 		</div>
-	</div>
-	<div id="right">
-	<span class="infobt">투자정보</span>
-	<span class="infobt">인재채용</span>
-	<span class="infobt">이용약관</span>
-	<span class="infobt">개인정보처리방침</span>
-	<span class="infobt">이용안내</span>
-	</div>
-	
 	</div>
 	<%-- <c:if test="${sessionScope.login == null }">
 	<div>

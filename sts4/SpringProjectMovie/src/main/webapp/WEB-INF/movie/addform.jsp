@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -17,32 +16,31 @@
 		<tr>
 			<th align="center">영화명</th>
 			<td>
-			<input type="text" name="mv_title" class="form-control" required="required">
+				<input type="text" name="mv_title" class="form-control" required="required">
 			</td>
 		</tr>
 		<tr>
 			<th align="center">포스터</th>
 			<td>
-			<input type="file" name="poster" class="form-control">
+				<input type="file" name="poster" class="form-control">
 			</td>				<!--file을 add할 때 name을 다르게 해줘야함 -->
 		</tr>
 		<tr>
 			<th align="center">감독</th>
 			<td>
-			<input type="text" name="mv_director" class="form-control" required="required">
+				<input type="text" name="mv_director" class="form-control" required="required">
 			</td>
 		</tr>
 		<tr>
 			<th align="center">개봉일</th>
 			<td>
-			<input type="date" name="mv_opendate" class="form-control" required="required">
+				<input type="date" name="mv_opendate" class="form-control" required="required">
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2">
-			<button type="submit" class="btn btn-success">저장</button>
-			<button type="button" class="btn btn-info"
-			onclick="location.href='list'">목록</button>
+				<button type="submit" class="btn btn-success">저장</button>
+				<button type="button" class="btn btn-info" onclick="location.href='list'">목록</button>
 			</td>
 		</tr>
 	</table>

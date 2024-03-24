@@ -219,8 +219,7 @@
 							<input type="text" class="form-control" name="id" id="id">
 							<button type="button" class="btn" id="idcheck">중복확인</button>
 					</span>
-				</div>
-					
+				</div>	
 				<span class="validid"></span>
 				</div>
 			    
@@ -230,7 +229,6 @@
 							<input type="text" class="form-control" name="password" id="pass1">
 						</div>
 					</span>
-						
 				<span class="validpass"></span>
 				</div>
 				
@@ -240,7 +238,6 @@
 							<input type="text" class="form-control passchk" name="pass2" id="pass2">
 						</div>
 				   </span>
-				   
 						<span class="passok"></span>
 				</div>
 				
@@ -300,8 +297,7 @@
 			if(validId){
 				$("span.validid").text("");
 			}
-			else
-			{	
+			else {	
 				$("span.validid").text("6~12자의 영문 소문자와 숫자만 가능합니다.").css("color","red");
 			}
 		})
@@ -323,8 +319,7 @@
 						alert("사용 가능한 아이디입니다.");
 						$("span.validid").text("사용 가능한 아이디입니다.").css("color","green");
 					}
-					else
-					{
+					else {
 						alert("이미 사용중인 아이디입니다. 다시 입력해주세요.");
 						$("span.validid").text("이미 사용중인 아이디입니다. 다시 입력해주세요.").css("color","red");
 					}
@@ -341,8 +336,7 @@
 			if(validPass){
 				$("span.validpass").text("");
 			}
-			else 
-			{
+			else {
 				$("span.validpass").text("비밀번호는 8~12자리의 영소문자 또는 대문자, 숫자, 특수문자를 포함해야합니다.").css("color","red");
 			}	
 		})
@@ -372,8 +366,7 @@
 			if(pass1==pass2){
 				$("span.passok").text("비밀번호가 일치합니다.").css("color","green");
 			}
-			else
-			{
+			else {
 				$("span.passok").text("비밀번호가 일치하지 않습니다.").css("color","red");
 				$("#pass2").focus();
 			}
@@ -383,8 +376,7 @@
 			
 			var id = $("#id").val();
 			
-			if(id=="")
-			{
+			if(id==""){
 				alert("아이디를 입력해주세요.");
 				e.preventDefault();
 				return;
@@ -393,22 +385,19 @@
 			var pass1 = $("#pass1").val();
 			var pass2 = $("#pass2").val();
 			
-			if(pass1 == "" || pass2 == "" || (pass1 == "" && pass2 ==""))
-			{
+			if(pass1 == "" || pass2 == "" || (pass1 == "" && pass2 =="")){
 				alert("비밀번호를 입력해주세요.");
 				e.preventDefault();
 				return;
 			}
 		
-			if(!ValidPass(pass1))
-			{
+			if(!ValidPass(pass1)){
 				alert("유효하지 않은 비밀번호입니다. 다시 입력해주세요.");
 				e.preventDefault();
 				return;
 			}
 			
-			if(pass1 !== pass2)
-			{
+			if(pass1 !== pass2){
 				alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
 				e.preventDefault();
 				return;
@@ -436,20 +425,17 @@
 						
 						//법정동명이 있을 경우 추가한다. (법정리는 제외)
 						//법정동의 경우 마지막 문자가 "동/로/가로 끝난다.'
-						if(data.bname !== '' && /[동/로/가]$/g.test(data.bname))
-						{
+						if(data.bname !== '' && /[동/로/가]$/g.test(data.bname)){
 								extraAddr += data.bname;
 						}
 						
 						//건물명이 있고, 공동주택일 경우 추가한다.
-						if(data.buildingName !== '' && data.apartment === 'Y')
-						{
+						if(data.buildingName !== '' && data.apartment === 'Y'){
 							extraAddr += (extraAddr !== '' ? ', '+ data.buildingName : data.buildingName);	
 						}
 						
 						//표시할 참고항목이 있을 경우 괄호까지 추가한 최종 문자열
-						if(extraAddr !== '')
-						{
+						if(extraAddr !== ''){
 							extraAddr = '('+ extraAddr +')';
 						}
 						

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -14,11 +13,11 @@
 <c:set var="root" value="<%=request.getContextPath() %>"></c:set>
 <body>
 	<div>
-	<img alt="" src="${root }/image/b3.png" width="200" align="left" hspace="20">
-	<br><br>
-	<b>${name }님</b><br>
-	<button type="button" class="btn btn-danger"
-	style="width:100px;" onclick="location.href='logoutprocess'">로그아웃</button>
+		<img alt="" src="${root }/image/b3.png" width="200" align="left" hspace="20">
+		<br><br>
+		<b>${name }님</b><br>
+		<button type="button" class="btn btn-danger"
+		style="width:100px;" onclick="location.href='logoutprocess'">로그아웃</button>
 	</div>
 </body>
 </html>

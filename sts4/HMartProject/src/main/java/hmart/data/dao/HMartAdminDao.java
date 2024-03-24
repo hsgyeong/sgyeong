@@ -14,8 +14,7 @@ public class HMartAdminDao {
 	@Autowired
 	HMartAdminDaoInter hmartAdminDaoInter;
 	
-	public void insertHMart(ItemDto dto)
-	{
+	public void insertHMart(ItemDto dto){
 		hmartAdminDaoInter.save(dto);
 	}
 	

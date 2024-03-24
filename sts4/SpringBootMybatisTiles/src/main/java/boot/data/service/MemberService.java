@@ -72,7 +72,6 @@ public class MemberService implements MemberServiceInter {
    @Override
    public void updatePhoto(String num, String photo) {
 	// TODO Auto-generated method stub
-	
 	Map<String,String> map=new HashMap<>();
 	
 	map.put("photo", photo);
@@ -84,7 +83,6 @@ public class MemberService implements MemberServiceInter {
    @Override
    public void updateMember(MemberDto dto) {
 	// TODO Auto-generated method stub
-	
 	mapperInter.updateMember(dto);
    }
 
@@ -92,6 +90,6 @@ public class MemberService implements MemberServiceInter {
    public MemberDto getDataByNum(String num) {
 	// TODO Auto-generated method stub
 	return mapperInter.getDataByNum(num);
-}
+   }
 
-	}
+}

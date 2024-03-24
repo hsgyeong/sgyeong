@@ -17,27 +17,26 @@
 		<tr align="center">
 			<th>상품명</th>
 			<td>
-			<input type="text" name="sangpum" class="form-control" required="required">
+				<input type="text" name="sangpum" class="form-control" required="required">
 			</td>
 		</tr>
 		<tr align="center">
 			<th>상품이미지</th>
 			<td>
-			<input type="file" name="photo" multiple="multiple" class="form-control" >
+				<input type="file" name="photo" multiple="multiple" class="form-control" >
 			</td>
 		</tr>
 		<tr align="center">
 			<th>가격</th>
 			<td>
-			<input type="text" name="price" class="form-control" >
+				<input type="text" name="price" class="form-control" >
 			</td>
 		</tr>
-		
 		<tr align="center">
 			<td colspan="2">
-			<button type="submit" class="btn btn-info">저장</button>
-			<button type="button" class="btn btn-success"
-			onclick="location.href='list'">목록</button>
+				<button type="submit" class="btn btn-info">저장</button>
+				<button type="button" class="btn btn-success"
+				onclick="location.href='list'">목록</button>
 			</td>
 		</tr>
 	</table>

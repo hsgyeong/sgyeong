@@ -25,14 +25,12 @@ public class MemBoardService implements MemBoardServiceInter {
 	@Override
 	public void updatereadcount(String num) {
 		// TODO Auto-generated method stub
-		
 		mapperInter.updatereadcount(num);
 	}
 
 	@Override
 	public void insertBoard(MemBoardDto dto) {
 		// TODO Auto-generated method stub
-		
 		mapperInter.insertBoard(dto);
 	}
 

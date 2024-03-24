@@ -14,47 +14,37 @@ public class HMartMemberService implements HMartMemberServiceInter {
 	@Autowired 
 	private HMartMemberDaoInter hmartMemberDaoInter;
 	
-	public Optional<HMartMemberDto> getUserNameById(String id)
-	{
+	public Optional<HMartMemberDto> getUserNameById(String id){
 		return hmartMemberDaoInter.findById(id);
 	}
 	
-	public int getSearchId(String id)
-	{
+	public int getSearchId(String id){
 		Optional<HMartMemberDto> memberDto = hmartMemberDaoInter.findById(id);
 		
-		if(memberDto.isPresent()) 
-		{
+		if(memberDto.isPresent()){
 			String usedID = hmartMemberDaoInter.findById(id).get().getId();
 			boolean idMatch = hmartMemberDaoInter.findById(id).get().getId().equals(id);
 		
 			return idMatch? 1:0;
-		}
-		else
-		{
+		}else{
 			return 0;
 		}
 	}
 	
-	public int idPassCheck(String id, String password)
-	{
+	public int idPassCheck(String id, String password){
 		Optional<HMartMemberDto> memberDto = hmartMemberDaoInter.findById(id);
 		
-		if(memberDto.isPresent()) 
-		{
+		if(memberDto.isPresent()){
 			String pass = hmartMemberDaoInter.findById(id).get().getPassword();
 			boolean passMatch = hmartMemberDaoInter.findById(id).get().getPassword().equals(password);
 		
 			return passMatch? 1:0;
-		}
-		else
-		{
+		}else{
 			return 0;
 		}
 	}
 	
-	public Optional<HMartMemberDto> getMemberInfoById(String id)
-	{
+	public Optional<HMartMemberDto> getMemberInfoById(String id){
 		return hmartMemberDaoInter.findById(id);
 	}
 }

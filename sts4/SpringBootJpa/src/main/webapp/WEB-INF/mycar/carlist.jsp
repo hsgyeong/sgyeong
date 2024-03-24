@@ -21,32 +21,36 @@ border-radius: 100px;
 </head>
 <body>
 <div style="margin:50px 100px; width:1000px;">
-<img alt="" src="../2.png" style="width:100px; height:100px;">
-	<button type="button" class="btn btn-info"
-	onclick="location.href='carform'">자동차정보입력</button>
-	<br><br>
-	<h3 class="alert alert-info">
-	<b>총 ${totalCount }개의 자동차 정보가 있습니다.</b>
-	</h3>
-	<table class="table table-bordered">
-		<tr align="center">
-			<th width="60px">번호</th>
-			<th width="150px">차량명</th>
-			<th width="100px">색상</th>
-			<th width="160px">가격</th>
-			<th width="180px">구입일</th>
-			<th width="180px">등록일</th>
-			<th width="150px">편집</th>
-		</tr>
-		
+	<img alt="" src="../2.png" style="width:100px; height:100px;">
+		<button type="button" class="btn btn-info"
+		onclick="location.href='carform'">자동차정보입력</button>
+		<br><br>
+		<h3 class="alert alert-info">
+			<b>총 ${totalCount }개의 자동차 정보가 있습니다.</b>
+		</h3>
+		<table class="table table-bordered">
+			<tr align="center">
+				<th width="60px">번호</th>
+				<th width="150px">차량명</th>
+				<th width="100px">색상</th>
+				<th width="160px">가격</th>
+				<th width="180px">구입일</th>
+				<th width="180px">등록일</th>
+				<th width="150px">편집</th>
+			</tr>
 		<tr>
 			<c:forEach var="dto" items="${list }" varStatus="i">
 				<tr>
 					<td align="center">${i.count }</td>
 					<td align="center">
-					<a href="detail?num=${dto.num }"><img alt="" src="../save/${dto.carphoto }" width="40" height="40" border="1" hspace="10"></a>
-					${dto.carname }</td>
-					<td align="center"><div style="background-color: ${dto.carcolor}" class="box"></div></td>
+						<a href="detail?num=${dto.num }">
+							<img alt="" src="../save/${dto.carphoto }" width="40" height="40" border="1" hspace="10">
+						</a>
+						${dto.carname }
+					</td>
+					<td align="center">
+						<div style="background-color: ${dto.carcolor}" class="box"></div>
+					</td>
 					<td align="center"><fmt:formatNumber value="${dto.carprice }" type="currency"/></td>
 					<td align="center">${dto.carguip }</td>
 					<td align="center"><fmt:formatDate value="${dto.guipday }" pattern="yyyy-MM-dd HH:mm" /></td>

@@ -2,7 +2,6 @@ package boot.mvc.ex1;
 
 import lombok.Data;
 
-
 //@Setter
 //@Getter
 //@ToString

@@ -22,8 +22,7 @@ public class MainController {
 	HMartMainDao hmartMainDao;
 
 	@GetMapping("/")
-	public String main(Model model)
-	{
+	public String main(Model model){
 		List<ItemDto> itemList = hmartMainDao.getAllDatas();
 		
 		model.addAttribute("list", itemList);
@@ -41,17 +40,15 @@ public class MainController {
 		model.addAttribute("totalCount", itemList.size());
 		
 		return "/layout/mainList";
-	}
-*/
+	}	*/
+
 	@GetMapping("/join")
-	public String join()
-	{
+	public String join(){
 		return "/login/join";
 	}
 
 	@GetMapping("/login")
-	public String login()
-	{
+	public String login(){
 		return "/login/login";
 	}
 		

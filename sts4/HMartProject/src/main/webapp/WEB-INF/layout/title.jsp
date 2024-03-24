@@ -12,7 +12,6 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-
 .ul {
 	display: flex;
 	float: right;
@@ -71,7 +70,6 @@
 	 border-radius: 5px;
 }
 
-
 </style>
 </head>
 <body>
@@ -79,10 +77,10 @@
 	<div class="member">
 		<ul class="ul">
 			<c:if test="${sessionScope.login == null }">
-			<li><a class="join" href="/join">회원가입</a></li>
+				<li><a class="join" href="/join">회원가입</a></li>
 			</c:if>
 			<c:if test="${sessionScope.login != null }">
-			<li class="member-name"><a>${sessionScope.name }</a>&nbsp;&nbsp;님</li>
+				<li class="member-name"><a>${sessionScope.name }</a>&nbsp;&nbsp;님</li>
 			</c:if>
 			<c:if test="${sessionScope.login == null }">
 				<li class="select-li"><a class="login" href="/login">로그인</a></li>
@@ -94,13 +92,12 @@
 		<i class="bi bi-heart"></i>
 		<i class="bi bi-truck"></i>
 		<i class="bi bi-basket3"></i>
-		
 	</div>
 	<c:if test="${sessionScope.login != null && sessionScope.myid == 'admin'}">
 		<div style="text-align:right; margin-right: 60px; margin-top:40px;">
-		<button type="button" class="item-insertbt"
-		onclick="location.href='item-upload'">상품 등록</button>
-		<button type="button" class="event-insertbt">이벤트 등록</button>
+			<button type="button" class="item-insertbt"
+			onclick="location.href='item-upload'">상품 등록</button>
+			<button type="button" class="event-insertbt">이벤트 등록</button>
 		</div>
 	</c:if>	
 </body>

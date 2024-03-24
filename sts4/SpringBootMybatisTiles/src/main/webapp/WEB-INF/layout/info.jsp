@@ -15,14 +15,11 @@
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 	<!--로그인 안하면 기본사진, 로그인하면 자기사진으로 변경 -->
 	<c:if test="${sessionScope.loginok==null}">
-	<img alt="" src="${root }/image/11.png" style="width:230px; height:200px; left:50px;">
+		<img alt="" src="${root }/image/11.png" style="width:230px; height:200px; left:50px;">
 	</c:if>
 	<c:if test="${sessionScope.loginok!=null}">
-	<img alt="" src="${root }/membersave/${sessionScope.loginphoto}" style="width:230px; height:200px; left:50px;">
+		<img alt="" src="${root }/membersave/${sessionScope.loginphoto}" style="width:230px; height:200px; left:50px;">
 	</c:if>
-	
 	<br>
-
-	
 </body>
 </html>

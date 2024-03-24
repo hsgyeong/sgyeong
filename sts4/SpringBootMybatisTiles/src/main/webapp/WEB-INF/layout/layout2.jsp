@@ -12,8 +12,6 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
-	
-	
 	div.layout div.title{
 		position:absolute;
 		top: 10px;
@@ -29,9 +27,8 @@
 		left: 300px;
 		height:100px;
 	}
-	
-	
-		div.layout div.main{
+
+	div.layout div.main{
 		position:absolute;
 		top: 250px;
 		left: 300px;
@@ -53,8 +50,6 @@
 	<div class="main">
 		<tiles:insertAttribute name="main"/>
 	</div>
-	
 </div>
-
 </body>
 </html>
