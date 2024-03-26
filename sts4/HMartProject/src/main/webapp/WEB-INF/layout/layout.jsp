@@ -17,6 +17,10 @@ div.layout {
 	position:relative;
 }
 
+html, body {
+	height: 100vh;
+}
+
 .marttitle {
 	 font-family: 'gugi';
 	 color: #7DAB12;
@@ -42,7 +46,17 @@ div.layout {
 .menu {
 	margin-top: 60px;
 }
+
+#main, #mainList {
+	padding-bottom: 500px;
+}
+
+.info, #info{
+	bottom: 0 !important;
+	width: 100%;
+}
 </style>
+
 </head>
 <body>
 <div class="layout">
@@ -55,7 +69,7 @@ div.layout {
 	<div class="menu" id="menu">
 		<tiles:insertAttribute name="menu"/>
 	</div>
-	<div class="main">
+	<div class="main" id="main">
 		<tiles:insertAttribute name="main"/>
 	</div>
     <div class="info" id="info">

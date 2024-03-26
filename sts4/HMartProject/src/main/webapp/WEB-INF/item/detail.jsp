@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -102,67 +101,72 @@ td img.img {
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-	<div class="detail-table">
+  <div class="detail-table">
 	<table class="detail" id="detail">
-	<div class="a">
-		<tr>
-			<td rowspan="4"><img alt="" src="../save/${dto.item_photo }" class="img"></td>
-			<td style="width: 300px;" colspan="2">
-			<div class="item-name">${dto.item}</div> 
-			<div class="item-price">
-			<span class="fmt"><fmt:formatNumber value="${dto.price }" var="price"/>${price }</span>
-			<span class="won">원</span>
-			</div>
-			<div>
-				<c:if test="${sessionScope.login == null }">
-					<div id="go">로그인 후, 쿠폰이 제공됩니다.</div><br>
-					<button type="button" class="gologin"
-					onclick="location.href='/login'">3,000원 할인 쿠폰 받고 구매하기</button>
-				</c:if>
-			</div>
-			</td>
-		</tr>
-		<tr>
-			<td class="info-label">판매자</td>
-			<td class="info-data" colspan="2">${dto.seller }</td>
-		</tr>
-		<tr>
-			<td class="info-label">포장타입</td>
-			<td class="info-data" colspan="2">${dto.packingtype }</td>
-		</tr>
-		<tr>
-			<td class="info-label">소비기한<br>(유통기한)</td>
-			<td class="info-data" colspan="2">${dto.expiration }</td>	
-		</tr>
-	</div>
-		<tr>
-			<td colspan="4">
-			<div class="selectlist">
-				<span class="detail-info"><a>상세정보</a></span>
-				<span class="item-review"><a>후기</a></span>
-				<span class="qna"><a>문의</a></span>
-				<span class="delivery-info"><a>배송정보</a></span>
-			</div>
-			</td>
-		</tr>
-	  	<tr>
-			<td colspan="2">
-			<div class="detail-photo"><img alt="" src="../save/${dto.item_detail }" class="item-detail"></div>
-			<div class="review-list">
-				<c:forEach var="dto" items="${list }" varStatus="i">
-					<table>
-						<tr>
-							<td>
-							<div type="hidden">${i.count }</div>
-							<div>${dto.name }</div>
-							</td>
-						</tr>
-					</table>
-				</c:forEach>
-			</div>
-			</td>
-		</tr>
-	</table>
+		<div class="a">
+			<tr>
+				<td rowspan="5">
+					<img alt="" src="../save/${dto.item_photo }" class="img">
+				</td>
+				<td style="width: 300px;" colspan="2">
+					<div class="item-name">${dto.item}</div> 
+					<div class="item-price">
+						<span class="fmt"><fmt:formatNumber value="${dto.price }" var="price"/>${price }</span>
+						<span class="won">원</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="info-label">판매자</td>
+				<td class="info-data" colspan="2">${dto.seller }</td>
+			</tr>
+			<tr>
+				<td class="info-label">포장타입</td>
+				<td class="info-data" colspan="2">${dto.packingtype }</td>
+			</tr>
+			<tr>
+				<td class="info-label">소비기한<br>(유통기한)</td>
+				<td class="info-data" colspan="2">${dto.expiration }</td>	
+			</tr>
+			<tr>	
+				<td colspan="2">
+					<c:if test="${sessionScope.login == null }">
+						<div id="go">
+							로그인 후, 쿠폰이 제공됩니다.
+						</div><br>
+					<button type="button" class="gologin" onclick="location.href='/login'">3,000원 할인 쿠폰 받고 구매하기</button>
+					</c:if>
+				</td>
+			</tr>
+		</div>
+			<tr>
+				<td colspan="4">
+					<div class="selectlist">
+						<span class="detail-info"><a>상세정보</a></span>
+						<span class="item-review"><a>후기</a></span>
+						<span class="qna"><a>문의</a></span>
+						<span class="delivery-info"><a>배송정보</a></span>
+					</div>
+				</td>
+			</tr>
+	  		<tr>
+				<td colspan="2">
+					<div class="detail-photo"><img alt="" src="../save/${dto.item_detail }" class="item-detail"></div>
+					<div class="review-list">
+					<c:forEach var="dto" items="${list }" varStatus="i">
+						<table>
+							<tr>
+								<td>
+									<div type="hidden">${i.count }</div>
+									<div>${dto.name }</div>
+								</td>
+							</tr>
+						</table>
+					</c:forEach>
+					</div>
+				</td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>

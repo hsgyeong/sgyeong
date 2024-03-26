@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -11,6 +10,11 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <style>
+.info {
+	bottom: 0;
+	position: absolute;
+}
+
 .center {
 	/* margin-bottom: 650px; */
 	color: #477500;
@@ -25,11 +29,12 @@
 
 #infobox {
 	justify-content: center;/**/
-	height:40vh;
+	height:500px;
 	display: flex;
 	width: 100%;
-	bottom: 0 !important;
+	bottom: 0;
 	margin: auto;
+	position: absolute;
 }
 
 .information {
@@ -131,8 +136,8 @@
 				<div class="kakao-inq-btn">
 					<button class="kakao-inquiry">카카오톡 문의</button>
 					<div class="runtime">
-					월~토요일 | 오전7시~오후6시<br>
-					일/공휴일 &nbsp;| 오전7시~오후1시
+						월~토요일 | 오전7시~오후6시<br>
+						일/공휴일 &nbsp;| 오전7시~오후1시
 					</div>
 				</div>
 				<br>
